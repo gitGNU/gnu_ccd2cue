@@ -1,0 +1,11 @@
+Copyright 2010, Bruno Félix Rezende Ribeiro
+
+BUILD:
+
+Just run in bash: ./compile
+
+The program executable will be placed in 'bin' directory.
+
+Any bug, corrections, commentary or any else, please e-mail in oitofelix@gmail.com.
+
+Have fun!
