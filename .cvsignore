@@ -27,5 +27,5 @@ build
 ccd2cue-*
 
 aclocal.m4
-build-aux m4
+build-aux
 autom4te.cache
