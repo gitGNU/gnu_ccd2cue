@@ -1,0 +1,470 @@
+\input texinfo  @c -*-texinfo-*-
+@c
+@c README.texi -- ccd2cue README file
+@c
+@c Copyright (C) 2010, 2013 Bruno Félix Rezende Ribeiro
+@c <oitofelix@riseup.net>
+@c
+@c Permission is granted to copy, distribute and/or modify this
+@c document under the terms of the GNU Free Documentation License,
+@c Version 1.2 or any later version published by the Free Software
+@c Foundation; with no Invariant Sections.  A copy of the license is
+@c included in the section entitled “GNU Free Documentation License.”.
+@c
+
+@c %**start of header
+@setfilename ccd2cue-README.info
+@documentencoding UTF-8
+@c @documentlanguage en_US
+@firstparagraphindent insert
+@footnotestyle end
+@include version.texi
+@settitle README
+@c %**end of header
+
+
+
+
+
+@c --- Copying;
+@set FILE README
+@include copying.texi
+
+
+
+
+
+@c --- Info directory entry;
+@dircategory Converter
+@direntry
+* ccd2cue README file: (ccd2cue-README)@
+Distribution, contacting community, bug reports, contribution and
+hacking
+@end direntry
+
+
+
+
+
+@c --- Info Top Node;
+@ifnottex
+@node Top
+@top README
+@insertcopying
+@end ifnottex
+
+
+
+
+
+@c --- Menu;
+@menu
+* Preface::          What this document is all about and where to get more information.
+* Distribution::     How to distribute the program you got.
+* Getting a copy::   How to get a copy of the program and its documentation.
+* Getting in touch:: How to contact developers and user community.
+* Bug reporting::    How to fill a bug report.
+* Contributing::     How to contribute to development and its community.
+* Donating::         How to support developer's work.
+* Hacking::          How to hack the code.
+* Index::            Concepts index.
+@end menu
+
+
+
+
+
+@c --- Title page;
+@titlepage
+@title README
+@subtitle for version @value{VERSION} (@value{UPDATED})
+@author Bruno Félix Rezende Ribeiro <@email{oitofelix@@riseup.net}>
+@page
+@vskip 0pt plus 1filll
+@insertcopying
+@end titlepage
+
+
+
+
+
+@c --- Table of contents;
+@sp 1
+@noindent
+--- Table of Contents ---
+@contents
+@sp 2
+
+
+
+
+
+@c --- Preface;
+@node Preface
+@unnumbered Preface
+@cindex introduction
+
+This document briefly explains the rules of distribution of this
+program@footnote{The expression ``this program'' is used throughout
+the documentation to reference the whole software included in the same
+package as this file.} and its documentation, how to contact the
+community, how to fill bug reports, how to contribute to the project
+and how to get started hacking the code.  If you have checked out the
+source tree from the CVS repository see @ref{Hacking}.  For other
+information about this package you can check the following files found
+in the top level directory of the distribution:
+
+@cindex documentation files
+@cindex help files
+@cindex files help
+@table @file
+@item INSTALL
+Generic build and installation instructions;
+@item NEWS
+User-visible changes since previous versions;
+@item AUTHORS
+List of major contributors;
+@item THANKS
+List of minor contributors;
+@item TODO
+Features we want to see implemented someday;
+@c @item BUGS
+@c Bugs you must be aware of;
+@item DONORS
+People who significantly supported development;
+@item ABOUT-NLS
+Internationalization and localization matters;
+@item COPYING
+The program license;
+@item COPYING.DOC
+The documentation license;
+@item ChangeLog
+Detailed list of changes of the source code;
+@end table
+
+@cindex Richard Stallman
+@cindex Stallman, Richard
+@cindex GNU
+@cindex The GNU Project
+@cindex Linux and the GNU system
+@cindex Free Software Movement
+Information about the GNU operating system, the GNU Project and the
+Free Software Movement are included in the distribution --- for your
+pleasure --- in the form of some articles by Richard Stallman (RMS).
+See the top-level files:
+
+@table @file
+@item GNU
+The GNU Manifesto;
+@item THE-GNU-PROJECT
+The GNU Project history;
+@item LINUX-GNU
+Linux and the GNU system;
+@item WHY-FREE
+Why Software Should Not Have Owners;
+@end table
+
+@cindex site
+@cindex web
+@cindex atom feed
+@cindex feed of updates
+For more information about this program you can visit its home page at
+@url{http://www.nongnu.org/ccd2cue/}.  If you want to receive
+notifications about new releases of this program or important issues
+related to it, subscribe to the mailing list, as described in
+@ref{Getting in touch}, or subscribe to the project atom feed
+@url{https://savannah.nongnu.org/news/atom.php?group=ccd2cue}.
+
+
+
+
+
+@c --- Distribution;
+@node Distribution
+@chapter Distribution
+
+@cindex free software
+@cindex free documentation
+@cindex user rights
+@cindex rights of the user
+@cindex distribution
+This program is @dfn{free software}; this means that everyone is free
+to use it and free to redistribute it under certain conditions.  This
+program is not in the public domain; it is copyrighted and there are
+restrictions on its distribution, but these restrictions are designed
+to permit everything that a good cooperating citizen would want to do.
+What is not allowed is to try to prevent others from further sharing
+any version of this program that they might get from you.  The precise
+conditions are found in the GNU General Public License (@file{COPYING}
+file).  The program manual is covered by the GNU Free Documentation
+License (@file{COPYING.DOC} file).  This license is similar in spirit
+to the GNU General Public License, but is more suitable for
+documentation.
+
+
+
+
+
+@c --- Getting a copy;
+@node Getting a copy
+@chapter Getting a copy
+
+@cindex copying
+One way to get a copy of this program is from someone else who has it.
+You need not ask for our permission to do so, or tell any one else;
+just copy it.  You may also receive this program when you buy a
+computer.  Computer manufacturers are free to distribute copies on the
+same terms that apply to everyone else.  These terms require them to
+give you the full sources, including whatever changes they may have
+made, and to permit you to redistribute the program received from them
+under the usual terms of the GNU General Public License.  In other
+words, the program must be free for you when you get it, not just free
+for the manufacturer.
+
+@cindex release
+If you have access to the Internet, you can get the latest
+distribution version of this program at
+@url{http://download.savannah.gnu.org/releases/ccd2cue/}.  Please, use
+a mirror if possible; you will be automatically redirected to the
+nearest mirror at
+@url{http://download-mirror.savannah.gnu.org/releases/ccd2cue/}.
+
+@cindex cvs repository
+@cindex development version
+A CVS repository, where the development takes place, is also
+available.  It maintains the full history of modifications of every
+single source file.  You can checkout any given revision of any file
+or get a snapshot of the entire source tree in a particular desired
+state.  Special build tools, as described in @ref{Hacking}, are
+required to build from those checkouts, though.  Notably, to stay up
+to date with the latest developments in the source tree, you can
+anonymously checkout the repository with the following command:
+@example
+cvs -z3 -d:pserver:anonymous@@cvs.savannah.nongnu.org:\
+/sources/ccd2cue co ccd2cue
+@end example
+
+
+
+
+
+@c --- Getting in touch;
+@node Getting in touch
+@chapter Getting in touch
+
+@cindex contact user community
+@cindex user community contact
+@cindex community contact
+@cindex developers contact
+@cindex contact developers
+@cindex mailing list
+You can get in touch with other users and the developers of this
+program subscribing to the mailing list.  Anyone is welcome to join
+the list; to do so, visit
+@url{http://lists.nongnu.org/mailman/listinfo/ccd2cue-bug/} or send an
+email to @email{ccd2cue-bug-join@@nongnu.org}.  You can use this list
+for all discussion, including asking for help and bug reporting,
+although the preferred method for reporting bugs is the dedicated bug
+tracking web interface described in @ref{Bug reporting}.  To post a
+message to all the list members, send email to
+@email{ccd2cue-bug@@nongnu.org}.  To see the collection of prior
+postings to the list, visit its archive at:
+@url{http://lists.nongnu.org/archive/html/ccd2cue-bug/}.
+
+@cindex IRC channel
+If you feel somewhat chatty, eager for a somewhat more instantaneous
+response from community, you can join us on our friendly IRC channel:
+@display
+#ccd2cue at freenode.net
+@end display
+
+
+
+
+
+@c --- Bug reporting;
+@node Bug reporting
+@chapter Bug reporting
+@cindex bug reporting
+@cindex reporting a bug
+@cindex support
+@cindex getting support
+If you come across some problem and need help you can contact the
+community as described @xref{Getting in touch}.  If you think you
+found a bug, but is not quite sure about it, you can instead ask for
+support on our support tracker at
+@url{https://savannah.nongnu.org/support/?group=ccd2cue}.
+We will revise your post, advise you and take the appropriate
+measures.  If you are confident you have found a bug, you can submit a
+bug report directly at our bug tracker:
+@url{https://savannah.nongnu.org/bugs/?group=ccd2cue}.  Please, when
+reporting a bug include enough information for the maintainers to
+reproduce the problem.  Generally speaking, that means:
+
+@itemize
+@item
+The contents of any input files necessary to reproduce the bug and
+command line invocations of the program(s) involved (crucial!).
+@item
+A description of the problem and any samples of the erroneous output.
+@item
+The version number of the program(s) involved (use
+@option{--version}).
+@item
+Hardware, operating system, and compiler versions (@code{uname -a}).
+@item
+Unusual options you gave to configure, if any (see
+@file{config.status}).
+@item
+Anything else that you think would be helpful.
+@end itemize
+
+
+
+
+
+@c --- Contributing;
+@node Contributing
+@chapter Contributing
+@cindex helping development
+@cindex contributing to development
+
+This program is a collaborative project and we encourage contributions
+from anyone and everyone --- your help is very much appreciated.  You
+can help in many ways:
+
+@itemize
+@item
+@cindex donation
+@cindex supporting development
+@cindex development, supporting it
+Donate to developers in order to support their work.  See
+@ref{Donating}.
+@item
+Write documentation.  We are specially in need to complete the CCD
+sheet format specification.
+@item
+Help users in the mailing list and IRC channel.
+@item
+Find and report bugs.  @xref{Bug reporting}.
+@item
+Fix reported bugs.
+@item
+Implement new feature ideas.
+@item
+Write test cases.
+@item
+Check the documentation against the implementation.
+@item
+Translate the program strings to other languages.
+@end itemize
+
+@cindex project site
+@cindex development site
+You can join the development team to contribute code and documentation
+at @url{https://savannah.nongnu.org/projects/ccd2cue/}.  Patches are
+most welcome, but contributed code should follow the GNU Coding
+Standards.  @xref{,,, standards, GNU Coding Standards}.  If it
+doesn't, we'll need to find someone to fix the code before we can use
+it.  It is also necessary that the contributor be willing to assign
+their copyright to the @acronym{FSF, Free Software Foundation}, since
+the developers plan to make it officially part of the GNU operating
+system and they want FSF to enforce the program's license.  To get
+started hacking see @ref{Hacking}.
+
+
+
+
+
+@c --- Donating;
+@node Donating
+@chapter Donating
+@cindex financial support
+
+If you find this program useful, please @strong{send a donation} to
+its developers to support their work.  If you use this program at your
+workplace, please suggest that the company make a donation.  We
+appreciate contributions of any size -- donations enable us to spend
+more time working on the project, and help cover our infrastructure
+expenses.
+
+If you'd like to make a donation of any value, please send it to the
+following Bitcoin address:
+
+@cindex bitcoin address
+@example
+12sKDaBNYekQuRPdrpnbUL4YRDKrzMnY62
+@end example
+
+@cindex donors web page
+Since our project isn't a tax-exempt organization, we can't offer you
+a tax deduction, but for all donations over 0.05 BTC, we'd be happy to
+recognize your contribution on
+@url{http://http://www.nongnu.org/ccd2cue/donors/} and on
+@file{DONORS} file for the next release.
+
+@cindex hire to implement feature
+We are also happy to consider making particular improvements or
+changes, or giving specific technical assistance, in return for a
+substantial donation over 0.5 BTC.  If you would like to discuss this
+possibility, write to us at @email{ccd2cue-support@@nongnu.org}.
+
+Another possibility is to pay a software maintenance fee.  Again,
+write to us about this at @email{ccd2cue-support@@nongnu.org} to
+discuss how much you want to pay and how much maintenance we can offer
+in return.
+
+@center @strong{Thanks for your support!}
+
+
+
+
+@c --- Hacking;
+@node Hacking
+@chapter Hacking
+@cindex hacking
+@cindex building from cvs
+@cindex development version, building
+@noindent
+The development sources are available through CVS at Savannah:
+
+@display
+https://savannah.nongnu.org/cvs/?group=ccd2cue
+@end display
+
+If you are getting the sources from CVS (or change
+@file{configure.ac}), you'll need to have Automake, Autoconf and
+Gettext installed to (re)build.  You'll also need help2man.  All of
+these programs are available from @url{ftp://ftp.gnu.org/gnu}.
+
+After getting the CVS sources, and installing the tools above, you can
+run @code{./bootstrap} to do a fresh build.  After that first time,
+running @command{make} should suffice.  See file @file{INSTALL}.
+
+When modifying the sources, or making a distribution, more is needed,
+as follows:
+
+@itemize
+@item
+This distribution also uses Gnulib
+(@url{http://www.gnu.org/software/gnulib}) to share common files,
+stored as a submodule in git.
+@item
+When updating gettext, besides the normal installation on the system,
+it is necessary to run @code{gettextize -f} in this hierarchy to
+update the @file{po/} infrastructure.  After doing so, rerun
+@code{gnulib-tool --import} since otherwise older files will have been
+imported.  @xref{,,, gnulib, Gnulib Manual}, for more information.
+@end itemize
+
+
+
+
+
+@c --- Index;
+@node Index
+@unnumbered Index
+
+@printindex cp
+
+@bye

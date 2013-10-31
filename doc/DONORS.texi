@@ -1,0 +1,115 @@
+\input texinfo  @c -*-texinfo-*-
+@c
+@c DONORS.texi -- ccd2cue DONORS file
+@c
+@c Copyright (C) 2010, 2013 Bruno Félix Rezende Ribeiro
+@c <oitofelix@riseup.net>
+@c
+@c Permission is granted to copy, distribute and/or modify this
+@c document under the terms of the GNU Free Documentation License,
+@c Version 1.2 or any later version published by the Free Software
+@c Foundation; with no Invariant Sections.  A copy of the license is
+@c included in the section entitled “GNU Free Documentation License.”.
+@c
+
+@c %**start of header
+@setfilename ccd2cue-DONORS.info
+@documentencoding UTF-8
+@c @documentlanguage en_US
+@firstparagraphindent insert
+@footnotestyle end
+@include version.texi
+@settitle DONORS
+@c %**end of header
+
+
+
+
+
+@c --- Copying;
+@set FILE DONORS
+@include copying.texi
+
+
+
+
+
+@c --- Info directory entry;
+@dircategory Converter
+@direntry
+* ccd2cue DONORS file: (ccd2cue-DONORS)@
+User-visible changes since previous versions;
+@end direntry
+
+
+
+
+
+@c --- Info Top Node;
+@ifnottex
+@node Top
+@top DONORS
+@insertcopying
+@end ifnottex
+
+
+
+
+
+@c --- Menu;
+@menu
+* Preface::          What this document is all about and how it is organized.
+
+Contributors:
+@end menu
+
+
+
+
+
+@c --- Title page;
+@titlepage
+@title DONORS
+@subtitle for version @value{VERSION} (@value{UPDATED})
+@author Bruno Félix Rezende Ribeiro <@email{oitofelix@@riseup.net}>
+@page
+@vskip 0pt plus 1filll
+@insertcopying
+@end titlepage
+
+
+
+
+
+@c --- Table of contents;
+@sp 1
+@noindent
+--- Table of Contents ---
+@contents
+@sp 2
+
+
+
+
+
+@c --- Preface;
+@node Preface
+@unnumbered Preface
+@cindex introduction
+
+This document contains a list of people that supported development by
+means of donation.  This program would not be what it is today without
+the invaluable help of these people, for whom we would like to say:
+
+@center @strong{THANK YOU VERY MUCH!}
+@sp 1
+
+The names are listed in chronological order of contribution.  Each
+person's contact information, usually email, and a summary of that
+person's contribution is put in per correspondent section.
+
+If you would appreciate your own name listed here, @strong{please
+donate!}  See the ``Donating'' section of the @file{README} file.
+
+@sp 1
+@center @emph{Unfortunately no one has donated so far.  Be the first!}
