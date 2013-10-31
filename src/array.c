@@ -29,14 +29,17 @@
  */
 
 
+#include <config.h>
 #include <stdarg.h>
 #include <string.h>
 #include <stdlib.h>
 #include <ctype.h>
 #include <assert.h>
 #include <sysexits.h>
+#include <error.h>
+
 #include "i18n.h"
-#include "error.h"
+#include "errors.h"
 #include "array.h"
 
 
@@ -66,7 +69,7 @@ concat (const char *str, ...)
      isn't possible. */
   result = malloc (total);
   if (result == NULL)
-    error_push_lib (malloc, NULL, _("could not concatenate strings"));
+    error_push_lib (malloc, NULL, _("cannot concatenate strings"));
 
   /* Copy the strings.  */
   result_end = result;
@@ -91,7 +94,7 @@ xstrdup (const char *s)
 
   /* If it is not possible exit with failure. */
   if (str == NULL)
-    error (EX_OSERR, errno, "%s: error copying string", __func__);
+    error (EX_OSERR, errno, _("%s: error copying string"), __func__);
 
   /* If allocation succeeded return the address to it. */
   return str;
