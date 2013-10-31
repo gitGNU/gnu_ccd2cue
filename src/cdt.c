@@ -29,15 +29,17 @@
  */
 
 
+#include <config.h>
 #include <stdio.h>
 #include <assert.h>
+
 #include "io.h"
 #include "cdt.h"
 
 
 void
 cdt2stream (const struct cdt *cdt, FILE *stream)
-{ 
+{
   /* Assert the CDT structure is valid. */
   assert (cdt != NULL);
 
