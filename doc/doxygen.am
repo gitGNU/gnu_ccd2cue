@@ -1,0 +1,149 @@
+##
+## doxygen.am -- Automake rules for Doxygen.
+##
+#
+# Copyright (C) 2013 Bruno Félix Rezende Ribeiro
+# <oitofelix@riseup.net>
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 3, or (at your option)
+# any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+
+## --------------------------------- ##
+## Format-independent Doxygen rules. ##
+## --------------------------------- ##
+
+if DX_COND_doc
+
+.PHONY: doxygen-run doxygen-doc
+
+.INTERMEDIATE: doxygen-run
+
+doxygen-run: @DX_DOCDIR@/@PACKAGE@.tag
+
+doxygen-doc: doxygen-run
+
+@DX_DOCDIR@/@PACKAGE@.tag: $(DX_CONFIG) $(pkginclude_HEADERS)
+	   rm -rf @DX_DOCDIR@
+	   $(DX_ENV) $(DX_DOXYGEN) $(DX_CONFIG)
+
+DX_CLEANFILES = \
+    @DX_DOCDIR@/@PACKAGE@.tag \
+    -r \
+    $(DX_CLEAN_HTML) \
+    $(DX_CLEAN_CHM) \
+    $(DX_CLEAN_CHI) \
+    $(DX_CLEAN_MAN) \
+    $(DX_CLEAN_RTF) \
+    $(DX_CLEAN_XML) \
+    $(DX_CLEAN_PS) \
+    $(DX_CLEAN_PDF) \
+    $(DX_CLEAN_LATEX) \
+    @DX_DOCDIR@
+
+## ------------------------------- ##
+## Rules specific for HTML output. ##
+## ------------------------------- ##
+
+if DX_COND_html
+
+DX_CLEAN_HTML = @DX_DOCDIR@/html
+
+endif DX_COND_html
+
+## ------------------------------ ##
+## Rules specific for CHM output. ##
+## ------------------------------ ##
+
+if DX_COND_chm
+
+DX_CLEAN_CHM = @DX_DOCDIR@/chm
+
+if DX_COND_chi
+
+DX_CLEAN_CHI = @DX_DOCDIR@/@PACKAGE@.chi
+
+endif DX_COND_chi
+
+endif DX_COND_chm
+
+## ------------------------------ ##
+## Rules specific for MAN output. ##
+## ------------------------------ ##
+
+if DX_COND_man
+
+DX_CLEAN_MAN = @DX_DOCDIR@/man
+
+endif DX_COND_man
+
+## ------------------------------ ##
+## Rules specific for RTF output. ##
+## ------------------------------ ##
+
+if DX_COND_rtf
+
+DX_CLEAN_RTF = @DX_DOCDIR@/rtf
+
+endif DX_COND_rtf
+
+## ------------------------------ ##
+## Rules specific for XML output. ##
+## ------------------------------ ##
+
+if DX_COND_xml
+
+DX_CLEAN_XML = @DX_DOCDIR@/xml
+
+endif DX_COND_xml
+
+## ----------------------------- ##
+## Rules specific for PS output. ##
+## ----------------------------- ##
+
+if DX_COND_ps
+
+DX_CLEAN_PS = @DX_DOCDIR@/@PACKAGE@.ps
+
+endif DX_COND_ps
+
+## ------------------------------ ##
+## Rules specific for PDF output. ##
+## ------------------------------ ##
+
+if DX_COND_pdf
+
+DX_CLEAN_PDF = @DX_DOCDIR@/@PACKAGE@.pdf
+
+endif DX_COND_pdf
+
+## ------------------------------------------------- ##
+## Rules specific for LaTeX (shared for PS and PDF). ##
+## ------------------------------------------------- ##
+
+if DX_COND_latex
+
+DX_CLEAN_LATEX = @DX_DOCDIR@/latex
+
+endif DX_COND_latex
+
+endif DX_COND_doc
+
+#
+# Copyright (c) 2009 Oren Ben-Kiki <oren@ben-kiki.org>
+#
+# Copying and distribution of this file, with or without modification, are
+# permitted in any medium without royalty provided the copyright notice
+# and this notice are preserved. This file is offered as-is, without any
+# warranty.
+#
