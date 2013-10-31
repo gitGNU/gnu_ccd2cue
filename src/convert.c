@@ -36,7 +36,9 @@
 #include <stdlib.h>
 #include <string.h>
 #include <assert.h>
-#include "error.h"
+#include <error.h>
+
+#include "errors.h"
 #include "array.h"
 #include "memory.h"
 #include "i18n.h"
@@ -156,8 +158,8 @@ ccd2cue (const struct ccd *ccd, const char *img_name, const char *cdt_name)
 	      break;
 	    default:		/* If you got here, the program
 				   certainly has a bug. */
-	      error_push (-1, _("unknown track data type %s; please report a bug"),
-			  ccd->TRACK[i].MODE);
+	      error (1, 0, _("unknown track data type %d; please report a bug"),
+		     ccd->TRACK[i].MODE);
 	    }
 
 	  /* If there is a FLAGS entry for this track, add it. */
@@ -176,7 +178,7 @@ ccd2cue (const struct ccd *ccd, const char *img_name, const char *cdt_name)
 	  /* Add each INDEX entry. */
 	  for (j = 0; j < ccd->TRACK[i].IndexEntries; j++)
 	    if (ccd->TRACK[i].INDEX[j] != -1)
-	      frames2msf (ccd->TRACK[i].INDEX[j], &cue->FILE[0].TRACK[i].INDEX[j]);		
+	      frames2msf (ccd->TRACK[i].INDEX[j], &cue->FILE[0].TRACK[i].INDEX[j]);
 	    else cue->FILE[0].TRACK[i].INDEX[j].initialized = 0;
 	}
 
