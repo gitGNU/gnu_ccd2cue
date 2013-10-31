@@ -21,6 +21,7 @@ configure
 config.log
 config.status
 
+gnulib
 lib
 build
 
