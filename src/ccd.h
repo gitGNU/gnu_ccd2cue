@@ -131,6 +131,14 @@ struct ccd_TRACK
 				 - 0 = AUDIO
 				 - 1 = MODE1/2352
 				 - 2 = MODE2/2352 */
+  char ISRC[12 + 1];		/**< International Standard Recording
+				  Code; must be 12 characters in
+				  length --- the first five characters
+				  are alphanumeric, the last seven are
+				  numeric only. */
+  int *INDEX;			/**< Array of _INDEX_ entries; */
+  int IndexEntries;		/**< Number of _INDEX_ entries; it is
+				  not in the CCD sheet properly. */
   char *FLAGS;			/**< Special track's subcode flags;
 				 - DCP = Digital copy permitted
 				 - 4CH = Four channel audio
@@ -141,14 +149,6 @@ struct ccd_TRACK
 				          (not used directly)
 				 One or more flags can be specified
 				 separating them by a space.*/
-  char ISRC[12 + 1];		/**< International Standard Recording
-				  Code; must be 12 characters in
-				  length --- the first five characters
-				  are alphanumeric, the last seven are
-				  numeric only. */
-  int *INDEX;			/**< Array of _INDEX_ entries; */
-  int IndexEntries;		/**< Number of _INDEX_ entries; it is
-				  not in the CCD sheet properly. */
 };
 
 /**
