@@ -131,7 +131,7 @@ Features we want to see implemented someday;
 @c @item BUGS
 @c Bugs you must be aware of;
 @item DONORS
-People who significantly supported development;
+People who supported the development by donations;
 @item ABOUT-NLS
 Internationalization and localization matters;
 @item COPYING
