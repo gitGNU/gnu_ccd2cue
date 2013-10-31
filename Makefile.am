@@ -20,10 +20,43 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-SUBDIRS = man
+SUBDIRS = po src doc
 
-EXTRA_DIST = README.texi NEWS.texi AUTHORS.texi THANKS.texi TODO.texi	\
-DONORS.texi COPYING.texi COPYING.DOC.texi
+EXTRA_DIST = DONORS GNU LINUX-GNU THE-GNU-PROJECT WHY-FREE
 
-info_TEXINFOS = ccd2cue.texi
-ccd2cue_TEXINFOS = README.texi COPYING.DOC.texi version.texi
+include doc/doxygen.am
+MOSTLYCLEANFILES = $(DX_CLEANFILES)
+
+dist-hook: README NEWS AUTHORS THANKS TODO DONORS COPYING COPYING.DOC ChangeLog
+
+define makeinfo_text
+makeinfo --plaintext --output=$@ $<
+endef
+
+README: doc/README.texi
+	$(makeinfo_text)
+
+NEWS: doc/NEWS.texi
+	$(makeinfo_text)
+
+AUTHORS: doc/AUTHORS.texi
+	$(makeinfo_text)
+
+THANKS: doc/THANKS.texi
+	$(makeinfo_text)
+
+TODO: doc/TODO.texi
+	$(makeinfo_text)
+
+DONORS: doc/DONORS.texi
+	$(makeinfo_text)
+
+COPYING: doc/COPYING.texi
+	$(makeinfo_text)
+
+COPYING.DOC: doc/COPYING.texi
+	$(makeinfo_text)
+
+ChangeLog::
+	build-aux/cvs2cl.pl --distributed --group-within-date --no-times --no-indent
+	sed --in-place --file=changelog.sed $$(find -name ChangeLog)

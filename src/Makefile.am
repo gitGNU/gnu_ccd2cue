@@ -20,10 +20,19 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-SUBDIRS = man
+bin_PROGRAMS = ccd2cue
+ccd2cue_SOURCES = ccd2cue.c \
+	memory.c memory.h \
+	io.c io.h \
+	file.c file.h \
+	array.c array.h \
+	errors.c errors.h \
+	crc.c crc.h \
+	ccd.c ccd.h \
+	cue.c cue.h \
+	cdt.c cdt.h \
+	convert.c convert.h \
+	i18n.h
 
-EXTRA_DIST = README.texi NEWS.texi AUTHORS.texi THANKS.texi TODO.texi	\
-DONORS.texi COPYING.texi COPYING.DOC.texi
-
-info_TEXINFOS = ccd2cue.texi
-ccd2cue_TEXINFOS = README.texi COPYING.DOC.texi version.texi
+AM_CPPFLAGS = -DLOCALEDIR=\"$(localedir)\"
+AM_CFLAGS = -Wall
