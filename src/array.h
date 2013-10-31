@@ -57,7 +57,7 @@ char * concat (const char *str, ...)
  * Copy a null-terminated string into a newly allocated string.
  *
  * \param[in]  s  String;
- * 
+ *
  * \return  A pointer to the newly allocated string that is a copy of
  *          the supplied string;
  *
@@ -70,8 +70,7 @@ char * concat (const char *str, ...)
  * \sa [Copying and Concatenation] (https://gnu.org/software/libc/manual/html_node/Copying-and-Concatenation.html#Copying-and-Concatenation)
  *
  */
-char * xstrdup (const char *s)
-  __attribute__ ((nonnul, warn_unused_result));
+char * xstrdup (const char *s);
 
 /**
  * Remove trailing white space from a string.
