@@ -35,10 +35,12 @@
 #include <stdlib.h>
 #include <string.h>
 #include <assert.h>
+
 #include "memory.h"
 #include "i18n.h"
 #include "ccd.h"
-#include "error.h"
+#include "errors.h"
+#include "array.h"
 
 
 /**
@@ -147,7 +149,7 @@ stream2ccd (FILE *stream, struct ccd *ccd)
 	 an error. */
       errno = 0;
       if (getline (&line, &line_size, stream) == -1 && errno != 0)
-	error_push_lib (getline, -1, _("could not parse CCD sheet stream"));
+	error_push_lib (getline, -1, _("cannot parse CCD sheet stream"));
 
       /* Simple data --- these are data that do not need dynamic
 	 allocation; insert the value of each entry on the respective
@@ -479,5 +481,5 @@ ccd_TRACK_init (struct ccd_TRACK *TRACK)
   TRACK->INDEX = xmalloc (sizeof (*TRACK->INDEX) * 2);
   TRACK->INDEX[0] = -1;
   TRACK->INDEX[1] = -1;
-  TRACK->IndexEntries = 2;    
+  TRACK->IndexEntries = 2;
 }
