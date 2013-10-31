@@ -1,8 +1,14 @@
-Makefile.in.in Makefile.in Makefile
+Makefile.in.in
+Makefile.in
+Makefile
+
 POTFILES
+
 ccd2cue.pot
+
 Makevars
 Makevars.template
+
 Rules-quot
 boldquot.sed
 en@boldquot.header
@@ -11,3 +17,5 @@ insert-header.sin
 quot.sed
 remove-potcdate.sin remove-potcdate.sed
 stamp-po
+
+.reference
