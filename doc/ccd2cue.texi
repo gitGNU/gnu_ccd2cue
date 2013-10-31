@@ -1,21 +1,16 @@
-@c ccd2cue.texi -- The ccd2cue Manual
-
-@c Copyright 2013 Bruno Félix Rezende Ribeiro (oitofelix@riseup.net)
-
-@c This program is free software: you can redistribute it and/or modify
-@c it under the terms of the GNU General Public License as published by
-@c the Free Software Foundation, either version 3 of the License, or
-@c (at your option) any later version.
-
-@c This program is distributed in the hope that it will be useful,
-@c but WITHOUT ANY WARRANTY; without even the implied warranty of
-@c MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-@c GNU General Public License for more details.
-
-@c You should have received a copy of the GNU General Public License
-@c along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
 \input texinfo  @c -*-texinfo-*-
+@c
+@c ccd2cue.texi -- The ccd2cue Manual
+@c
+@c Copyright (C) 2010, 2013 Bruno Félix Rezende Ribeiro
+@c <oitofelix@riseup.net>
+@c
+@c Permission is granted to copy, distribute and/or modify this
+@c document under the terms of the GNU Free Documentation License,
+@c Version 1.2 or any later version published by the Free Software
+@c Foundation; with no Invariant Sections.  A copy of the license is
+@c included in the section entitled “GNU Free Documentation License.”.
+@c
 
 @c %**start of header
 @setfilename ccd2cue.info
@@ -74,76 +69,74 @@
 
 
 
-@c --- Copying;
-@copying
-The program ccd2cue is a CCD sheet to CUE sheet converter.  It
-supports the full extent of CUE sheet format expressiveness, including
-mixed-mode discs and CD-Text meta-data.
-
-This manual is for ccd2cue version @value{VERSION}.
-
-Copyright @copyright{} 2013 Bruno Félix Rezende Ribeiro
-
-@quotation
-Permission is granted to copy, distribute and/or modify this document
-under the terms of the GNU Free Documentation License, Version 1.2 or
-any later version published by the Free Software Foundation; with no
-Invariant Sections.  A copy of the license is included in the section
-entitled ``GNU Free Documentation License.''
-@end quotation
-@end copying
+@include copying.texi
 
 
 
 
 
-@c --- Info directory entry
+@c --- Info directory entry;
 @dircategory Converter
 @direntry
 * ccd2cue: (ccd2cue)The CCD sheet to CUE sheet converter.
 @end direntry
 
-@c --- Info Top Node
+
+
+
+
+@c --- Info Top Node;
 @ifnottex
 @node Top
 @top The CCD sheet to CUE sheet converter
 @insertcopying
 @end ifnottex
 
-@menu
-* Preface::      Motivation, program definition and document organization.
 
-Instructional:
-* Distribution:: Rules of distribution, how to get in touch and contribute.
-* Installation:: Full build and installation instructions.
-* Use::          How the program works, how to invoke and use it.
+
+
+
+@c --- Menu;
+@menu
+* Preface::    Motivation, program definition and document organization.
+* Operation::  How the program works from the user's perspective.
+* Tutorial::   Easy and fast to learn case by case.
+* Invocation:: Formal and canonical list of options and meanings.
 
 Appendices:
 * Compact Disc fields::            Common concepts to all sheets.
 * CCD sheet format::               Unofficial and partial format reference.
 * CUE sheet format::               Reference.
-* GNU General Public License::     The license for the program.
 * GNU Free Documentation License:: The license for this documentation.
 
 Indexes:
-* Index::
+* Index:: Concepts and reference material.
 @end menu
 
 
 
 
 
-@c --- TeX title page;
+@c --- Title page;
 @titlepage
 @title The ccd2cue Manual
 @subtitle for version @value{VERSION} (@value{UPDATED})
-@author Bruno Félix Rezende Ribeiro (@email{oitofelix@@riseup.net})
+@author Bruno Félix Rezende Ribeiro <@email{oitofelix@@riseup.net}>
 @page
 @vskip 0pt plus 1filll
 @insertcopying
 @end titlepage
 
+
+
+
+
+@c --- Table of contents;
 @contents
+
+
+
+
 
 
 @c --- Preface;
@@ -239,17 +232,14 @@ instructional, reasonably tutorial, use.  It is composed by the
 following chapters:
 
 @table @emph
-@item Distribution
-Briefly explains the rules of distribution of ccd2cue and its
-documentation, how to contact the ccd2cue community, how to fill bug
-reports, how to contribute to the project and how to hack the code.
-@item Installation
-Gives full build and installation instructions for stable releases.
-Include localization matters.
-@item Use
-Teach how the program works from the user's perspective, how to use it
-for the most common cases and describes the ccd2cue invocation and
-accepted options.
+@item Operation
+Teach how the program works from the user's perspective;
+@item Tutorial
+Guides the reader step-by-step using the program in face of practical
+common use cases.
+@item Invocation
+Concerns ccd2cue invocation syntax, accepted options and their
+meanings.
 @end table
 
 @iftex
@@ -281,270 +271,9 @@ Now that you are acquainted to the program and documentation,
 
 
 
-@c --- Distribution;
-@node Distribution
-@chapter Distribution
-
-@cindex free software
-@cindex free documentation
-@cindex user rights
-@cindex rights of the user
-@cindex ccd2cue distribution
-@cindex distribution of ccd2cue
-The program ccd2cue is @dfn{free software}; this means that everyone
-is free to use it and free to redistribute it under certain
-conditions.  The program ccd2cue is not in the public domain; it is
-copyrighted and there are restrictions on its distribution, but these
-restrictions are designed to permit everything that a good cooperating
-citizen would want to do.  What is not allowed is to try to prevent
-others from further sharing any version of ccd2cue that they might get
-from you.  The precise conditions are found in the GNU General Public
-License that comes with ccd2cue and also appears in this
-manual@footnote{This manual is itself covered by the GNU Free
-Documentation License.  This license is similar in spirit to the
-General Public License, but is more suitable for documentation.
-@xref{GNU Free Documentation License}.}.  @xref{GNU General Public
-License}.
-
-@cindex ccd2cue site
-@cindex site of ccd2cue
-@cindex ccd2cue in web
-@cindex atom feed
-@cindex feed of updates
-For more information about this program you can visit its home page at
-@url{http://www.nongnu.org/ccd2cue/}.  If you want to receive
-notifications about new releases of this program or important issues
-related to it, subscribe to the mailing list, as described in
-@ref{Getting in touch}, or subscribe to the project atom feed
-@url{https://savannah.nongnu.org/news/atom.php?group=ccd2cue}.
-
-@c --- Menu;
-
-@menu
-* Getting a copy::   How to get a copy of the program and its documentation.
-* Getting in touch:: How to contact developers and user community.
-* Bug reporting::    How to fill a bug report.
-* Contributing::     How to contribute to ccd2cue development and its community.
-* Hacking::          How to hack the code.
-@end menu
-
-
-@c --- Getting a copy;
-@node Getting a copy
-@section Getting a copy
-
-@cindex copying ccd2cue
-@cindex ccd2cue copying
-One way to get a copy of ccd2cue is from someone else who has it.  You
-need not ask for our permission to do so, or tell any one else; just
-copy it.  You may also receive ccd2cue when you buy a computer.
-Computer manufacturers are free to distribute copies on the same terms
-that apply to everyone else.  These terms require them to give you the
-full sources, including whatever changes they may have made, and to
-permit you to redistribute the ccd2cue received from them under the
-usual terms of the General Public License.  In other words, the
-program must be free for you when you get it, not just free for the
-manufacturer.
-
-@cindex ccd2cue release
-@cindex release ccd2cue
-If you have access to the Internet, you can get the latest
-distribution version of ccd2cue at
-@url{http://download.savannah.gnu.org/releases/ccd2cue/}.  Please, use
-a mirror if possible; you will be automatically redirected to the
-nearest mirror at
-@url{http://download-mirror.savannah.gnu.org/releases/ccd2cue/}.
-
-@cindex ccd2cue cvs repository
-@cindex cvs repository of ccd2cue
-@cindex ccd2cue development version
-@cindex development version of ccd2cue
-A CVS repository, where the development takes place, is also
-available.  It maintains the full history of modifications of every
-single source file.  You can checkout any given revision of any file
-or get a snapshot of the entire source tree in a particular desired
-state.  Special build tools, as described in @ref{Hacking}, are
-required to build from those checkouts, though.  Notably, to stay up
-to date with the latest developments in the source tree, you can
-anonymously checkout the repository with the following command:
-@example
-cvs -z3 -d:pserver:anonymous@@cvs.savannah.nongnu.org:\
-/sources/ccd2cue co ccd2cue
-@end example
-
-
-@c --- Getting in touch;
-@node Getting in touch
-@section Getting in touch
-
-@cindex contact user community
-@cindex user community contact
-@cindex community contact
-@cindex developers contact
-@cindex contact developers
-@cindex ccd2cue mailing list
-@cindex mailing list of ccd2cue
-You can get in touch with other users and the developers of ccd2cue
-subscribing to the mailing list.  Anyone is welcome to join the list;
-to do so, visit
-@url{http://lists.nongnu.org/mailman/listinfo/ccd2cue-bug/} or send an
-email to @email{ccd2cue-bug-join@@nongnu.org}.  You can use this list
-for all discussion, including asking for help and bug reporting,
-although the preferred method for reporting bugs is the dedicated bug
-tracking web interface described in @ref{Bug reporting}.  To post a
-message to all the list members, send email to
-@email{ccd2cue-bug@@nongnu.org}.  To see the collection of prior
-postings to the list, visit its archive at:
-@url{http://lists.nongnu.org/archive/html/ccd2cue-bug/}.
-
-@cindex ccd2cue in IRC
-@cindex IRC channel of ccd2cue
-If you feel somewhat chatty, eager for more instantaneous response
-from community, you can join us on our friendly IRC channel:
-@display
-#ccd2cue at freenode.net
-@end display
-
-
-@c --- Bug reporting;
-@node Bug reporting
-@section Bug reporting
-@cindex ccd2cue bug reporting
-@cindex bug reporting of ccd2cue
-@cindex report a bug in ccd2cue
-@cindex support on ccd2cue
-@cindex ccd2cue, getting support
-If you come across some problem and need help you can contact the
-community as described @xref{Getting in touch}.  If you think you
-found a bug, but is not quite sure about it, you can instead ask for
-support on our support tracker at
-@url{https://savannah.nongnu.org/support/?group=ccd2cue}.
-We will revise your post, advise you and take the appropriate
-measures.  If you are confident you have found a bug, you can submit a
-bug report directly at our bug tracker:
-@url{https://savannah.nongnu.org/bugs/?group=ccd2cue}.  Please, when
-reporting a bug include enough information for the maintainers to
-reproduce the problem.  Generally speaking, that means:
-
-@itemize
-@item
-The contents of any input files necessary to reproduce the bug and
-command line invocations of the program(s) involved (crucial!).
-@item
-A description of the problem and any samples of the erroneous output.
-@item
-The version number of the program(s) involved (use
-@option{--version}).
-@item
-Hardware, operating system, and compiler versions (@code{uname -a}).
-@item
-Unusual options you gave to configure, if any (see
-@file{config.status}).
-@item
-Anything else that you think would be helpful.
-@end itemize
-
-
-@c --- Contributing;
-@node Contributing
-@section Contributing
-@cindex Helping ccd2cue development
-@cindex Contributing to ccd2cue development
-@cindex ccd2cue, contributing to development
-
-The program ccd2cue is a collaborative project and we encourage
-contributions from anyone and everyone.  You can help in many ways:
-
-@itemize
-@item
-@cindex donation
-@cindex supporting development
-@cindex development, supporting it
-If you find ccd2cue useful, please @strong{send a donation} to the
-author to support his work.  If you use ccd2cue at your workplace,
-please suggest that the company make a donation.
-@item
-Write documentation.  We are specially in need to complete the CCD
-sheet format specification.
-@item
-Help users in the mailing list and IRC channel.
-@item
-Find and report bugs.  @xref{Bug reporting}.
-@item
-Fix reported bugs.
-@item
-Implement new feature ideas.
-@end itemize
-
-@cindex ccd2cue project site
-@cindex project site of ccd2cue
-@cindex development site
-You can join the development team to contribute code and documentation
-at @url{https://savannah.nongnu.org/projects/ccd2cue/}.  Contributed
-code should follow the GNU Coding Standards.  @xref{,,, standards, GNU
-Coding Standards}.  If it doesn't, we'll need to find someone to fix
-the code before we can use it.  It is also necessary that the
-contributor be willing to assign their copyright to the @acronym{FSF,
-Free Software Foundation}, since the original author plans to make it
-officially part of the GNU operating system and wants FSF to enforce
-the program license.
-
-
-@c --- Hacking;
-@node Hacking
-@section Hacking
-@cindex hacking ccd2cue
-@cindex ccd2cue hacking
-@cindex building from cvs
-@cindex development version, building
-@noindent
-The development sources are available through CVS at Savannah:
-
-@display
-https://savannah.nongnu.org/cvs/?group=ccd2cue
-@end display
-
-If you are getting the sources from CVS (or change
-@file{configure.ac}), you'll need to have Automake, Autoconf and
-Gettext installed to (re)build.  You'll also need help2man.  All of
-these programs are available from @url{ftp://ftp.gnu.org/gnu}.
-
-After getting the CVS sources, and installing the tools above, you can
-run @code{./bootstrap} to do a fresh build.  After that first time,
-running @command{make} should suffice.  @xref{Installation}.
-
-When modifying the sources, or making a distribution, more is needed,
-as follows:
-
-@itemize
-@item
-This distribution also uses Gnulib
-(@url{http://www.gnu.org/software/gnulib}) to share common files,
-stored as a submodule in git.
-@item
-When updating gettext, besides the normal installation on the system,
-it is necessary to run @code{gettextize -f} in this hierarchy to
-update the @file{po/} infrastructure.  After doing so, rerun
-@code{gnulib-tool --import} since otherwise older files will have been
-imported.  @xref{,,, gnulib, Gnulib Manual}, for more information.
-@end itemize
-
-
-
-@c --- Installation;
-@node Installation
-@chapter Installation
-
-@include install.texi
-
-
-
-
-
-
-@c --- Use;
-@node Use
-@chapter Use
+@c --- Operation;
+@node Operation
+@chapter Operation
 
 @cindex ccd2cue use
 @cindex using ccd2cue
@@ -640,15 +369,9 @@ the CD-Text meta-data is such a case --- the CD-Text file is produced
 from decoded sub-channel information available inside the CCD sheet
 file.
 
-@c --- Menu;
-@menu
-* Tutorial::   Easy and fast to learn case by case.
-* Invocation:: Formal and canonical list of options and meanings.
-@end menu
-
 @c --- Tutorial;
 @node Tutorial
-@section Tutorial
+@chapter Tutorial
 @cindex ccd2cue tutorial
 
 @cindex simple use case
@@ -753,7 +476,7 @@ binary CD-Text data to standard output, however.
 
 @c --- Invocation;
 @node Invocation
-@section Invocation
+@chapter Invocation
 @cindex command-line syntax
 @cindex calling @command{ccd2cue}
 @cindex invoking @command{ccd2cue}
@@ -2442,22 +2165,6 @@ known.
 
 
 
-@c --- GNU General Public License;
-@node GNU General Public License
-@appendix GNU General Public License
-@cindex license of ccd2cue
-@cindex ccd2cue license
-@cindex copying ccd2cue
-@cindex ccd2cue copying
-@cindex program license
-@cindex program copying
-
-@include gpl.texi
-
-
-
-
-
 @c --- GNU Free Documentation License;
 @node GNU Free Documentation License
 @appendix GNU Free Documentation License
@@ -2470,7 +2177,7 @@ known.
 @cindex copying manual
 @cindex manual copying
 
-@include fdl.texi
+@include COPYING.DOC.texi
 
 
 
