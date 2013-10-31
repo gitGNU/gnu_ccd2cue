@@ -36,6 +36,9 @@
 #include <sysexits.h>
 #include <error.h>
 #include <stdarg.h>
+#include <errno.h>
+
+#include "i18n.h"
 #include "io.h"
 
 
@@ -80,7 +83,7 @@ xfwrite (const void *data, size_t size, size_t count, FILE *stream)
 
   /* Write to stream, and if occurs an error exit with failure. */
   if (fwrite (data, size, count, stream) != count)
-    error (EX_OSERR, errno, "%s: error writing to stream", __func__);
+    error (EX_OSERR, errno, _("%s: error writing to stream"), __func__);
 
   /* Return the number of objects actually written. */
   return count;
@@ -94,7 +97,7 @@ xputc (int c, FILE *stream)
 
   /* Write to stream, and if occurs an error exit with failure. */
   if (putc (c, stream) == EOF)
-    error (EX_OSERR, errno, "%s: error writing to stream", __func__);
+    error (EX_OSERR, errno, _("%s: error writing to stream"), __func__);
 
   /* Return the character just written. */
   return c;
@@ -120,7 +123,7 @@ xfprintf (FILE *stream, const char *template, ...)
 
   /* If occurred an output error exit with failure. */
   if (retval < 0)
-    error (EX_OSERR, errno, "%s: error writing to stream", __func__);
+    error (EX_OSERR, errno, _("%s: error writing to stream"), __func__);
 
   /* Return the number of characters just written. */
   return retval;

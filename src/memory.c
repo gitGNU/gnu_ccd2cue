@@ -29,6 +29,7 @@
  */
 
 
+#include <config.h>
 #include <stddef.h>
 #include <error.h>
 #include <errno.h>
@@ -36,6 +37,7 @@
 #include <sysexits.h>
 #include <error.h>
 
+#include "i18n.h"
 #include "memory.h"
 
 
@@ -71,7 +73,7 @@ xmalloc (size_t size)
 
   /* If it is not possible exit with failure. */
   if (value == NULL)
-    error (EX_OSERR, errno, "%s: error allocating memory", __func__);
+    error (EX_OSERR, errno, _("%s: error allocating memory"), __func__);
 
   /* If allocation succeeded return the address to it. */
   return value;
@@ -85,7 +87,7 @@ xrealloc (void *ptr, size_t newsize)
 
   /* If it is not possible exit with failure. */
   if (value == NULL)
-    error (EX_OSERR, errno, "%s: error reallocating memory", __func__);
+    error (EX_OSERR, errno, _("%s: error reallocating memory"), __func__);
 
   /* If reallocation succeeded return the address to it. */
   return value;
@@ -95,5 +97,5 @@ static void
 memory_obstack_alloc_failed (void)
 {
   /* Print an error message and exit with failure. */
-  error (EX_OSERR, errno, "%s: error allocating chunk for obstack", __func__);
+  error (EX_OSERR, errno, _("%s: error allocating chunk for obstack"), __func__);
 }
