@@ -29,7 +29,9 @@
  */
 
 
+#include <config.h>
 #include <assert.h>
+
 #include "memory.h"
 #include "io.h"
 #include "cue.h"
@@ -156,7 +158,7 @@ cue_TRACK_init (size_t entries)
 
 int
 cue2stream (const struct cue *cue, FILE *stream)
-{ 
+{
   int file; 			/* File number (zero based); */
 
   /* Assert the cue structure is valid. */
