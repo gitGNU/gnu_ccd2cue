@@ -102,6 +102,8 @@
 * Operation::  How the program works from the user's perspective.
 * Tutorial::   Easy and fast to learn case by case.
 * Invocation:: Formal and canonical list of options and meanings.
+* Burning::    An @emph{important warning} and advice about burning the
+               resultant CUE sheet.  @strong{READ THIS!}
 
 Appendices:
 * Compact Disc fields::            Common concepts to all sheets.
@@ -240,6 +242,9 @@ common use cases.
 @item Invocation
 Concerns ccd2cue invocation syntax, accepted options and their
 meanings.
+@item Burning
+Gives an @emph{important warning} and advice about burning the
+resultant CUE sheet.  @strong{READ THAT!}
 @end table
 
 @iftex
@@ -548,6 +553,43 @@ Print program version.
 
 Mandatory or optional arguments to long options are also mandatory or
 optional for any corresponding short options.
+
+
+
+
+@c --- Invocation;
+@node Burning
+@chapter Burning
+@cindex CD burning
+@cindex audio track static noise
+@cindex static noise in audio tracks
+@cindex swap sample bytes
+@cindex cdrdao tip
+
+@center @strong{READ THIS!}
+
+If you are willing to burn or already burned a CD from a CUE sheet
+produced by this program and all audio tracks became only senseless
+static noise, you may need to ask your burning software to swap the
+byte order of all samples sent to the CD-recorder when writing audio
+tracks.  For instance, that can be accomplished with the
+@option{--swap} option when using the cdrdao program.  Be warned that
+at least for mixed-mode discs, by author's own experience, the rule is
+to use that option; if you fail to specify it when burning, you almost
+certainly will pointless waste your CD.
+
+Supposing you want to burn a CD using the cdrdao program and a CUE
+sheet file named @file{gnu.cue}, and wisely want to ensure the correct
+behavior of your burnt disc, use the command:
+
+@example
+cdrdao write --swap --speed 1 --eject gnu.cue
+@end example
+
+@noindent
+That way @command{cdrdao} will swap the byte order of audio samples,
+cautiously burning in the smallest possible speed and will eject your
+CD when it is done.
 
 
 
@@ -1835,7 +1877,8 @@ there is no related explicit element in the CCD sheet format.
 Among the CCD set files, is presumed that the source of audio/data is
 a file with the same base name of the CCD sheet file, but with a
 different extension, to indicate its specific purpose, namely
-@file{.img}.  It is believed the type of such file is @code{MOTOROLA}.
+@file{.img}.  This file is always assumed as having type
+@code{BINARY}.
 
 @c --- --- Command: TRACK
 @cueCommand{TRACK}
