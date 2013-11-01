@@ -584,6 +584,8 @@ type can be supplied.  The following options are accepted:"));
 		 "%s\n\n"	/* Examples: */
 		 "%s\n\n"	/* The most... */
 		 "  %s\n\n"	/* ccd2cue -o... */
+		 "%s\n\n"	/* Burning: */
+		 "%s\n\n"	/* If you burned... */
 		 "%s <%s>\n"	/* Report bugs at: <%s>*/
 		 "%s <%s>\n"	/* Report translation bugs to: <%s> */,
 		 _("Examples:"),
@@ -592,6 +594,16 @@ just want to generate a CUE sheet file in order to burn or otherwise \
 access the data inside the image file.  Supposing your CCD sheet file \
 is called gnu.ccd, you are done with the command:"),
 		 _("ccd2cue -o gnu.cue gnu.ccd"),
+		 _("Burning:"),
+		 _("If you are willing to burn or already burned a CD from a CUE sheet \
+produced by this program and all audio tracks became only senseless \
+static noise, you may need to ask your burning software to swap the \
+byte order of all samples sent to the CD-recorder when writing audio \
+tracks.  For instance, that can be accomplished with the `--swap' \
+option when using the cdrdao program.  Be warned that at least for \
+mixed-mode discs, by author's own experience, the rule is to use that \
+option; if you fail to specify it when burning, you almost certainly \
+will pointless waste your CD."),
 		 _("Report bugs at:"),
 		 PACKAGE_BUGREPORT,
 		 _("Report translation bugs to:"),
