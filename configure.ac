@@ -53,6 +53,7 @@ AC_CONFIG_FILES([Makefile
 	po/Makefile.in
 	src/Makefile
 	doc/Makefile
+	doc/copying.texi
 	doc/Doxyfile
 	doc/man/Makefile])
 
