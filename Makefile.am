@@ -20,43 +20,39 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
+ACLOCAL_AMFLAGS = -I m4
+
 SUBDIRS = po src doc
 
 EXTRA_DIST = DONORS GNU LINUX-GNU THE-GNU-PROJECT WHY-FREE
 
-include doc/doxygen.am
-MOSTLYCLEANFILES = $(DX_CLEANFILES)
-
-dist-hook: README NEWS AUTHORS THANKS TODO DONORS COPYING COPYING.DOC ChangeLog
+dist-hook: README NEWS AUTHORS THANKS TODO DONORS ChangeLog
 
 define makeinfo_text
-makeinfo --plaintext --output=$@ $<
+makeinfo --plaintext -I doc --output=$@ $<
 endef
 
-README: doc/README.texi
+README: README.texi
 	$(makeinfo_text)
 
-NEWS: doc/NEWS.texi
+NEWS: NEWS.texi
 	$(makeinfo_text)
 
-AUTHORS: doc/AUTHORS.texi
+AUTHORS: AUTHORS.texi
 	$(makeinfo_text)
 
-THANKS: doc/THANKS.texi
+THANKS: THANKS.texi
 	$(makeinfo_text)
 
-TODO: doc/TODO.texi
+TODO: TODO.texi
 	$(makeinfo_text)
 
-DONORS: doc/DONORS.texi
-	$(makeinfo_text)
-
-COPYING: doc/COPYING.texi
-	$(makeinfo_text)
-
-COPYING.DOC: doc/COPYING.texi
+DONORS: DONORS.texi
 	$(makeinfo_text)
 
 ChangeLog::
 	build-aux/cvs2cl.pl --distributed --group-within-date --no-times --no-indent
 	sed --in-place --file=changelog.sed $$(find -name ChangeLog)
+
+include doxygen.am
+MOSTLYCLEANFILES = $(DX_CLEANFILES)
