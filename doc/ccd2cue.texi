@@ -2177,7 +2177,7 @@ known.
 @cindex copying manual
 @cindex manual copying
 
-@include COPYING.DOC.texi
+@include fdl.texi
 
 
 
