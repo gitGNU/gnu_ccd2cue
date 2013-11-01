@@ -24,35 +24,34 @@ ACLOCAL_AMFLAGS = -I m4
 
 SUBDIRS = po src doc
 
-EXTRA_DIST = DONORS GNU LINUX-GNU THE-GNU-PROJECT WHY-FREE
+toplevel_doc = README NEWS AUTHORS THANKS TODO DONORS
+changelog_dirs = . po src doc doc/man build-aux m4
+articles = GNU LINUX-GNU THE-GNU-PROJECT WHY-FREE
 
-dist-hook: README NEWS AUTHORS THANKS TODO DONORS ChangeLog
+EXTRA_DIST = $(articles)
 
-define makeinfo_text
-makeinfo --plaintext -I doc --output=$@ $<
-endef
-
-README: README.texi
-	$(makeinfo_text)
-
-NEWS: NEWS.texi
-	$(makeinfo_text)
-
-AUTHORS: AUTHORS.texi
-	$(makeinfo_text)
-
-THANKS: THANKS.texi
-	$(makeinfo_text)
-
-TODO: TODO.texi
-	$(makeinfo_text)
-
-DONORS: DONORS.texi
-	$(makeinfo_text)
-
-ChangeLog::
-	build-aux/cvs2cl.pl --distributed --group-within-date --no-times --no-indent
-	sed --in-place --file=changelog.sed $$(find -name ChangeLog)
+dist-hook:
+#	Build top level documentation if checked from CVS.
+	for f in $(toplevel_doc); \
+	do \
+	  if test -f $(srcdir)/"$$f".texi; then \
+	    $(MAKEINFO) --plaintext -I $(builddir)/doc \
+	      --output=$(distdir)/"$$f" $(srcdir)/"$$f".texi; \
+	  fi; \
+	done
+#	Build ChangeLog files if checked from CVS.
+	for d in $(changelog_dirs); \
+	do \
+	  if test ! -f $(abs_srcdir)/"$$d"/ChangeLog; then \
+	    cd $(abs_srcdir)/"$$d" && \
+	    $(abs_srcdir)/build-aux/cvs2cl.pl --group-within-date \
+	      --no-times --no-indent && \
+	    sed --in-place --file=$(abs_srcdir)/changelog.sed \
+	      ChangeLog && \
+	    cd $(abs_srcdir) && \
+	    cp $(abs_srcdir)/"$$d"/ChangeLog $(distdir)/"$$d"; \
+	  fi; \
+	done
 
 include doxygen.am
 MOSTLYCLEANFILES = $(DX_CLEANFILES)
