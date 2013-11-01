@@ -25,4 +25,4 @@ MAINTAINERCLEANFILES = ccd2cue.1
 
 ccd2cue.1: $(top_srcdir)/src/ccd2cue.c
 	$(MAKE) --directory=$(top_builddir)/src $(AM_MAKEFLAGS) ccd2cue
-	$(HELP2MAN) --output=$@  $(top_builddir)/src/ccd2cue
+	$(HELP2MAN) --name="CCD sheet to CUE sheet converter" --output=$@  $(top_builddir)/src/ccd2cue
