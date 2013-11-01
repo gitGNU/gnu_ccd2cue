@@ -1,5 +1,5 @@
 /*
- ccd2cue.c -- convert CCD sheet to CUE sheet
+ ccd2cue.c -- convert CCD sheet to CUE sheet;
 
  Copyright (C) 2010, 2013 Bruno Félix Rezende Ribeiro
  <oitofelix@riseup.net>
@@ -22,7 +22,7 @@
  * \file       ccd2cue.c
  * \brief      convert CCD sheet to CUE sheet
  * \author     Bruno Félix Rezende Ribeiro (_oitofelix_)
- *             <oitofelix@gmail.com>
+ *             <oitofelix@riseup.net>
  * \date       2013
  * \version    0.2
  *

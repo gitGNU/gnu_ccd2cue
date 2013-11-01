@@ -1,8 +1,27 @@
+/*
+ memory.h -- Memory management;
+
+ Copyright (C) 2013 Bruno Félix Rezende Ribeiro <oitofelix@riseup.net>
+
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 3, or (at your option)
+ any later version.
+
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
 /**
  * \file       memory.h
  * \brief      Memory management
  * \author     Bruno Félix Rezende Ribeiro (_oitofelix_)
- *             <oitofelix@gmail.com>
+ *             <oitofelix@riseup.net>
  * \date       2013
  * \version    0.2
  *
@@ -62,7 +81,7 @@
  * Allocate memory.
  *
  * \param[in] size Block size in bytes;
- * 
+ *
  * \return A pointer to the newly allocated block;
  *
  * \since 0.2
@@ -100,5 +119,5 @@ void * xmalloc (size_t size)
 
 void * xrealloc (void *ptr, size_t newsize)
   __attribute__ ((alloc_size (2), warn_unused_result));
-  
+
 #endif	/* CCD2CUE_MEMORY_H */
