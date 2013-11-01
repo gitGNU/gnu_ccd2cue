@@ -22,8 +22,5 @@
 
 SUBDIRS = man
 
-EXTRA_DIST = README.texi NEWS.texi AUTHORS.texi THANKS.texi TODO.texi	\
-DONORS.texi COPYING.texi COPYING.DOC.texi
-
 info_TEXINFOS = ccd2cue.texi
-ccd2cue_TEXINFOS = README.texi COPYING.DOC.texi version.texi
+ccd2cue_TEXINFOS = fdl.texi
