@@ -5,6 +5,7 @@
 Makefile
 Makefile.in
 
+copying.texi
 relocatable.texi
 version.texi
 
