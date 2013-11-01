@@ -25,33 +25,45 @@ ACLOCAL_AMFLAGS = -I m4
 SUBDIRS = po src doc
 
 toplevel_doc = README NEWS AUTHORS THANKS TODO DONORS
-changelog_dirs = . po src doc doc/man build-aux m4
+changelog_dirs = . po src doc doc/man
 articles = GNU LINUX-GNU THE-GNU-PROJECT WHY-FREE
 
 EXTRA_DIST = $(articles)
 
 dist-hook:
-#	Build top level documentation if checked from CVS.
-	for f in $(toplevel_doc); \
-	do \
-	  if test -f $(srcdir)/"$$f".texi; then \
+##	Build and distribute top level documentation if checked from CVS.
+	if test -d $(srcdir)/CVS; then \
+	  for f in $(toplevel_doc); \
+	  do \
+	    echo Generating $$f top level documentation file... && \
 	    $(MAKEINFO) --plaintext -I $(builddir)/doc \
 	      --output=$(distdir)/"$$f" $(srcdir)/"$$f".texi; \
-	  fi; \
-	done
-#	Build ChangeLog files if checked from CVS.
-	for d in $(changelog_dirs); \
-	do \
-	  if test ! -f $(abs_srcdir)/"$$d"/ChangeLog; then \
-	    cd $(abs_srcdir)/"$$d" && \
-	    $(abs_srcdir)/build-aux/cvs2cl.pl --group-within-date \
-	      --no-times --no-indent && \
-	    sed --in-place --file=$(abs_srcdir)/changelog.sed \
-	      ChangeLog && \
-	    cd $(abs_srcdir) && \
-	    cp $(abs_srcdir)/"$$d"/ChangeLog $(distdir)/"$$d"; \
-	  fi; \
-	done
+	  done; \
+##	Top level documentation already built if not checked from CVS,
+##	so just distribute it.
+	else \
+	  for f in $(toplevel_doc); \
+	  do cp $(srcdir)/"$$f" $(distdir)/"$$f"; \
+	  done; \
+	fi
+##	Build and distribute ChangeLog files if checked from CVS.
+	if test -d $(srcdir)/CVS; then \
+	  cd $(srcdir) && \
+	  build-aux/cvs2cl.pl --distributed --group-within-date \
+	    --no-times --no-indent && \
+	  cd $(abs_builddir) && \
+	  for d in $(changelog_dirs); \
+	  do \
+	    sed --file=$(srcdir)/changelog.sed \
+	      $(srcdir)/"$$d"/ChangeLog > $(distdir)/"$$d"/ChangeLog; \
+	  done; \
+##	ChangeLog files already built if not checked from CVS, so just
+##	distribute it.
+	else \
+	  for d in $(changelog_dirs); \
+	  do cp $(srcdir)/"$$d"/ChangeLog $(distdir)/"$$d"; \
+	  done; \
+	fi
 
 include doxygen.am
 MOSTLYCLEANFILES = $(DX_CLEANFILES)
