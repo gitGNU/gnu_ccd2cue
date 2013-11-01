@@ -146,7 +146,7 @@ ccd2cue (const struct ccd *ccd, const char *img_name, const char *cdt_name)
   cue->FileEntries = 1;
   cue->FILE = cue_FILE_init (cue->FileEntries);
   cue->FILE[0].filename = xstrdup (img_name);
-  cue->FILE[0].filetype = MOTOROLA;
+  cue->FILE[0].filetype = BINARY;
 
   /* If there is any TRACK section, process it. */
   if (ccd->TrackEntries > 0)
