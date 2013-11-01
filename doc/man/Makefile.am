@@ -24,5 +24,5 @@ dist_man_MANS = ccd2cue.1
 MAINTAINERCLEANFILES = ccd2cue.1
 
 ccd2cue.1: $(top_srcdir)/src/ccd2cue.c
-	$(MAKE) --directory=$(top_srcdir)/src $(AM_MAKEFLAGS) ccd2cue
-	$(HELP2MAN) --output=$@  $(top_srcdir)/src/ccd2cue
+	$(MAKE) --directory=$(top_builddir)/src $(AM_MAKEFLAGS) ccd2cue
+	$(HELP2MAN) --output=$@  $(top_builddir)/src/ccd2cue
