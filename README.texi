@@ -66,7 +66,6 @@ hacking
 * Contributing::     How to contribute to development and its community.
 * Donating::         How to support developer's work.
 * Hacking::          How to hack the code.
-* Index::            Concepts index.
 @end menu
 
 
@@ -441,15 +440,3 @@ update the @file{po/} infrastructure.  After doing so, rerun
 @code{gnulib-tool --import} since otherwise older files will have been
 imported.  @xref{,,, gnulib, Gnulib Manual}, for more information.
 @end itemize
-
-
-
-
-
-@c --- Index;
-@node Index
-@unnumbered Index
-
-@printindex cp
-
-@bye
