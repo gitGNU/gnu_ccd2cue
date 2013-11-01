@@ -18,7 +18,6 @@
 @c @documentlanguage en_US
 @firstparagraphindent insert
 @footnotestyle end
-@include version.texi
 @settitle AUTHORS
 @c %**end of header
 
@@ -63,20 +62,6 @@ User-visible changes since previous versions;
 Contributors:
 * Bruno Félix Rezende Ribeiro::
 @end menu
-
-
-
-
-
-@c --- Title page;
-@titlepage
-@title AUTHORS
-@subtitle for version @value{VERSION} (@value{UPDATED})
-@author Bruno Félix Rezende Ribeiro <@email{oitofelix@@riseup.net}>
-@page
-@vskip 0pt plus 1filll
-@insertcopying
-@end titlepage
 
 
 
