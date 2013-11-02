@@ -23,6 +23,12 @@ ccd2cue.tmp
 ccd2cue.toc
 ccd2cue.tp
 ccd2cue.vr
+ccd2cue.ccdP
+ccd2cue.ccdS
+ccd2cue.cdfF
+ccd2cue.cueC
+ccd2cue.dvi
+ccd2cue.t2d
 
 doxygen
 Doxyfile
@@ -30,3 +36,5 @@ Doxyfile
 stamp-vti
 
 ChangeLog
+
+gendocs_template
