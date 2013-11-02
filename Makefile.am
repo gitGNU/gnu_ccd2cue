@@ -67,3 +67,28 @@ dist-hook:
 
 include doxygen.am
 MOSTLYCLEANFILES = $(DX_CLEANFILES)
+
+# Update of the online web pages for the documentation with the
+# gendocs.sh script; see
+# http://www.gnu.org/prep/maintain/html_node/Invoking-gendocs_002esh.html
+gendocs = $(abs_top_srcdir)/build-aux/gendocs.sh
+gendocs_envvars = TEXINPUTS="../../build-aux:$TEXINPUTS" GENDOCS_TEMPLATE_DIR=..
+
+doctemp = doc/wwwtemp
+www_target = $(HOME)/savannah/web/ccd2cue/manual
+
+manual = ccd2cue
+manual_title = "CCD2CUE - CCD sheet to CUE sheet converter"
+email = $(PACKAGE_BUGREPORT)
+gendocs_args = --email $(email) $(manual) $(manual_title)
+
+wwwdoc:
+	rm -rf $(doctemp) && mkdir $(doctemp)
+	cd $(doctemp) \
+	&& ln -s ../*.texi . \
+	&& env $(gendocs_envvars) $(gendocs) $(gendocs_args)
+	rm -rf $(www_target)
+	cp -arf $(doctemp)/manual/. $(www_target)
+
+maintainer-clean-local:
+	-rm -rf $(doctemp)
