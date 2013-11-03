@@ -48,6 +48,11 @@ DX_PDF_FEATURE(OFF)
 DX_PS_FEATURE(OFF)
 DX_INIT_DOXYGEN(ccd2cue, '$(top_builddir)/doc/Doxyfile', '$(top_builddir)/doc/doxygen')
 
+# Rerun configure script when the following files are modified.
+AC_SUBST([CONFIG_STATUS_DEPENDENCIES],
+['$(top_srcdir)/doc/copying.texi.in'],
+['$(top_srcdir)/doc/Doxyfile.in'])
+
 # Output files;
 AC_CONFIG_FILES([Makefile
 	po/Makefile.in
