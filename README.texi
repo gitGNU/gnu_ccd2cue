@@ -1,4 +1,3 @@
-\input texinfo  @c -*-texinfo-*-
 @c
 @c README.texi -- ccd2cue README file
 @c

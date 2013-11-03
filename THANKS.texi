@@ -1,4 +1,3 @@
-\input texinfo  @c -*-texinfo-*-
 @c
 @c THANKS.texi -- ccd2cue THANKS file
 @c

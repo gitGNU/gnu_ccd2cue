@@ -1,4 +1,3 @@
-\input texinfo  @c -*-texinfo-*-
 @c
 @c DONORS.texi -- ccd2cue DONORS file
 @c

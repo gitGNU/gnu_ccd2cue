@@ -1,4 +1,3 @@
-\input texinfo  @c -*-texinfo-*-
 @c
 @c TODO.texi -- ccd2cue TODO file
 @c

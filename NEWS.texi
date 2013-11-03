@@ -1,4 +1,3 @@
-\input texinfo  @c -*-texinfo-*-
 @c
 @c NEWS.texi -- ccd2cue NEWS file
 @c
