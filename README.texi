@@ -264,7 +264,7 @@ for the manufacturer.
 
 If you have access to the Internet, you can get the latest
 distribution version of this program at
-@url{http://ftp.gnu.org/gnu/ccd2cue/}.  Please, use a mirror if
+@url{https://ftp.gnu.org/gnu/ccd2cue/}.  Please, use a mirror if
 possible; you will be automatically redirected to the nearest mirror
 at @url{http://ftpmirror.gnu.org/ccd2cue/}.
 
@@ -296,15 +296,15 @@ cvs -z3 -d:pserver:anonymous@@cvs.savannah.nongnu.org:\
 ccd2cue-@value{VERSION}.tar.gz},
 @url{http://ftpmirror.gnu.org/ccd2cue/ccd2cue-@value{VERSION}.tar.gz.sig,
 ccd2cue-@value{VERSION}.tar.gz.sig} (alternative:
-@url{http://ftp.gnu.org/gnu/ccd2cue/ccd2cue-@value{VERSION}.tar.gz,
+@url{https://ftp.gnu.org/gnu/ccd2cue/ccd2cue-@value{VERSION}.tar.gz,
 ccd2cue-@value{VERSION}.tar.gz},
-@url{http://ftp.gnu.org/gnu/ccd2cue/ccd2cue-@value{VERSION}.tar.gz.sig,
+@url{https://ftp.gnu.org/gnu/ccd2cue/ccd2cue-@value{VERSION}.tar.gz.sig,
 ccd2cue-@value{VERSION}.tar.gz.sig}).
 
 You can find that and earlier releases at a nearby
 @url{http://ftpmirror.gnu.org/ccd2cue/, GNU@tie{}ftp@tie{}mirror}; or
 if automatic redirection does not work use the
-@url{http://ftp.gnu.org/gnu/ccd2cue/,
+@url{https://ftp.gnu.org/gnu/ccd2cue/,
 GNU@tie{}main@tie{}ftp@tie{}server}.
 
 This release is signed by @emph{Bruno Félix Rezende Ribeiro}.  His key
@@ -352,7 +352,7 @@ reporting bugs is the dedicated bug tracking web interface described
 in @ref{Bug reporting}.  To post a message to all the list members,
 send email to @email{bug-ccd2cue@@gnu.org}.  To see the collection of
 prior postings to the list, visit the
-@url{http://lists.gnu.org/archive/html/bug-ccd2cue/, bug-ccd2cue
+@url{https://lists.gnu.org/archive/html/bug-ccd2cue/, bug-ccd2cue
 archive}.
 
 If you feel somewhat chatty, eager for a somewhat more instantaneous
@@ -503,7 +503,7 @@ as follows:
 
 @itemize
 @item
-This distribution also uses @url{http://www.gnu.org/software/gnulib,
+This distribution also uses @url{https://www.gnu.org/software/gnulib,
 Gnulib} to share common files, stored as a submodule in git.
 @item
 When updating gettext, besides the normal installation on the system,
