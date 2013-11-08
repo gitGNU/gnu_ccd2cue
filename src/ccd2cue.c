@@ -548,7 +548,7 @@ parse_opt (int key, char *arg, struct argp_state *state)
 static void
 print_version (FILE *stream, struct argp_state *state)
 {
-  xfprintf (stream, "%s %s\n", PACKAGE, VERSION);
+  xfprintf (stream, "%s (%s) %s\n", PACKAGE, PACKAGE_NAME, VERSION);
   xputc ('\n', stream);
   xfprintf(stream,
   "Copyright (C) %s Bruno Félix Rezende Ribeiro <%s>\n\n",
