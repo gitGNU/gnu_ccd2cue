@@ -77,8 +77,8 @@ gendocs_envvars = TEXINPUTS="../../build-aux:$TEXINPUTS" GENDOCS_TEMPLATE_DIR=..
 doctemp = doc/wwwtemp
 www_target = $(HOME)/savannah/web/ccd2cue/manual
 
-manual = ccd2cue
-manual_title = "CCD2CUE - CCD sheet to CUE sheet converter"
+manual = "ccd2cue"
+manual_title = "<strong>GNU ccd2cue</strong> - <em>CCD sheet to CUE sheet converter</em>"
 email = $(PACKAGE_BUGREPORT)
 gendocs_args = --email $(email) $(manual) $(manual_title)
 
@@ -87,7 +87,6 @@ wwwdoc:
 	cd $(doctemp) \
 	&& ln -s ../*.texi . \
 	&& env $(gendocs_envvars) $(gendocs) $(gendocs_args)
-	rm -rf $(www_target)
 	cp -arf $(doctemp)/manual/. $(www_target)
 
 maintainer-clean-local:
