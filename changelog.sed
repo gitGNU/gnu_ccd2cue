@@ -2,7 +2,7 @@
 # changelog.sed -- User to full name and email mapping;
 #
 # Copyright (C) 2013 Bruno Félix Rezende Ribeiro
-# <oitofelix@riseup.net>
+# <oitofelix@gnu.org>
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -18,4 +18,4 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-s/oitofelix/Bruno Félix Rezende Ribeiro <oitofelix@riseup.net>/
+s/oitofelix/Bruno Félix Rezende Ribeiro <oitofelix@gnu.org>/

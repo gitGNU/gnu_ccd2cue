@@ -1,7 +1,7 @@
 /*
  file.c -- File and file name handling;
 
- Copyright (C) 2013 Bruno Félix Rezende Ribeiro <oitofelix@riseup.net>
+ Copyright (C) 2013 Bruno Félix Rezende Ribeiro <oitofelix@gnu.org>
 
  This program is free software; you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
@@ -21,7 +21,7 @@
  * \file       file.c
  * \brief      File and file name handling
  * \author     Bruno Félix Rezende Ribeiro (_oitofelix_)
- *             <oitofelix@riseup.net>
+ *             <oitofelix@gnu.org>
  * \date       2013
  * \version    0.2
  *

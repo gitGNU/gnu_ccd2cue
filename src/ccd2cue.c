@@ -2,7 +2,7 @@
  ccd2cue.c -- convert CCD sheet to CUE sheet;
 
  Copyright (C) 2010, 2013 Bruno Félix Rezende Ribeiro
- <oitofelix@riseup.net>
+ <oitofelix@gnu.org>
 
  This program is free software; you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
@@ -22,7 +22,7 @@
  * \file       ccd2cue.c
  * \brief      convert CCD sheet to CUE sheet
  * \author     Bruno Félix Rezende Ribeiro (_oitofelix_)
- *             <oitofelix@riseup.net>
+ *             <oitofelix@gnu.org>
  * \date       2013
  * \version    0.2
  *
@@ -552,7 +552,7 @@ print_version (FILE *stream, struct argp_state *state)
   xputc ('\n', stream);
   xfprintf(stream,
   "Copyright (C) %s Bruno Félix Rezende Ribeiro <%s>\n\n",
-	   "2010, 2013", "oitofelix@riseup.net");
+	   "2010, 2013", "oitofelix@gnu.org");
   fputs (_("License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>\n\
 This is free software: you are free to change and redistribute it.\n\
 There is NO WARRANTY, to the extent permitted by law.\n"), stream);

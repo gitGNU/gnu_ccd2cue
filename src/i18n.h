@@ -1,6 +1,6 @@
 /* i18n.h -- Internationalization support
 
-   Copyright 2013 Bruno Félix Rezende Ribeiro <oitofelix@riseup.net>
+   Copyright 2013 Bruno Félix Rezende Ribeiro <oitofelix@gnu.org>
 
    This file is part of ccd2cue.
 
