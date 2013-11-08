@@ -1,8 +1,8 @@
 @c
-@c TODO.texi -- ccd2cue TODO file
+@c TODO.texi -- GNU ccd2cue TODO file
 @c
 @c Copyright (C) 2010, 2013 Bruno Félix Rezende Ribeiro
-@c <oitofelix@riseup.net>
+@c <oitofelix@gnu.org>
 @c
 @c Permission is granted to copy, distribute and/or modify this
 @c document under the terms of the GNU Free Documentation License,
@@ -15,7 +15,7 @@
 @c
 
 @c %**start of header
-@setfilename ccd2cue-TODO.info
+@setfilename TODO
 @documentencoding UTF-8
 @c @documentlanguage en_US
 @firstparagraphindent insert
@@ -27,113 +27,65 @@
 
 
 
+@ifhtml
+@include navigation.texi
+@end ifhtml
+
+
+
+
+
 @c --- Copying;
+@ifnothtml
 @set FILE TODO
 @include copying.texi
-
-
-
-
-
-@c --- Info directory entry;
-@dircategory Converter
-@direntry
-* ccd2cue TODO file: (ccd2cue-TODO)@
-User-visible changes since previous versions;
-@end direntry
-
-
-
-
-
-@c --- Info Top Node;
-@ifnottex
-@node Top
-@top TODO
 @insertcopying
-@end ifnottex
+@end ifnothtml
 
 
 
 
 
-@c --- Menu;
-@menu
-* Preface::          What this document is all about and how it is organized.
+@c --- TO DO;
+@centerchap To do
 
-Todo items:
-* CCD sheet format specification::
-* TOC sheet format::
-@end menu
-
-
-
-
-
-@c --- Table of contents;
-@sp 1
-@noindent
---- Table of Contents ---
-@contents
-@sp 2
-
-
-
-
-
-@c --- Preface;
-@node Preface
-@unnumbered Preface
-@cindex introduction
-
-This document contains a list of ideas and features which would be
-nice to see implemented some day.  If you are ready to start working
-on any of these TODO items, we appreciate your help; please write to
-@email{ccd2cue-bug@@nongnu.org} so we can be aware that the problem is
-being addressed, and talk with you how to do it best.  It is best to
-consult the latest version of this file in the program source code
-repository.  See the sections ``Getting a copy'' and ``Hacking'' of
-the file @file{README} for instruction on how to access it.
+This @inlinefmtifelse{html, page, file} contains a list of ideas and
+features which would be nice to see implemented some day.  If you are
+ready to start working on any of these TODO items, we appreciate your
+help; please write to @email{bug-ccd2cue@@gnu.org} so we can be aware
+that the problem is being addressed, and talk with you how to do it
+best.  @inlinefmt{plaintext, It is best to consult the latest version
+of this file in the program source code repository.  See the sections
+``Getting a copy'' and ``Hacking'' of the file @file{README} for
+instruction on how to access it.}
 
 Since the developers of this program are willing to assign the
 copyright of this package to FSF, please be prepared to sign legal
 papers to transfer the copyright on your work to the FSF too.  For
-more details on this, see the section ``Contributing'' in the file
-@file{README}.  That file also contains some more practical details
-about getting involved.
+more details on this and some more practical details about getting
+involved, see @inlinefmtifelse{html, @url{README.html#Contributing, how
+to contribute}, the section ``Contributing'' in the file
+@file{README}}.
 
 As well as the issues listed here, there are bug reports, which are
-effectively to-do items too --- that can use your help --- at
-@url{https://savannah.nongnu.org/bugs/?group=ccd2cue} and the
-@file{BUGS} file.  See the section ``Bug reporting'' in @file{README}
-file for more information.
+effectively to-do items too --- that can use your help --- at the
+@url{https://savannah.gnu.org/bugs/?group=ccd2cue, bug tracker web
+interface}.  See @inlinefmtifelse{html, @url{README.html#Bug-reporting,
+how to report a bug}, the section ``Bug reporting'' in @file{README}
+file} for more information.
 
-
-
-
-
-@c --- CCD sheet format specification;
-@node CCD sheet format specification
-@chapter CCD sheet format specification
-
-There is a specification of the CCD sheet format in the program manual
-at @ref{CCD sheet format,,, ccd2cue, The ccd2cue Manual}.  That
-specification is the result of a reverse engineering process and is
-incomplete; pretty much only the fields that affects the CUE sheet
-generation are known.  It would be very nice to decipher the entirety
-of the format, and document it, so we can bring into light whether
-there is room for improvement in the conversion process, and to open
-new possibilities for more expressive formats like the TOC sheet.
-
-
-
-
-
-@c --- TOC sheet format;
-@node TOC sheet format
-@chapter TOC sheet format
-
-As the name implies the program ccd2cue is designed to convert CCD
+@table @asis
+@item CCD sheet format specification
+There is a specification of the CCD sheet format in the program
+manual.  That specification is the result of a reverse engineering
+process and is incomplete; pretty much only the fields that affects
+the CUE sheet generation are known.  It would be very nice to decipher
+the entirety of the format, and document it, so we can bring into
+light whether there is room for improvement in the conversion process,
+and to open new possibilities for more expressive formats like the TOC
+sheet.
+@item TOC sheet format
+As the name implies the program GNU ccd2cue is designed to convert CCD
 sheets only to the CUE sheet format.  This format has some well know
 limitations regarding the sub-channel data, which apparently can be
 mitigated by more expressive formats.  There is one sheet format
@@ -142,5 +94,15 @@ free software in the GNU system.  It seems that format was designed to
 handle the sub-channel data that is the major flaw of the CUE sheet
 format.  In fact it seems like a super-set of the CUE sheet format.
 For that reason we would like to have a ccd2toc in complement of the
-ccd2cue.  But is that another project?  If not, we have to change the
-name. ;-)
+GNU ccd2cue.  But is that another project?  If not, we have to change
+the name. ;-)
+@end table
+
+
+
+
+
+@c --- Footer;
+@ifhtml
+@include footer.texi
+@end ifhtml

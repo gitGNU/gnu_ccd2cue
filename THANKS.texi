@@ -1,5 +1,5 @@
 @c
-@c THANKS.texi -- ccd2cue THANKS file
+@c THANKS.texi -- GNU ccd2cue THANKS file
 @c
 @c Copyright (C) 2010, 2013 Bruno Félix Rezende Ribeiro
 @c <oitofelix@riseup.net>
@@ -16,7 +16,7 @@
 
 
 @c %**start of header
-@setfilename ccd2cue-THANKS.info
+@setfilename THANKS
 @documentencoding UTF-8
 @c @documentlanguage en_US
 @firstparagraphindent insert
@@ -28,67 +28,33 @@
 
 
 
+@ifhtml
+@include navigation.texi
+@end ifhtml
+
+
+
+
+
 @c --- Copying;
+@ifnothtml
 @set FILE THANKS
 @include copying.texi
-
-
-
-
-
-@c --- Info directory entry;
-@dircategory Converter
-@direntry
-* ccd2cue THANKS file: (ccd2cue-THANKS)@
-User-visible changes since previous versions;
-@end direntry
-
-
-
-
-
-@c --- Info Top Node;
-@ifnottex
-@node Top
-@top THANKS
 @insertcopying
-@end ifnottex
+@end ifnothtml
 
 
 
 
 
-@c --- Menu;
-@menu
-* Preface::          What this document is all about and how it is organized.
+@c --- THANKS;
+@centerchap Thanks
 
-Contributors:
-@end menu
-
-
-
-
-
-@c --- Table of contents;
-@sp 1
-@noindent
---- Table of Contents ---
-@contents
-@sp 2
-
-
-
-
-
-@c --- Preface;
-@node Preface
-@unnumbered Preface
-@cindex introduction
-
-This document contains a list of people that reported problems,
-suggested improvements or submitted relatively small portions of
-actual code.  This program would not be what it is today without the
-invaluable help of these people, for whom we would like to say:
+This @inlinefmtifelse{html, page, file} contains a list of people that
+reported problems, suggested improvements or submitted relatively
+small portions of actual code.  This program would not be what it is
+today without the invaluable help of these people, for whom we would
+like to say:
 
 @center @strong{THANK YOU!}
 @sp 1
@@ -98,9 +64,24 @@ person's contact information, usually email, and a summary of that
 person's contribution is put in per correspondent section.
 
 For contributions that does matter for copyright purposes, e.g., major
-source code contributions, see file @file{AUTHORS}.  If you would
-appreciate your own name listed here, @strong{please contribute!}  See
-the ``Contributing'' section of the @file{README} file.
+source code contributions, see @inlinefmtifelse{html,
+@url{AUTHORS.html, the authors page}, file @file{AUTHORS}}.  If you
+would appreciate your own name listed here, @strong{please
+contribute!}  See @inlinefmtifelse{html, @url{README.html#Contributing,
+how to contribute}, the ``Contributing'' section of the @file{README}
+file}.
 
-@sp 1
-@center @emph{Unfortunately no one has contributed so far.  Be the first!}
+@table @asis
+@item Lucas Sköldqvist (frusen) @email{frusen@@gungre.ch}
+He pointed out a syntactically incorrect expression in the project's
+Manifesto.
+@end table
+
+
+
+
+
+@c --- Footer;
+@ifhtml
+@include footer.texi
+@end ifhtml

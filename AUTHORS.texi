@@ -1,5 +1,5 @@
 @c
-@c AUTHORS.texi -- ccd2cue AUTHORS file
+@c AUTHORS.texi -- GNU ccd2cue AUTHORS file
 @c
 @c Copyright (C) 2010, 2013 Bruno Félix Rezende Ribeiro
 @c <oitofelix@riseup.net>
@@ -15,7 +15,7 @@
 @c
 
 @c %**start of header
-@setfilename ccd2cue-AUTHORS.info
+@setfilename AUTHORS
 @documentencoding UTF-8
 @c @documentlanguage en_US
 @firstparagraphindent insert
@@ -27,69 +27,32 @@
 
 
 
+@ifhtml
+@include navigation.texi
+@end ifhtml
+
+
+
+
+
 @c --- Copying;
+@ifnothtml
 @set FILE AUTHORS
 @include copying.texi
-
-
-
-
-
-@c --- Info directory entry;
-@dircategory Converter
-@direntry
-* ccd2cue AUTHORS file: (ccd2cue-AUTHORS)@
-User-visible changes since previous versions;
-@end direntry
-
-
-
-
-
-@c --- Info Top Node;
-@ifnottex
-@node Top
-@top AUTHORS
 @insertcopying
-@end ifnottex
-
-
-
-
-
-@c --- Menu;
-@menu
-* Preface::          What this document is all about and how it is organized.
-
-Contributors:
-* Bruno Félix Rezende Ribeiro::
-@end menu
-
+@end ifnothtml
 
 
 
 
-@c --- Table of contents;
-@sp 1
-@noindent
---- Table of Contents ---
-@contents
-@sp 2
+@c --- AUTHORS;
+@centerchap Authors
 
-
-
-
-
-@c --- Preface;
-@node Preface
-@unnumbered Preface
-@cindex introduction
-
-This document contains a list of people that made sufficiently large
-contributions to development that they can be regarded as truly
-authors of the program.  This program would not be what it is today
-without the invaluable help of these people, for whom we would like to
-say:
+This @inlinefmtifelse{html, page, file} contains a list of people that
+made sufficiently large contributions to development that they can be
+regarded as truly authors of the program.  This program would not be
+what it is today without the invaluable help of these people, for whom
+we would like to say:
 
 @center @strong{THANK YOU VERY MUCH!}
 @sp 1
@@ -99,26 +62,22 @@ person's contact information, usually email, and a summary of that
 person's contribution is put in per correspondent section.
 
 For contributions that does not matter for copyright purposes, e.g.,
-minor or non-source code contributions, see file @file{THANKS}.  If
-you would appreciate your own name listed here, @strong{please
-contribute!}  See the ``Contributing'' section of the @file{README}
-file.
+minor or non-source code contributions, see @inlinefmtifelse{html,
+@url{THANKS.html, the thanks page}, file @file{THANKS}}.  If you would
+appreciate your own name listed here, @strong{please contribute!}  See
+@inlinefmtifelse{html, @url{README.html#Contributing, how to
+contribute}, the ``Contributing'' section of the @file{README} file}.
+
+@table @asis
+@item Bruno Félix Rezende Ribeiro (oitofelix) @email{oitofelix@@gnu.org}
+He is the original and only author so far.
+@end table
 
 
 
 
 
-@c --- Bruno Félix Rezende Ribeiro;
-@node Bruno Félix Rezende Ribeiro
-@chapter Bruno Félix Rezende Ribeiro
-
-@table @strong
-@item Name
-Bruno Félix Rezende Ribeiro
-@item Nick
-oitofelix
-@item Email
-@email{oitofelix@@riseup.net}
-@end table
-
-He is the original and only author until now.
+@c --- Footer;
+@ifhtml
+@include footer.texi
+@end ifhtml

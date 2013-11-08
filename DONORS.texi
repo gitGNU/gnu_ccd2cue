@@ -1,5 +1,5 @@
 @c
-@c DONORS.texi -- ccd2cue DONORS file
+@c DONORS.texi -- GNU ccd2cue DONORS file
 @c
 @c Copyright (C) 2010, 2013 Bruno Félix Rezende Ribeiro
 @c <oitofelix@riseup.net>
@@ -15,7 +15,7 @@
 @c
 
 @c %**start of header
-@setfilename ccd2cue-DONORS.info
+@setfilename DONORS
 @documentencoding UTF-8
 @c @documentlanguage en_US
 @firstparagraphindent insert
@@ -27,72 +27,50 @@
 
 
 
+@ifhtml
+@include navigation.texi
+@end ifhtml
+
+
+
+
+
 @c --- Copying;
+@ifnothtml
 @set FILE DONORS
 @include copying.texi
-
-
-
-
-
-@c --- Info directory entry;
-@dircategory Converter
-@direntry
-* ccd2cue DONORS file: (ccd2cue-DONORS)@
-User-visible changes since previous versions;
-@end direntry
-
-
-
-
-
-@c --- Info Top Node;
-@ifnottex
-@node Top
-@top DONORS
 @insertcopying
-@end ifnottex
+@end ifnothtml
 
 
 
 
 
-@c --- Menu;
-@menu
-* Preface::          What this document is all about and how it is organized.
+@c --- DONORS;
+@centerchap Donors
 
-Contributors:
-@end menu
-
-
-
-
-
-@c --- Table of contents;
-@sp 1
-@noindent
---- Table of Contents ---
-@contents
-@sp 2
-
-
-
-
-
-@c --- Preface;
-@node Preface
-@unnumbered Preface
-@cindex introduction
-
-This document contains a list of people that supported development by
-means of donation.  This program would not be what it is today without
-the invaluable help of these people, for whom we would like to say:
+This @inlinefmtifelse{html, page, file} contains a list of people that
+supported development by means of donation.  This program would not be
+what it is today without the invaluable help of these people, for whom
+we would like to say:
 
 @center @strong{THANK YOU VERY MUCH!}
 @sp 1
 
 If you would appreciate your own name listed here, @strong{please
-donate!}  See the ``Donating'' section of the @file{README} file.
+donate!}  See @inlinefmtifelse{html, @url{README.html#Donating, how to
+donate}, the ``Donating'' section of the @file{README} file}.
 
-@sp 1
-@center @emph{Unfortunately no one has donated so far.  Be the first!}
+@multitable @columnfractions .500 .380 .120
+@headitem Name @tab Email @tab BTC
+@item Lucas Sköldqvist (frusen) @tab @email{frusen@@gungre.ch} @tab 0.28833329
+@end multitable
+
+
+
+
+
+@c --- Footer;
+@ifhtml
+@include footer.texi
+@end ifhtml
