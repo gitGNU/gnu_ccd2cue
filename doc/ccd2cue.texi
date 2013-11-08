@@ -1,6 +1,6 @@
 \input texinfo  @c -*-texinfo-*-
 @c
-@c ccd2cue.texi -- The ccd2cue Manual
+@c ccd2cue.texi -- The GNU ccd2cue Manual
 @c
 @c Copyright (C) 2010, 2013 Bruno Félix Rezende Ribeiro
 @c <oitofelix@riseup.net>
@@ -22,7 +22,7 @@
 @firstparagraphindent insert
 @footnotestyle end
 @include version.texi
-@settitle The ccd2cue Manual
+@settitle The GNU ccd2cue Manual
 @defindex cdfF
 @defindex ccdS
 @defindex ccdP
@@ -81,7 +81,7 @@
 @c --- Info directory entry;
 @dircategory Converter
 @direntry
-* ccd2cue: (ccd2cue)The CCD sheet to CUE sheet converter.
+* GNU ccd2cue: (ccd2cue)The CCD sheet to CUE sheet converter.
 @end direntry
 
 
@@ -124,7 +124,7 @@ Indexes:
 
 @c --- Title page;
 @titlepage
-@title The ccd2cue Manual
+@title The GNU ccd2cue Manual
 @subtitle for version @value{VERSION} (@value{UPDATED})
 @author Bruno Félix Rezende Ribeiro <@email{oitofelix@@riseup.net}>
 @page
@@ -150,12 +150,12 @@ Indexes:
 @cindex introduction
 
 @cindex manifesto
-@cindex ccd2cue motivation
-@cindex motivation to write ccd2cue
-@cindex ccd2cue history
-@cindex history of ccd2cue
-@cindex ccd2cue origin
-@cindex origin of ccd2cue
+@cindex GNU ccd2cue motivation
+@cindex motivation to write GNU ccd2cue
+@cindex GNU ccd2cue history
+@cindex history of GNU ccd2cue
+@cindex GNU ccd2cue origin
+@cindex origin of GNU ccd2cue
 @quotation Manifesto
 On the internet there is a gigantic quantity of optical disc image
 files in numerous formats.  Countless times we need to burn some of
@@ -166,12 +166,13 @@ software called CloneCD.  I searched the internet for a way to burn
 that file on the GNU+Linux-Libre system, but I only found a lot of
 people asking for a solution on a lot of forums, and getting the
 unanimous answer: no way!  At first I could not believe at that point
-there was no option.  Then, with a little of patience and research, I
-wrote some code to convert that files to a format much more common and
-accessible, an ad-hoc standard in the GNU operating system: the CUE
-sheet format.  So I could burn a lot of what I wanted!  I wondered
-whether it would be useful for others@dots{} and here is the result!
-@author Bruno Félix
+there was no option.  Then, with a little bit of patience and
+research, I wrote some code to convert that files to a format much
+more common and accessible, an ad-hoc standard in the GNU operating
+system: the CUE sheet format.  So I could burn a lot of what I wanted!
+I wondered whether it would be useful for others@dots{} and here is
+the result!
+@author Bruno Félix Rezende Ribeiro (oitofelix)
 @end quotation
 
 @cindex proprietary software
@@ -189,7 +190,7 @@ Microsoft Windows.} which is intended to make a nearly exact copy of
 audio and/or data optical discs for archival and/or reproduction
 purposes.  When making a copy of an optical disc to hard disk that
 program can output three files: audio/data raw image, sub-channel data
-and layout description.  The ccd2cue program operates exclusively on
+and layout description.  The GNU ccd2cue program operates exclusively on
 the latter to produce a hopefully equivalent@footnote{As far as
 possible to the full extent of CUE sheet format expressiveness.}
 layout description in the CUE sheet format and possibly a companion
@@ -207,10 +208,10 @@ One such software capable of burning a raw image file laid out by a
 CUE sheet file, as well as to convert a CUE sheet file to the TOC
 sheet format, is @webdoc{cdrdao, http://cdrdao.sourceforge.net/}.
 
-@cindex ccd2cue features
-@cindex features of ccd2cue
+@cindex GNU ccd2cue features
+@cindex features of GNU ccd2cue
 @noindent
-Notably, ccd2cue can handle:
+Notably, GNU ccd2cue can handle:
 @itemize
 @item
 Mixed-mode CCD sheet file@footnote{A sheet describing the layout of a disc
@@ -243,7 +244,7 @@ Teach how the program works from the user's perspective;
 Guides the reader step-by-step using the program in face of practical
 common use cases.
 @item Invocation
-Concerns ccd2cue invocation syntax, accepted options and their
+Concerns GNU ccd2cue invocation syntax, accepted options and their
 meanings.
 @item Burning
 Gives an @emph{important warning} and advice about burning the
@@ -283,10 +284,10 @@ Now that you are acquainted to the program and documentation,
 @node Operation
 @chapter Operation
 
-@cindex ccd2cue use
-@cindex using ccd2cue
+@cindex GNU ccd2cue use
+@cindex using GNU ccd2cue
 Firstly, it is important to discern between the various files involved
-in the conversion operation accomplished by ccd2cue.  The whole
+in the conversion operation accomplished by GNU ccd2cue.  The whole
 process consists basically of a conversion of the CCD set of files
 into a CUE set of files, whose meaning is, by suffix, described below:
 
@@ -323,12 +324,12 @@ CD-Text meta-data file (hereafter called @dfn{CD-Text file});
 Layout description (hereafter called @dfn{CUE sheet file});
 @end table
 
-@cindex ccd2cue operation
-@cindex operation of ccd2cue
+@cindex GNU ccd2cue operation
+@cindex operation of GNU ccd2cue
 @iftex
 @sp 1
 @end iftex
-The ccd2cue program never touches any of the files in the CCD set; not
+The GNU ccd2cue program never touches any of the files in the CCD set; not
 even to rename the image file to use the traditional @file{.bin}
 suffix.  However it will still work with other software because the
 image file is explicitly referenced inside the CUE sheet file.  The
@@ -337,7 +338,7 @@ of files simultaneously without any interfering with each other.
 Although we are against the use and development of any proprietary
 program, including those which can handle CCD sheets@footnote{Actually
 I'm really sorry those programs came into existence in the first
-place.  I wish I never had to write a program like ccd2cue.  I would
+place.  I wish I never had to write a program like GNU ccd2cue.  I would
 then be contributing to society in a way that directly advances the
 social good, not just alleviating the wrong doing of others that
 immersed in their own egoism and blindness desire to subjugate their
@@ -347,9 +348,9 @@ improved in a subsequent release; or more expressive destination
 formats@footnote{The TOC sheet format is an example.} become
 supported; or just for debugging.
 
-The ccd2cue program has just one non-trivial operation: the conversion
+The GNU ccd2cue program has just one non-trivial operation: the conversion
 and only rely on the information contained inside the CCD sheet file
-to generate the equivalent CUE sheet file.  Thus, ccd2cue does not
+to generate the equivalent CUE sheet file.  Thus, GNU ccd2cue does not
 enforce, and actually does not even check, if you have the sub-channel
 file, or even more important, the actual image file.  Therefore,
 although it is possible to generate seamlessly a CUE sheet file from a
@@ -359,7 +360,7 @@ correspondent image file when burning the disc.
 @cindex sub-channel information
 @cindex @file{.sub} file
 @cindex file with @file{.sub} suffix
-While the image file is not used by ccd2cue but is referenced in the
+While the image file is not used by GNU ccd2cue but is referenced in the
 produced CUE sheet file, the sub-channel file is not used nor
 referenced at all in the CUE sheet file.  The CUE sheet format was not
 designed to describe the information found in the sub-channel file and
@@ -371,7 +372,7 @@ extra sub-channel data contained in the sub-channel file can be fully
 ignored producing yet usable discs for the intended application.
 Notice however that that does not mean CUE sheet format is incapable
 of describing any sub-channel data; in fact it describes the most
-remarkable ones.  Hence all that data is available for ccd2cue not
+remarkable ones.  Hence all that data is available for GNU ccd2cue not
 inside the sub-channel file but rather in the CCD sheet file itself;
 the CD-Text meta-data is such a case --- the CD-Text file is produced
 from decoded sub-channel information available inside the CCD sheet
@@ -380,7 +381,7 @@ file.
 @c --- Tutorial;
 @node Tutorial
 @chapter Tutorial
-@cindex ccd2cue tutorial
+@cindex GNU ccd2cue tutorial
 
 @cindex simple use case
 @cindex converting CCD sheet
@@ -393,8 +394,8 @@ is called free-as-in-freedom.ccd, you are done with the command:
 ccd2cue -o free-as-in-freedom.cue free-as-in-freedom.ccd
 @end example
 
-@cindex ccd2cue, omitting output option
-@cindex omitting output option of ccd2cue
+@cindex GNU ccd2cue, omitting output option
+@cindex omitting output option of GNU ccd2cue
 Remember that if your CCD sheet file name has spaces or unusual
 characters, like @samp{$}, you are better quoting the whole name with
 @samp{'}.  Naturally the CUE sheet file don't need to have the same
@@ -414,19 +415,19 @@ use the shell to redirect it to a file, as you would do without it
 using the @option{-o} option.  The same thing is accomplished passing
 @code{-} as an argument to option @option{-o}.
 
-@cindex ccd2cue, omitting all arguments
-@cindex omitting all arguments of ccd2cue
+@cindex GNU ccd2cue, omitting all arguments
+@cindex omitting all arguments of GNU ccd2cue
 @cindex file name deduction algorithm
 @cindex deduction of file names
 May you guess what happens if we omit the CCD sheet input file
-specification as well?  If you answered that ccd2cue will read the CCD
+specification as well?  If you answered that GNU ccd2cue will read the CCD
 sheet input from standard input and write the correspondent CUE sheet
 output to standard output, unfortunately you are wrong.  It would be
 nice if it behaved that way, but there is an inherent design drawback:
 the CUE sheet need to reference an image file and possibly a CD-Text
 file; that way how can it have any clue about those file names?  For
 that reason it is always necessary to supply at least one file name in
-an option or non-option argument, that way ccd2cue can deduce the
+an option or non-option argument, that way GNU ccd2cue can deduce the
 remaining file names needed.  The deduction algorithm is very simple:
 get the file name supplied, in the following preference order:
 
@@ -458,7 +459,7 @@ On the other hand, you can use the @option{-i} (@option{--image}) in
 conjunction with the CCD sheet file name and/or CUE sheet file name
 just to override the image file name deduction.  As expected, the
 argument @code{-} in place of the CCD sheet file name, will also make
-ccd2cue read its CCD sheet input from standard input.
+GNU ccd2cue read its CCD sheet input from standard input.
 
 @cindex absolute file name deduction
 @cindex deduction using absolute file names
@@ -473,7 +474,7 @@ directly supplied, but deduced by the program.
 
 @cindex CD-Text file generation
 @cindex outputting CD-Text file
-When ccd2cue detects CD-Text data information inside the CCD sheet, it
+When GNU ccd2cue detects CD-Text data information inside the CCD sheet, it
 outputs a CD-Text file, whose name is determined by the same file name
 deduction rules just described, unless overridden by the option
 @option{-c} (@option{--cd-text}).  It is not possible to output the

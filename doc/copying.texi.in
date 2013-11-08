@@ -16,15 +16,15 @@
 
 @c --- Copying;
 @copying
-The program ccd2cue is a CCD sheet to CUE sheet converter.  It
+The GNU ccd2cue program is a CCD sheet to CUE sheet converter.  It
 supports the full extent of CUE sheet format expressiveness, including
 mixed-mode discs and CD-Text meta-data.
 
 @ifset FILE
-This is the @value{FILE} file for ccd2cue version @VERSION@.
+This is the @value{FILE} file for GNU ccd2cue version @VERSION@.
 @end ifset
 @ifclear FILE
-This manual is for ccd2cue version @VERSION@.
+This manual is for GNU ccd2cue version @VERSION@.
 @end ifclear
 
 Copyright @copyright{} 2010, 2013 Bruno Félix Rezende Ribeiro
