@@ -35,6 +35,7 @@ dist-hook:
 	  for f in $(toplevel_doc); \
 	  do \
 	    echo Generating $$f top level documentation file... && \
+	    chmod u+w $(distdir) && \
 	    $(MAKEINFO) -D file --plaintext -I $(builddir)/doc \
 	      --output=$(distdir)/"$$f" $(srcdir)/"$$f".texi; \
 	  done; \
@@ -42,7 +43,9 @@ dist-hook:
 ##	so just distribute it.
 	else \
 	  for f in $(toplevel_doc); \
-	  do cp $(srcdir)/"$$f" $(distdir)/"$$f"; \
+	  do \
+	    chmod u+w $(distdir) && \
+	    cp $(srcdir)/"$$f" $(distdir); \
 	  done; \
 	fi
 ##	Build and distribute GNU philosophy essays if checked from
@@ -51,6 +54,7 @@ dist-hook:
 	  for f in $(articles); \
 	  do \
 	    echo Generating $$f top level GNU philosophy essay file... && \
+	    chmod u+w $(distdir) && \
 	    $(MAKEINFO) -D GNUphiStandalone --plaintext --output=$(distdir)/"$$f" \
 		$(srcdir)/doc/"$$(echo $$f | tr '[:upper:]' '[:lower:]')".texi; \
 	  done; \
@@ -58,7 +62,9 @@ dist-hook:
 ##	so just distribute it.
 	else \
 	  for f in $(articles); \
-	  do cp $(srcdir)/"$$f" $(distdir)/"$$f"; \
+	  do \
+	    chmod u+w $(distdir) && \
+	    cp $(srcdir)/"$$f" $(distdir); \
 	  done; \
 	fi
 ##	Build and distribute ChangeLog files if checked from CVS.
@@ -69,6 +75,7 @@ dist-hook:
 	  cd $(abs_builddir) && \
 	  for d in $(changelog_dirs); \
 	  do \
+	    chmod u+w $(distdir)/"$$d" && \
 	    sed --file=$(srcdir)/changelog.sed \
 	      $(srcdir)/"$$d"/ChangeLog > $(distdir)/"$$d"/ChangeLog; \
 	  done; \
@@ -76,7 +83,9 @@ dist-hook:
 ##	distribute it.
 	else \
 	  for d in $(changelog_dirs); \
-	  do cp $(srcdir)/"$$d"/ChangeLog $(distdir)/"$$d"; \
+	  do \
+	    chmod u+w $(distdir)/"$$d"/ChangeLog && \
+	    cp $(srcdir)/"$$d"/ChangeLog $(distdir)/"$$d"; \
 	  done; \
 	fi
 
