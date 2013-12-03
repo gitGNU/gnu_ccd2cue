@@ -21,6 +21,13 @@ dnl
 AC_INIT([GNU ccd2cue], [0.3],
 [https://savannah.gnu.org/bugs/?group=ccd2cue], [ccd2cue],
 [https://www.gnu.org/software/ccd2cue])
+
+AC_DEFINE(PACKAGE_MAILING_LIST, "bug-ccd2cue@gnu.org", Users mailing list)
+AC_DEFINE(PACKAGE_TRANSLATION_BUGREPORT,
+"http://translationproject.org/team/", Translation bug reporting address)
+AC_DEFINE(PACKAGE_COPYRIGHT_HOLDER, "Bruno Félix Rezende Ribeiro",
+Copyright holder's name)
+
 AC_CONFIG_AUX_DIR([build-aux])
 AM_INIT_AUTOMAKE([-Wall])
 AC_PREREQ(2.60)
