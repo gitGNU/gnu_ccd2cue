@@ -26,9 +26,8 @@ SUBDIRS = po src doc
 
 toplevel_doc = README NEWS AUTHORS THANKS TODO DONORS
 changelog_dirs = . po src doc doc/man
-articles = GNU LINUX-GNU THE-GNU-PROJECT WHY-FREE
-
-EXTRA_DIST = $(articles)
+articles = THE-GNU-MANIFESTO THE-GNU-PROJECT LINUX-AND-THE-GNU-SYSTEM	\
+WHY-SOFTWARE-SHOULD-NOT-HAVE-OWNERS
 
 dist-hook:
 ##	Build and distribute top level documentation if checked from CVS.
@@ -36,13 +35,29 @@ dist-hook:
 	  for f in $(toplevel_doc); \
 	  do \
 	    echo Generating $$f top level documentation file... && \
-	    $(MAKEINFO) --plaintext -I $(builddir)/doc \
+	    $(MAKEINFO) -D file --plaintext -I $(builddir)/doc \
 	      --output=$(distdir)/"$$f" $(srcdir)/"$$f".texi; \
 	  done; \
 ##	Top level documentation already built if not checked from CVS,
 ##	so just distribute it.
 	else \
 	  for f in $(toplevel_doc); \
+	  do cp $(srcdir)/"$$f" $(distdir)/"$$f"; \
+	  done; \
+	fi
+##	Build and distribute GNU philosophy essays if checked from
+##	CVS.
+	if test -d $(srcdir)/CVS; then \
+	  for f in $(articles); \
+	  do \
+	    echo Generating $$f top level GNU philosophy essay file... && \
+	    $(MAKEINFO) -D GNUphiStandalone --plaintext --output=$(distdir)/"$$f" \
+		$(srcdir)/doc/"$$(echo $$f | tr '[:upper:]' '[:lower:]')".texi; \
+	  done; \
+##	GNU philosophy essays already built if not checked from CVS,
+##	so just distribute it.
+	else \
+	  for f in $(articles); \
 	  do cp $(srcdir)/"$$f" $(distdir)/"$$f"; \
 	  done; \
 	fi
