@@ -43,27 +43,38 @@ AM_GNU_GETTEXT([external])
 
 AC_MSG_NOTICE([checking presence of programs necessary to build documentation])
 
+# Define whether it is building from CVS.
+AS_IF(test -d "$srcdir"/CVS, cvs_build=y, cvs_build=n)
+
 # Check for `sed'.
 AC_PROG_SED
 
 # Define GNU Texinfo minimal version.
 m4_define([texinfo_minver], 5.1)
 
-# Check for GNU Texinfo existence.
+# Check for GNU Texinfo existence.  If not building from a CVS
+# checkout, GNU Texinfo is not required.
 AC_PATH_PROG(MAKEINFO, makeinfo)
 AS_IF(test x$MAKEINFO = x,
-  AC_MSG_ERROR(
+  AS_IF(test x$cvs_build = xt,
+    AC_MSG_ERROR(
 GNU Texinfo not found.  It is required at least version texinfo_minver.
-You can find it at https://gnu.org/software/texinfo/.))
+You can find it at https://gnu.org/software/texinfo/.),
+    MAKEINFO=:))
 
-texinfo_version=`$MAKEINFO --version |
-  $SED -n 's/^makeinfo.* \([[:digit:].]*\)$/\1/p'`
+AS_IF(test x$MAKEINFO != x:,
+  texinfo_version=`$MAKEINFO --version |
+    $SED -n 's/^makeinfo.* \([[:digit:].]*\)$/\1/p'`
 
-# Check GNU Texinfo version.
-AX_COMPARE_VERSION($texinfo_version, lt, texinfo_minver,
-  AC_MSG_ERROR(
+  # Check GNU Texinfo version.
+  AX_COMPARE_VERSION($texinfo_version, lt, texinfo_minver,
+    AS_IF(test x$cvs_build = xt,
+      AC_MSG_ERROR(
 GNU Texinfo is too old.  It is required at least version texinfo_minver.
-You can find it at https://gnu.org/software/texinfo/.))
+You can find it at https://gnu.org/software/texinfo/.),
+     MAKEINFO=:))
+
+)
 
 # Check for GNU help2man existence.  It should only be used if not
 # cross-compiling.
