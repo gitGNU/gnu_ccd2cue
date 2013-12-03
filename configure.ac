@@ -50,16 +50,19 @@ DX_INIT_DOXYGEN(ccd2cue, '$(top_builddir)/doc/Doxyfile', '$(top_builddir)/doc/do
 
 # Rerun configure script when the following files are modified.
 AC_SUBST([CONFIG_STATUS_DEPENDENCIES],
-['$(top_srcdir)/doc/copying.texi.in'],
-['$(top_srcdir)/doc/Doxyfile.in'])
+['$(top_srcdir)/package.texi.in \
+$(top_srcdir)/doc/copying.texi.in \
+$(top_srcdir)/doc/Doxyfile.in'])
 
 # Output files;
-AC_CONFIG_FILES([Makefile
-	po/Makefile.in
-	src/Makefile
-	doc/Makefile
-	doc/copying.texi
-	doc/Doxyfile
-	doc/man/Makefile])
+AC_CONFIG_FILES(
+[Makefile
+po/Makefile.in
+src/Makefile
+doc/Makefile
+package.texi
+doc/copying.texi
+doc/Doxyfile
+doc/man/Makefile])
 
 AC_OUTPUT
