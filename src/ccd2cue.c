@@ -537,7 +537,7 @@ print_version (FILE *stream, struct argp_state *state)
 	    "%s (%s) %s\n\n"	/* ccd2cue (GNU ccd2cue) a.b */
 	    "%s\n\n"		/* GNU ccd2cue is a... */
 	    "%s\n\n"		/* This program is a component... */
-	    "Copyright (C) %s Bruno Félix Rezende Ribeiro <%s>\n\n"
+	    "Copyright (C) %s " PACKAGE_COPYRIGHT_HOLDER " <%s>\n\n"
 	    "%s\n\n"		/* License GPLv3+... */
 	    "%s\n",		/* Written by... */
 	    PACKAGE, PACKAGE_NAME, VERSION,
@@ -550,7 +550,7 @@ This program is a component of the GNU Operating System and is\n\
 developed by the GNU Project."),
 	    "2010, 2013", "oitofelix@gnu.org",
 	    _("\
-License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>\n	\
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>\n\
 This is free software: you are free to change and redistribute it.\n\
 There is NO WARRANTY, to the extent permitted by law."),
 	    _("Written by Bruno Félix Rezende Ribeiro."));
@@ -578,33 +578,43 @@ type can be supplied.  The following options are accepted:"));
 	break;
       case ARGP_KEY_HELP_EXTRA:
         alloc_status = asprintf(&newtext,
-		 "%s\n\n"	/* Examples: */
-		 "%s\n\n"	/* The most... */
-		 "  %s\n\n"	/* ccd2cue -o... */
-		 "%s\n\n"	/* Burning: */
-		 "%s\n\n"	/* If you burned... */
-		 "%s <%s>\n"	/* Report bugs at: <%s>*/
-		 "%s <%s>\n"	/* Report translation bugs to: <%s> */,
-		 _("Examples:"),
-		 _("The most ordinary use case is when you have a CCD set of files and \
+				"%s\n\n"	/* Examples: */
+				"%s\n\n"	/* The most... */
+				"  %s\n\n"	/* ccd2cue -o... */
+				"%s\n\n"	/* Burning: */
+				"%s\n\n"	/* If you burned... */
+				"%s <%s>\n"	/* Homepage: <%s> */
+				"%s <%s>\n"	/* Mailing list: <%s> */
+				"%s <%s>\n"	/* Report bugs at: <%s>*/
+				"%s <%s>\n\n"	/* Report translation bugs to: <%s> */
+				"%s\n",		/* For complete documentation... */
+				_("Examples:"),
+				_("\
+The most ordinary use case is when you have a CCD set of files and   \
 just want to generate a CUE sheet file in order to burn or otherwise \
 access the data inside the image file.  Supposing your CCD sheet file \
 is called gnu.ccd, you are done with the command:"),
-		 _("ccd2cue -o gnu.cue gnu.ccd"),
-		 _("Burning:"),
-		 _("If you are willing to burn or already burned a CD from a CUE sheet \
+				_("ccd2cue -o gnu.cue gnu.ccd"),
+				_("Burning:"),
+				_("\
+If you are willing to burn or already burned a CD from a CUE sheet  \
 produced by this program and all audio tracks became only senseless \
-static noise, you may need to ask your burning software to swap the \
+static noise, you may need to ask your burning software to swap the  \
 byte order of all samples sent to the CD-recorder when writing audio \
 tracks.  For instance, that can be accomplished with the `--swap' \
 option when using the cdrdao program.  Be warned that at least for \
 mixed-mode discs, by author's own experience, the rule is to use that \
-option; if you fail to specify it when burning, you almost certainly \
+option; if you fail to specify it when burning, you almost certainly  \
 will pointless waste your CD."),
-		 _("Report bugs at:"),
-		 PACKAGE_BUGREPORT,
-		 _("Report translation bugs to:"),
-		 "http://translationproject.org/team/");
+				_("Homepage:"),
+				PACKAGE_URL,
+				_("Mailing list:"),
+                                PACKAGE_MAILING_LIST,
+				_("Report bugs at:"),
+				PACKAGE_BUGREPORT,
+				_("Report translation bugs to:"),
+				PACKAGE_TRANSLATION_BUGREPORT,
+	  _("For complete documentation, run: `info ccd2cue'"));
         break;
     default:
       newtext = (char *) text;
