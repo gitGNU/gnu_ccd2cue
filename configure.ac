@@ -47,7 +47,7 @@ AC_MSG_NOTICE([checking presence of programs necessary to build documentation])
 AC_PROG_SED
 
 # Define GNU Texinfo minimal version.
-m4_define(texinfo_minver, 5.1)
+m4_define([texinfo_minver], 5.1)
 
 # Check for GNU Texinfo existence.
 AC_PATH_PROG(MAKEINFO, makeinfo)
@@ -56,11 +56,11 @@ AS_IF(test x$MAKEINFO = x,
 GNU Texinfo not found.  It is required at least version texinfo_minver.
 You can find it at https://gnu.org/software/texinfo/.))
 
-AS_VAR_SET(texinfo_version, `$MAKEINFO --version |
-  $SED -n 's/^makeinfo.* \([[:digit:].]*\)$/\1/p'`)
+texinfo_version=`$MAKEINFO --version |
+  $SED -n 's/^makeinfo.* \([[:digit:].]*\)$/\1/p'`
 
 # Check GNU Texinfo version.
-AX_COMPARE_VERSION($texinfo_version, ge, texinfo_minver,
+AX_COMPARE_VERSION($texinfo_version, lt, texinfo_minver,
   AC_MSG_ERROR(
 GNU Texinfo is too old.  It is required at least version texinfo_minver.
 You can find it at https://gnu.org/software/texinfo/.))
