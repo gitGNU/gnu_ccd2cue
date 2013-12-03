@@ -143,7 +143,7 @@ struct argp_child argp_child = { NULL };
  *
  */
 
-struct argp argp = { options, parse_opt, "[ccd-file]", NULL, argp_child, help_filter, NULL };
+struct argp argp = { options, parse_opt, "[ccd-file]", NULL, &argp_child, help_filter, NULL };
 
 /**
  * Post-Argp, processed command line arguments and correlate, helper,
@@ -552,12 +552,13 @@ There is NO WARRANTY, to the extent permitted by law.\n"), stream);
 static char *
 help_filter (int key, const char *text, void *input)
 {
+  int alloc_status = 0;
   char *newtext;
 
   switch (key)
     {
       case ARGP_KEY_HELP_PRE_DOC:
-	asprintf(&newtext, "%s\n\n%s",
+	alloc_status = asprintf(&newtext, "%s\n\n%s",
 		 _("Convert CCD sheet to CUE sheet."),
 		 _("The input file, referred as `ccd-file', must exist.  If `ccd-file' is \
 `-', or omitted, standard input is used.  It is necessary to supply at \
@@ -566,7 +567,7 @@ deduce the remaining file names needed, and only one file name of each \
 type can be supplied.  The following options are accepted:"));
 	break;
       case ARGP_KEY_HELP_EXTRA:
-        asprintf(&newtext,
+        alloc_status = asprintf(&newtext,
 		 "%s\n\n"	/* Examples: */
 		 "%s\n\n"	/* The most... */
 		 "  %s\n\n"	/* ccd2cue -o... */
@@ -596,9 +597,11 @@ will pointless waste your CD."),
 		 "http://translationproject.org/team/");
         break;
     default:
-      newtext = text;
+      newtext = (char *) text;
       break;
     }
+
+  if (alloc_status < 0) error (EX_OSERR, errno, _("%s: error allocating memory"), __func__);
 
   return newtext;
 }
