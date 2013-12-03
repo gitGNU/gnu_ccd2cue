@@ -22,5 +22,15 @@
 
 SUBDIRS = man
 
+TEXINPUTS = $(TEXINFO_TEX)$(PATH_SEPARATOR)$(top_srcdir)$(PATH_SEPARATOR)$(top_builddir)
+export TEXINPUTS
+
+AM_MAKEINFOFLAGS = -I $(top_srcdir) -I $(top_builddir)
 info_TEXINFOS = ccd2cue.texi
-ccd2cue_TEXINFOS = fdl.texi
+
+ccd2cue_TEXINFOS = ../README.texi ../NEWS.texi ../TODO.texi	\
+../AUTHORS.texi ../THANKS.texi ../DONORS.texi essay-header.texi	\
+the-gnu-manifesto.texi the-gnu-project.texi			\
+linux-and-the-gnu-system.texi					\
+why-software-should-not-have-owners.texi			\
+$(top_builddir)/package.texi.in copying.texi.in fdl.texi
