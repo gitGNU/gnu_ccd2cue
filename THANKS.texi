@@ -1,5 +1,5 @@
 @c
-@c THANKS.texi -- GNU ccd2cue THANKS file
+@c THANKS.texi -- List of minor contributors;
 @c
 @c Copyright (C) 2010, 2013 Bruno Félix Rezende Ribeiro
 @c <oitofelix@gnu.org>
@@ -16,44 +16,51 @@
 
 
 @c %**start of header
+@ifclear manual
 @setfilename THANKS
 @documentencoding UTF-8
 @c @documentlanguage en_US
 @firstparagraphindent insert
 @footnotestyle end
 @settitle THANKS
+@end ifclear
+@include package.texi
 @c %**end of header
 
 
 
 
 
-@ifhtml
+@c --- homepage: Navigation bar;
+@ifset homepage
 @include navigation.texi
-@end ifhtml
+@end ifset
 
 
 
 
 
-@c --- Copying;
-@ifnothtml
+@c --- file: Copying notice;
+@ifset file
 @set FILE THANKS
 @include copying.texi
 @insertcopying
-@end ifnothtml
+@end ifset
 
 
 
 
 
 @c --- THANKS;
+@ifclear manual
 @centerchap Thanks
+@end ifclear
 
-This @inlinefmtifelse{html, page, file} contains a list of people that
+This @inlineifset{manual, chapter}@inlineifset{file,
+file}@inlineifset{homepage, page} contains a list of people that
 reported problems, suggested improvements or submitted relatively
 small portions of actual code.  This program would not be what it is
-today without the invaluable help of these people, for whom we would
+today without the invaluable help of these people, to whom we would
 like to say:
 
 @center @strong{THANK YOU!}
@@ -64,24 +71,24 @@ person's contact information, usually email, and a summary of that
 person's contribution is put in per correspondent section.
 
 For contributions that does matter for copyright purposes, e.g., major
-source code contributions, see @inlinefmtifelse{html,
-@url{AUTHORS.html, the authors page}, file @file{AUTHORS}}.  If you
-would appreciate your own name listed here, @strong{please
-contribute!}  See @inlinefmtifelse{html, @url{README.html#Contributing,
-how to contribute}, the ``Contributing'' section of the @file{README}
-file}.
+source code contributions, see @inlineifset{homepage,
+@url{AUTHORS.html, the authors page}}@inlineifset{file, @file{AUTHORS}
+file}@inlineifset{manual, @ref{Authors}}.  If you would appreciate
+your own name listed here, @strong{please contribute!}  See
+@inlineifset{homepage, @url{README.html#Contributing, how to
+contribute}}@inlineifset{file, the ``Contributing'' section of the
+@file{README} file}@inlineifset{manual, @ref{Contributing}}.
 
 @table @asis
 @item Lucas Sköldqvist (frusen) @email{frusen@@gungre.ch}
-He pointed out a syntactically incorrect expression in the project's
-Manifesto.
+He pointed out a syntactically incorrect expression in the manifesto.
 @end table
 
 
 
 
 
-@c --- Footer;
-@ifhtml
+@c --- homepage: Footer;
+@ifset homepage
 @include footer.texi
-@end ifhtml
+@end ifset

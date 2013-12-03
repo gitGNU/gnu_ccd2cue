@@ -1,5 +1,5 @@
 @c
-@c DONORS.texi -- GNU ccd2cue DONORS file
+@c DONORS.texi -- People who supported the development by donations;
 @c
 @c Copyright (C) 2010, 2013 Bruno Félix Rezende Ribeiro
 @c <oitofelix@gnu.org>
@@ -15,51 +15,59 @@
 @c
 
 @c %**start of header
+@ifclear manual
 @setfilename DONORS
 @documentencoding UTF-8
 @c @documentlanguage en_US
 @firstparagraphindent insert
 @footnotestyle end
 @settitle DONORS
+@end ifclear
+@include package.texi
 @c %**end of header
 
 
 
 
 
-@ifhtml
+@c --- homepage: Navigation bar;
+@ifset homepage
 @include navigation.texi
-@end ifhtml
+@end ifset
 
 
 
 
 
-@c --- Copying;
-@ifnothtml
+@c --- Copying notice;
+@ifset file
 @set FILE DONORS
 @include copying.texi
 @insertcopying
-@end ifnothtml
+@end ifset
 
 
 
 
 
 @c --- DONORS;
+@ifclear manual
 @centerchap Donors
+@end ifclear
 
-This @inlinefmtifelse{html, page, file} contains a list of people that
+This @inlineifset{manual, chapter}@inlineifset{file,
+file}@inlineifset{homepage, page} contains a list of people that
 supported development by means of donation.  This program would not be
-what it is today without the invaluable help of these people, for whom
+what it is today without the invaluable help of these people, to whom
 we would like to say:
 
 @center @strong{THANK YOU VERY MUCH!}
 @sp 1
 
 If you would appreciate your own name listed here, @strong{please
-donate!}  See @inlinefmtifelse{html, @url{README.html#Donating, how to
-donate}, the ``Donating'' section of the @file{README} file}.
+donate!}  See @inlineifset{homepage, @url{README.html#Donating, how to
+donate}}@inlineifset{file, the ``Donating'' section of the
+@file{README} file}@inlineifset{manual, @ref{Donating}}.
 
 @multitable @columnfractions .500 .380 .120
 @headitem Name @tab Email @tab BTC
@@ -70,7 +78,7 @@ donate}, the ``Donating'' section of the @file{README} file}.
 
 
 
-@c --- Footer;
-@ifhtml
+@c --- homepage: Footer;
+@ifset homepage
 @include footer.texi
-@end ifhtml
+@end ifset

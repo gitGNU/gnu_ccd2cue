@@ -1,5 +1,5 @@
 @c
-@c TODO.texi -- GNU ccd2cue TODO file
+@c TODO.texi -- Features we want to see implemented someday;
 @c
 @c Copyright (C) 2010, 2013 Bruno Félix Rezende Ribeiro
 @c <oitofelix@gnu.org>
@@ -15,64 +15,74 @@
 @c
 
 @c %**start of header
+@ifclear manual
 @setfilename TODO
 @documentencoding UTF-8
 @c @documentlanguage en_US
 @firstparagraphindent insert
 @footnotestyle end
 @settitle TODO
+@end ifclear
+@include package.texi
 @c %**end of header
 
 
 
 
 
-@ifhtml
+@c --- homepage: Navigation bar;
+@ifset homepage
 @include navigation.texi
-@end ifhtml
+@end ifset
 
 
 
 
 
-@c --- Copying;
-@ifnothtml
+@c --- file: Copying notice;
+@ifset file
 @set FILE TODO
 @include copying.texi
 @insertcopying
-@end ifnothtml
+@end ifset
 
 
 
 
 
 @c --- TO DO;
+@ifclear manual
 @centerchap To do
+@end ifclear
 
-This @inlinefmtifelse{html, page, file} contains a list of ideas and
+This @inlineifset{manual, chapter}@inlineifset{file,
+file}@inlineifset{homepage, page} contains a list of ideas and
 features which would be nice to see implemented some day.  If you are
 ready to start working on any of these TODO items, we appreciate your
-help; please write to @email{bug-ccd2cue@@gnu.org} so we can be aware
+help; please write to @email{@value{mailBugAddr}} so we can be aware
 that the problem is being addressed, and talk with you how to do it
-best.  @inlinefmt{plaintext, It is best to consult the latest version
-of this file in the program source code repository.  See the sections
-``Getting a copy'' and ``Hacking'' of the file @file{README} for
-instruction on how to access it.}
+best.  @inlineifclear{homepage, It is best to consult the latest
+version of this file in the program source code repository.
+@inlineifset{file, See the sections ``Getting a copy'' and ``Hacking''
+of the @file{README} file}@inlineifset{manual, See @ref{Getting a
+copy} and @ref{Hacking}} for instruction on how to access it.}
 
 Since the developers of this program are willing to assign the
 copyright of this package to FSF, please be prepared to sign legal
 papers to transfer the copyright on your work to the FSF too.  For
 more details on this and some more practical details about getting
-involved, see @inlinefmtifelse{html, @url{README.html#Contributing, how
-to contribute}, the section ``Contributing'' in the file
-@file{README}}.
+involved, see @inlineifset{manual,
+@ref{Contributing}}@inlineifset{homepage,
+@url{README.html#Contributing, how to contribute}}@inlineifset{file,
+the section ``Contributing'' in the @file{README} file}.
 
 As well as the issues listed here, there are bug reports, which are
 effectively to-do items too --- that can use your help --- at the
 @url{https://savannah.gnu.org/bugs/?group=ccd2cue, bug tracker web
-interface}.  See @inlinefmtifelse{html, @url{README.html#Bug-reporting,
-how to report a bug}, the section ``Bug reporting'' in @file{README}
-file} for more information.
+interface}.  See @inlineifset{homepage,
+@url{README.html#Bug-reporting, how to report a
+bug}}@inlineifset{file, the section ``Bug reporting'' in @file{README}
+file}@inlineifset{manual, @ref{Bug reporting}} for more information.
 
 @table @asis
 @item CCD sheet format specification
@@ -102,7 +112,7 @@ the name. ;-)
 
 
 
-@c --- Footer;
-@ifhtml
+@c --- homepage: Footer;
+@ifset homepage
 @include footer.texi
-@end ifhtml
+@end ifset

@@ -1,5 +1,5 @@
 @c
-@c AUTHORS.texi -- GNU ccd2cue AUTHORS file
+@c AUTHORS.texi -- List of major contributors;
 @c
 @c Copyright (C) 2010, 2013 Bruno Félix Rezende Ribeiro
 @c <oitofelix@gnu.org>
@@ -15,43 +15,50 @@
 @c
 
 @c %**start of header
+@ifclear manual
 @setfilename AUTHORS
 @documentencoding UTF-8
 @c @documentlanguage en_US
 @firstparagraphindent insert
 @footnotestyle end
 @settitle AUTHORS
+@end ifclear
+@include package.texi
 @c %**end of header
 
 
 
 
 
-@ifhtml
+@c --- homepage: Navigation bar;
+@ifset homepage
 @include navigation.texi
-@end ifhtml
+@end ifset
 
 
 
 
 
-@c --- Copying;
-@ifnothtml
+@c --- file: Copying notice;
+@ifset file
 @set FILE AUTHORS
 @include copying.texi
 @insertcopying
-@end ifnothtml
+@end ifset
 
 
 
 
 @c --- AUTHORS;
+@ifclear manual
 @centerchap Authors
+@end ifclear
 
-This @inlinefmtifelse{html, page, file} contains a list of people that
-made sufficiently large contributions to development that they can be
+This @inlineifset{manual, chapter}@inlineifset{file,
+file}@inlineifset{homepage, page} contains a list of people that made
+sufficiently large contributions to development that they can be
 regarded as truly authors of the program.  This program would not be
-what it is today without the invaluable help of these people, for whom
+what it is today without the invaluable help of these people, to whom
 we would like to say:
 
 @center @strong{THANK YOU VERY MUCH!}
@@ -62,11 +69,13 @@ person's contact information, usually email, and a summary of that
 person's contribution is put in per correspondent section.
 
 For contributions that does not matter for copyright purposes, e.g.,
-minor or non-source code contributions, see @inlinefmtifelse{html,
-@url{THANKS.html, the thanks page}, file @file{THANKS}}.  If you would
+minor or non-source code contributions, see @inlineifset{homepage,
+@url{THANKS.html, the thanks page}}@inlineifset{file, file
+@file{THANKS}}@inlineifset{manual, @ref{Thanks}}.  If you would
 appreciate your own name listed here, @strong{please contribute!}  See
-@inlinefmtifelse{html, @url{README.html#Contributing, how to
-contribute}, the ``Contributing'' section of the @file{README} file}.
+@inlineifset{homepage, @url{README.html#Contributing, how to
+contribute}}@inlineifset{file, the ``Contributing'' section of the
+@file{README} file}@inlineifset{manual, @ref{Contributing}}.
 
 @table @asis
 @item Bruno Félix Rezende Ribeiro (oitofelix) @email{oitofelix@@gnu.org}
@@ -77,7 +86,7 @@ He is the original and only author so far.
 
 
 
-@c --- Footer;
-@ifhtml
+@c --- homepage: Footer;
+@ifset homepage
 @include footer.texi
-@end ifhtml
+@end ifset
