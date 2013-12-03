@@ -125,6 +125,15 @@ static struct argp_option options[] = {
 };
 
 /**
+ * The Argp Children.
+ *
+ * \sa [Argp Parsers] (https://gnu.org/software/libc/manual/html_node/Argp-Children.html#Argp-Children)
+ *
+ */
+
+struct argp_child argp_child = { NULL };
+
+/**
  * The Argp parser.
  *
  * This data structure maintain virtually all the information needed
@@ -134,7 +143,7 @@ static struct argp_option options[] = {
  *
  */
 
-struct argp argp = { options, parse_opt, "[ccd-file]", NULL, NULL, help_filter, NULL };
+struct argp argp = { options, parse_opt, "[ccd-file]", NULL, argp_child, help_filter, NULL };
 
 /**
  * Post-Argp, processed command line arguments and correlate, helper,
@@ -586,6 +595,9 @@ will pointless waste your CD."),
 		 _("Report translation bugs to:"),
 		 "http://translationproject.org/team/");
         break;
+    default:
+      newtext = text;
+      break;
     }
 
   return newtext;
