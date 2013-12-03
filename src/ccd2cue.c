@@ -533,17 +533,27 @@ parse_opt (int key, char *arg, struct argp_state *state)
 static void
 print_version (FILE *stream, struct argp_state *state)
 {
-  xfprintf (stream, "%s (%s) %s\n", PACKAGE, PACKAGE_NAME, VERSION);
-  xputc ('\n', stream);
-  xfprintf(stream,
-  "Copyright (C) %s Bruno Félix Rezende Ribeiro <%s>\n\n",
-	   "2010, 2013", "oitofelix@gnu.org");
-  fputs (_("License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>\n\
+  xfprintf (stream,
+	    "%s (%s) %s\n\n"	/* ccd2cue (GNU ccd2cue) a.b */
+	    "%s\n\n"		/* GNU ccd2cue is a... */
+	    "%s\n\n"		/* This program is a component... */
+	    "Copyright (C) %s Bruno Félix Rezende Ribeiro <%s>\n\n"
+	    "%s\n\n"		/* License GPLv3+... */
+	    "%s\n",		/* Written by... */
+	    PACKAGE, PACKAGE_NAME, VERSION,
+	    _("\
+GNU ccd2cue is a CCD sheet to CUE sheet converter.  It supports the\n\
+full extent of CUE sheet format expressiveness, including mixed-mode\n\
+discs and CD-Text meta-data."),
+	    _("\
+This program is a component of the GNU Operating System and is\n\
+developed by the GNU Project."),
+	    "2010, 2013", "oitofelix@gnu.org",
+	    _("\
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>\n	\
 This is free software: you are free to change and redistribute it.\n\
-There is NO WARRANTY, to the extent permitted by law.\n"), stream);
-  xputc ('\n', stream);
-  fputs (_("Written by Bruno Félix Rezende Ribeiro."), stream);
-  xputc ('\n', stream);
+There is NO WARRANTY, to the extent permitted by law."),
+	    _("Written by Bruno Félix Rezende Ribeiro."));
 
   exit (EXIT_SUCCESS);
 }
