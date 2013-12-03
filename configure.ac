@@ -43,13 +43,34 @@ AM_GNU_GETTEXT([external])
 
 AC_MSG_NOTICE([checking presence of programs necessary to build documentation])
 
-# We generally cannot invoke the built program when cross-compiling,
-# so we test to avoid that (the variable "cross_compiling" is set by
-# AC_PROG_CC).
+# Check for `sed'.
+AC_PROG_SED
+
+# Define GNU Texinfo minimal version.
+m4_define(texinfo_minver, 5.1)
+
+# Check for GNU Texinfo existence.
+AC_PATH_PROG(MAKEINFO, makeinfo)
+AS_IF(test x$MAKEINFO = x,
+  AC_MSG_ERROR(
+GNU Texinfo not found.  It is required at least version texinfo_minver.
+You can find it at https://gnu.org/software/texinfo/.))
+
+AS_VAR_SET(texinfo_version, `$MAKEINFO --version |
+  $SED -n 's/^makeinfo.* \([[:digit:].]*\)$/\1/p'`)
+
+# Check GNU Texinfo version.
+AX_COMPARE_VERSION($texinfo_version, ge, texinfo_minver,
+  AC_MSG_ERROR(
+GNU Texinfo is too old.  It is required at least version texinfo_minver.
+You can find it at https://gnu.org/software/texinfo/.))
+
+# Check for GNU help2man existence.  It should only be used if not
+# cross-compiling.
 AS_IF(test $cross_compiling = no,
   [AM_MISSING_PROG(HELP2MAN, help2man)], HELP2MAN=:)
 
-# Doxygen documentation;
+# Check for Doxygen existence and configure it;
 DX_DOT_FEATURE(ON)
 DX_PDF_FEATURE(OFF)
 DX_PS_FEATURE(OFF)
