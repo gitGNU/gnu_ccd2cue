@@ -22,7 +22,7 @@
 @firstparagraphindent insert
 @footnotestyle end
 @include version.texi
-@settitle The GNU ccd2cue Manual
+@settitle GNU ccd2cue
 @defindex cdfF
 @defindex ccdS
 @defindex ccdP
@@ -32,13 +32,15 @@
 @syncodeindex ccdS cp
 @syncodeindex ccdP cp
 @syncodeindex cueC cp
+@set manual
+@set GNUphiThird
 @c %**end of header
 
 
 
 
 
-@c --- Start Macros;
+@c --- Macros;
 @macro webdoc{text, url}
 @inlinefmtifelse{info, @emph{\text\}@footnote{See @url{\url\}.},
 @inlinefmtifelse{html, @url{\url\,,\text\},
@@ -66,8 +68,6 @@
 @inlinefmt{tex,}
 @end macro
 
-@c --- End Macros;
-
 
 
 
@@ -81,7 +81,7 @@
 @c --- Info directory entry;
 @dircategory Converter
 @direntry
-* GNU ccd2cue: (ccd2cue)The CCD sheet to CUE sheet converter.
+* ccd2cue: (ccd2cue)The GNU CCD sheet to CUE sheet converter.
 @end direntry
 
 
@@ -91,7 +91,7 @@
 @c --- Info Top Node;
 @ifnottex
 @node Top
-@top The CCD sheet to CUE sheet converter
+@top The GNU CCD sheet to CUE sheet converter
 @insertcopying
 @end ifnottex
 
@@ -101,18 +101,28 @@
 
 @c --- Menu;
 @menu
-* Preface::    Motivation, program definition and document organization.
-* Operation::  How the program works from the user's perspective.
-* Tutorial::   Easy and fast to learn case by case.
-* Invocation:: Formal and canonical list of options and meanings.
+* Preface::    Motivation, program definition and document organization;
+
+* Overview::   Description, distribution, obtaining, contact, bug reports,
+                contribution, donation and hacking;
+* Release::    Information specifically relevant for the current release;
+* Operation::  How the program works from the user's perspective;
+* Tutorial::   Easy and fast to learn case by case;
+* Invocation:: Formal and canonical list of options and meanings;
 * Burning::    An @emph{important warning} and advice about burning the
-               resultant CUE sheet.  @strong{READ THIS!}
+               resultant CUE sheet;  @strong{READ THIS!}
 
 Appendices:
-* Compact Disc fields::            Common concepts to all sheets.
-* CCD sheet format::               Unofficial and partial format reference.
-* CUE sheet format::               Reference.
-* GNU Free Documentation License:: The license for this documentation.
+* Compact Disc fields::            Common concepts to all sheets;
+* CCD sheet format::               Unofficial and partial format reference;
+* CUE sheet format::               Reference;
+* GNU Free Documentation License:: The license for this documentation;
+
+GNU philosophy:
+* The GNU Manifesto::
+* The GNU Project::
+* Linux and the GNU system::
+* Why Software Should Not Have Owners::
 
 Indexes:
 * Index:: Concepts and reference material.
@@ -124,9 +134,9 @@ Indexes:
 
 @c --- Title page;
 @titlepage
-@title The GNU ccd2cue Manual
+@title GNU ccd2cue
 @subtitle for version @value{VERSION} (@value{UPDATED})
-@author Bruno Félix Rezende Ribeiro <@email{oitofelix@@riseup.net}>
+@author Bruno Félix Rezende Ribeiro <@email{oitofelix@@gnu.org}>
 @page
 @vskip 0pt plus 1filll
 @insertcopying
@@ -238,14 +248,20 @@ instructional, reasonably tutorial, use.  It is composed by the
 following chapters:
 
 @table @emph
+@item Overview
+General information about purpose, distribution, copying, community,
+contribution and donation for this package.
+@item Release
+Presents information specifically relevant for the current release or
+subject to change between releases.
 @item Operation
 Teach how the program works from the user's perspective;
 @item Tutorial
 Guides the reader step-by-step using the program in face of practical
 common use cases.
 @item Invocation
-Concerns GNU ccd2cue invocation syntax, accepted options and their
-meanings.
+Concerns @command{ccd2cue} invocation syntax, accepted options and
+their meanings.
 @item Burning
 Gives an @emph{important warning} and advice about burning the
 resultant CUE sheet.  @strong{READ THAT!}
@@ -275,6 +291,91 @@ Describes the CUE sheet format.
 @end iftex
 Now that you are acquainted to the program and documentation,
 @strong{HAPPY@tie{}HACKING!}
+
+
+
+
+
+@c --- Overview;
+@node Overview
+@chapter Overview
+@include README.texi
+
+
+
+
+
+@c --- Release;
+@node Release
+@chapter Release
+
+In this chapter one can find information that are specific to the
+current release or subject to change between releases.  It is
+presented the features this program acquired over time and what
+possibly could happen --- by our wishes --- to it in the future.  Last
+but not least, people whose contribution for this package are
+noteworthy are acknowledged.
+
+@menu
+Present and Future:
+* News::     User-visible changes since previous versions;
+* To do::    Features we want to see implemented someday;
+
+People:
+* Authors::  List of major contributors;
+* Thanks::   List of minor contributors;
+* Donors::   People who supported the development by donations;
+@end menu
+
+
+
+
+
+@c --- News;
+@page
+@node News
+@section News
+@include NEWS.texi
+
+
+
+
+
+@c --- To do;
+@page
+@node To do
+@section To do
+@include TODO.texi
+
+
+
+
+
+@c --- Authors;
+@page
+@node Authors
+@section Authors
+@include AUTHORS.texi
+
+
+
+
+
+@c --- Thanks;
+@page
+@node Thanks
+@section Thanks
+@include THANKS.texi
+
+
+
+
+
+@c --- Donors;
+@page
+@node Donors
+@section Donors
+@include DONORS.texi
 
 
 
@@ -378,6 +479,10 @@ the CD-Text meta-data is such a case --- the CD-Text file is produced
 from decoded sub-channel information available inside the CCD sheet
 file.
 
+
+
+
+
 @c --- Tutorial;
 @node Tutorial
 @chapter Tutorial
@@ -483,6 +588,7 @@ binary CD-Text data to standard output, however.
 
 
 
+
 @c --- Invocation;
 @node Invocation
 @chapter Invocation
@@ -492,7 +598,7 @@ binary CD-Text data to standard output, however.
 @cindex @command{ccd2cue} options
 @cindex @command{ccd2cue} invocation
 
-The program @command{ccd2cue} is used to convert CCD sheet files in
+The command @command{ccd2cue} is used to convert CCD sheet files in
 CUE sheet files. It is invoked as follow:
 
 @example
@@ -561,7 +667,8 @@ optional for any corresponding short options.
 
 
 
-@c --- Invocation;
+
+@c --- Burning;
 @node Burning
 @chapter Burning
 @cindex CD burning
@@ -2225,6 +2332,43 @@ known.
 @cindex manual copying
 
 @include fdl.texi
+
+
+
+
+
+@c --- The GNU Manifesto;
+@node The GNU Manifesto
+@appendix The GNU Manifesto
+@include the-gnu-manifesto.texi
+
+
+
+
+
+@c --- The GNU Project;
+@node The GNU Project
+@appendix The GNU Project
+@include the-gnu-project.texi
+
+
+
+
+
+@c --- Linux and the GNU system;
+@node Linux and the GNU system
+@appendix Linux and the GNU system
+@include linux-and-the-gnu-system.texi
+
+
+
+
+
+@c --- Why Software Should Not Have Owners;
+@node Why Software Should Not Have Owners
+@appendix Why Software Should Not Have Owners
+@include why-software-should-not-have-owners.texi
+
 
 
 
