@@ -56,7 +56,7 @@ m4_define([texinfo_minver], 5.1)
 # checkout, GNU Texinfo is not required.
 AC_PATH_PROG(MAKEINFO, makeinfo)
 AS_IF(test x$MAKEINFO = x,
-  AS_IF(test x$cvs_build = xt,
+  AS_IF(test x$cvs_build = xy,
     AC_MSG_ERROR(
 GNU Texinfo not found.  It is required at least version texinfo_minver.
 You can find it at https://gnu.org/software/texinfo/.),
@@ -68,7 +68,7 @@ AS_IF(test x$MAKEINFO != x:,
 
   # Check GNU Texinfo version.
   AX_COMPARE_VERSION($texinfo_version, lt, texinfo_minver,
-    AS_IF(test x$cvs_build = xt,
+    AS_IF(test x$cvs_build = yt,
       AC_MSG_ERROR(
 GNU Texinfo is too old.  It is required at least version texinfo_minver.
 You can find it at https://gnu.org/software/texinfo/.),
