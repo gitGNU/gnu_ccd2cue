@@ -71,7 +71,7 @@ AS_IF(test x$MAKEINFO != x,
 GNU Texinfo is too old.  It is required at least version texinfo_minver.
 You can find it at https://gnu.org/software/texinfo/.))))
 
-MAKEINFO="$abs_top_srcdir/build-aux/missing makeinfo"
+AM_MISSING_PROG(MAKEINFO, makeinfo)
 
 # Check for GNU help2man existence.  It should only be used if not
 # cross-compiling.
