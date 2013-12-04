@@ -68,7 +68,7 @@ AS_IF(test x$MAKEINFO != x:,
 
   # Check GNU Texinfo version.
   AX_COMPARE_VERSION($texinfo_version, lt, texinfo_minver,
-    AS_IF(test x$cvs_build = yt,
+    AS_IF(test x$cvs_build = xy,
       AC_MSG_ERROR(
 GNU Texinfo is too old.  It is required at least version texinfo_minver.
 You can find it at https://gnu.org/software/texinfo/.),
