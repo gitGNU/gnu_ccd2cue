@@ -81,7 +81,7 @@
 @c --- Info directory entry;
 @dircategory Audio
 @direntry
-* ccd2cue: (ccd2cue)The GNU CCD sheet to CUE sheet converter.
+* ccd2cue: (ccd2cue).   The GNU CCD sheet to CUE sheet converter.
 @end direntry
 
 
