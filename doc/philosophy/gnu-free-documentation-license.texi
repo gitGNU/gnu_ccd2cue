@@ -1,20 +1,56 @@
-@center The GNU Free Documentation License
-@center Version 1.3, 3 November 2008
+@c Copyright (C) 2000, 2001, 2002, 2007, 2008 Free Software
+@c Foundation, Inc.
+@c
+@c Permission is granted to anyone to make or distribute verbatim copies
+@c of this document, in any medium, provided that the copyright notice and
+@c permission notice are preserved, and that the distributor grants the
+@c recipient permission for further redistribution as permitted by this
+@c notice.
+@c
+@c Modified versions of the subject matter text may not be made.  You
+@c are only allowed to modify the markup.
 
-@c This file is intended to be included within another document,
-@c hence no sectioning command or @node.
+@include essay-header.texi
 
-@display
-Copyright @copyright{} 2000, 2001, 2002, 2007, 2008 Free Software Foundation, Inc.
-@uref{http://fsf.org/}
+@c --- Original publication notice;
+@macro essayPreNotice
+Version 1.3, 3 November 2008
+@iftex
+@sp 1
+@end iftex
+@format
+@acronym{FSF, Free Software Foundation} (@url{http://fsf.org/})
+51 Franklin St., Floor 5
+Boston, MA 02110-1335
+USA
+@end format
+@end macro
 
-Everyone is permitted to copy and distribute verbatim copies
-of this license document, but changing it is not allowed.
-@end display
+@c --- Copyright notice;
+@macro essayCopyright
+Copyright @copyright{} 2000, 2001, 2002, 2007, 2008 Free Software
+Foundation, Inc.
+@end macro
 
-@enumerate 0
-@item
-PREAMBLE
+@c --- Setup standard essay defaults;
+@essayHeader{gnu-free-documentation-license,
+GNU Free Documentation License,
+GNU Free Documentation License}
+
+
+
+
+
+@rgindex GNU, GNU Free Documentation License (FDL) @emph{(see also} FDL, manuals, @emph{and} documentation@emph{)}
+@rgindex Free Documentation License (FDL), GNU @emph{(see also} FDL, manuals, @emph{and} documentation@emph{)}
+@rgindex manuals @emph{(see also} manuals, FDL, @emph{and} documentation@emph{)}
+@rgindex FDL @emph{(see also both} manuals @emph{and} documentation@emph{)}
+
+
+
+
+
+@essayHeading 0. PREAMBLE
 
 The purpose of this License is to make a manual, textbook, or other
 functional and useful document @dfn{free} in the sense of freedom: to
@@ -24,6 +60,7 @@ Secondarily, this License preserves for the author and publisher a way
 to get credit for their work, while not being considered responsible
 for modifications made by others.
 
+@cindex copyleft, FDL and
 This License is a kind of ``copyleft'', which means that derivative
 works of the document must themselves be free in the same sense.  It
 complements the GNU General Public License, which is a copyleft
@@ -37,8 +74,11 @@ it can be used for any textual work, regardless of subject matter or
 whether it is published as a printed book.  We recommend this License
 principally for works whose purpose is instruction or reference.
 
-@item
-APPLICABILITY AND DEFINITIONS
+
+
+
+
+@essayHeading 1. APPLICABILITY AND DEFINITIONS
 
 This License applies to any manual or other work, in any medium, that
 contains a notice placed by the copyright holder saying it can be
@@ -91,13 +131,24 @@ or discourage subsequent modification by readers is not Transparent.
 An image format is not Transparent if used for any substantial amount
 of text.  A copy that is not ``Transparent'' is called ``Opaque''.
 
+@cindex HTML
+@cindex ASCII
+@cindex DTD
+@cindex @LaTeX{}
+@cindex SGML
+@cindex XML
+@cindex PDF
+@cindex PDF
+@cindex PNG
+@cindex XCF
+@cindex JPEG
 Examples of suitable formats for Transparent copies include plain
-ASCII without markup, Texinfo input format, La@TeX{} input
+@sc{ascii} without markup, Texinfo input format, La@TeX{} input
 format, SGML or XML using a publicly available
 DTD, and standard-conforming simple HTML,
 PostScript or PDF designed for human modification.  Examples
 of transparent image formats include PNG, XCF and
-JPG@.  Opaque formats include proprietary formats that can be
+JPG.  Opaque formats include proprietary formats that can be
 read and edited only by proprietary word processors, SGML or
 XML for which the DTD and/or processing tools are
 not generally available, and the machine-generated HTML,
@@ -129,8 +180,11 @@ License, but only as regards disclaiming warranties: any other
 implication that these Warranty Disclaimers may have is void and has
 no effect on the meaning of this License.
 
-@item
-VERBATIM COPYING
+
+
+
+
+@essayHeading 2. VERBATIM COPYING
 
 You may copy and distribute the Document in any medium, either
 commercially or noncommercially, provided that this License, the
@@ -145,8 +199,11 @@ number of copies you must also follow the conditions in section 3.
 You may also lend copies, under the same conditions stated above, and
 you may publicly display copies.
 
-@item
-COPYING IN QUANTITY
+
+
+
+
+@essayHeading 3. COPYING IN QUANTITY
 
 If you publish printed copies (or copies in media that commonly have
 printed covers) of the Document, numbering more than 100, and the
@@ -183,8 +240,11 @@ It is requested, but not required, that you contact the authors of the
 Document well before redistributing any large number of copies, to give
 them a chance to provide you with an updated version of the Document.
 
-@item
-MODIFICATIONS
+
+
+
+
+@essayHeading 4. MODIFICATIONS
 
 You may copy and distribute a Modified Version of the Document under
 the conditions of sections 2 and 3 above, provided that you release
@@ -299,8 +359,11 @@ The author(s) and publisher(s) of the Document do not by this License
 give permission to use their names for publicity for or to assert or
 imply endorsement of any Modified Version.
 
-@item
-COMBINING DOCUMENTS
+
+
+
+
+@essayHeading 5. COMBINING DOCUMENTS
 
 You may combine the Document with other documents released under this
 License, under the terms defined in section 4 above for modified
@@ -324,8 +387,11 @@ in the various original documents, forming one section Entitled
 and any sections Entitled ``Dedications''.  You must delete all
 sections Entitled ``Endorsements.''
 
-@item
-COLLECTIONS OF DOCUMENTS
+
+
+
+
+@essayHeading 6. COLLECTIONS OF DOCUMENTS
 
 You may make a collection consisting of the Document and other documents
 released under this License, and replace the individual copies of this
@@ -338,8 +404,11 @@ it individually under this License, provided you insert a copy of this
 License into the extracted document, and follow this License in all
 other respects regarding verbatim copying of that document.
 
-@item
-AGGREGATION WITH INDEPENDENT WORKS
+
+
+
+
+@essayHeading 7. AGGREGATION WITH INDEPENDENT WORKS
 
 A compilation of the Document or its derivatives with other separate
 and independent documents or works, in or on a volume of a storage or
@@ -358,8 +427,11 @@ electronic equivalent of covers if the Document is in electronic form.
 Otherwise they must appear on printed covers that bracket the whole
 aggregate.
 
-@item
-TRANSLATION
+
+
+
+
+@essayHeading 8. TRANSLATION
 
 Translation is considered a kind of modification, so you may
 distribute translations of the Document under the terms of section 4.
@@ -379,8 +451,11 @@ If a section in the Document is Entitled ``Acknowledgements'',
 its Title (section 1) will typically require changing the actual
 title.
 
-@item
-TERMINATION
+
+
+
+
+@essayHeading 9. TERMINATION
 
 You may not copy, modify, sublicense, or distribute the Document
 except as expressly provided under this License.  Any attempt
@@ -407,8 +482,11 @@ this License.  If your rights have been terminated and not permanently
 reinstated, receipt of a copy of some or all of the same material does
 not give you any rights to use it.
 
-@item
-FUTURE REVISIONS OF THIS LICENSE
+
+
+
+
+@essayHeading 10. FUTURE REVISIONS OF THIS LICENSE
 
 The Free Software Foundation may publish new, revised versions
 of the GNU Free Documentation License from time to time.  Such new
@@ -429,8 +507,11 @@ License can be used, that proxy's public statement of acceptance of a
 version permanently authorizes you to choose that version for the
 Document.
 
-@item
-RELICENSING
+
+
+
+
+@essayHeading 11. RELICENSING
 
 ``Massive Multiauthor Collaboration Site'' (or ``MMC Site'') means any
 World Wide Web server that publishes copyrightable works and also
@@ -459,10 +540,12 @@ The operator of an MMC Site may republish an MMC contained in the site
 under CC-BY-SA on the same site at any time before August 1, 2009,
 provided the MMC is eligible for relicensing.
 
-@end enumerate
 
+
+
+
 @page
-@heading ADDENDUM: How to use this License for your documents
+@essaySuperHeading ADDENDUM: How to use this License for your documents
 
 To use this License in a document you have written, include a copy of
 the License in the document and put the following copyright and
@@ -470,24 +553,24 @@ license notices just after the title page:
 
 @smallexample
 @group
-  Copyright (C)  @var{year}  @var{your name}.
-  Permission is granted to copy, distribute and/or modify this document
-  under the terms of the GNU Free Documentation License, Version 1.3
-  or any later version published by the Free Software Foundation;
-  with no Invariant Sections, no Front-Cover Texts, and no Back-Cover
-  Texts.  A copy of the license is included in the section entitled ``GNU
-  Free Documentation License''.
+Copyright (C)  @var{year}  @var{your name}.
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.3 or
+any later version published by the Free Software Foundation; with
+no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.
+A copy of the license is included in the section entitled
+``GNU Free Documentation License''.
 @end group
 @end smallexample
 
-If you have Invariant Sections, Front-Cover Texts and Back-Cover Texts,
-replace the ``with@dots{}Texts.''@: line with this:
+If you have Invariant Sections, Front-Cover Texts and Back-Cover
+Texts, replace the ``with@dots{}Texts.'' line with this:
 
 @smallexample
 @group
-    with the Invariant Sections being @var{list their titles}, with
-    the Front-Cover Texts being @var{list}, and with the Back-Cover Texts
-    being @var{list}.
+with the Invariant Sections being @var{list their titles}, with the
+Front-Cover Texts being @var{list}, and with the Back-Cover Texts
+being @var{list}.
 @end group
 @end smallexample
 
@@ -499,7 +582,8 @@ If your document contains nontrivial examples of program code, we
 recommend releasing these examples in parallel under your choice of
 free software license, such as the GNU General Public License,
 to permit their use in free software.
-
-@c Local Variables:
-@c ispell-local-pdict: "ispell-dict"
-@c End:
+@rgindex Free Documentation License (FDL), GNU @emph{(see also} FDL, manuals, @emph{and} documentation@emph{)}
+@rgindex manuals @emph{(see also} manuals, FDL, @emph{and} documentation@emph{)}
+@rgindex GNU, GNU Free Documentation License (FDL) @emph{(see also} FDL, manuals, @emph{and} documentation@emph{)}
+@rgindex licenses @emph{(see also} Affero, FDL, GPL, LGPL, X11, BSD, XFree86, @emph{and} lax permissive licenses@emph{)}
+@rgindex FDL @emph{(see also both} manuals @emph{and} documentation@emph{)}
