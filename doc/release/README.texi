@@ -2,7 +2,7 @@
 @c README.texi -- Description, distribution, obtaining, contact,
 @c                bug reports, contribution, donation and hacking;
 @c
-@c Copyright (C) 2010, 2013 Bruno Félix Rezende Ribeiro
+@c Copyright (C) 2010, 2013, 2014 Bruno Félix Rezende Ribeiro
 @c <oitofelix@gnu.org>
 @c
 @c Permission is granted to copy, distribute and/or modify this
@@ -24,7 +24,7 @@
 @footnotestyle end
 @settitle README
 @end ifclear
-@include package.texi
+@include release.texi
 @c %**end of header
 
 
@@ -48,31 +48,6 @@
 @majorheading \name\
 @end ifset
 @end macro
-
-
-
-
-
-@c --- manual: Menu;
-@ifset manual
-This chapter briefly explains for what this package is intended, what
-are the rules for its distribution, how to get a copy of it, how to
-contact its community, how to fill bug reports, how to contribute to
-the package, how to make donations to support its development and how
-to get started hacking the code.  If you have checked out the source
-tree from the CVS repository see @ref{Hacking}.
-
-@menu
-* Description::    What this package is all about;
-* Distribution::   The user's right to modify and redistribute;
-* Getting a copy:: GNU FTP server and CVS;
-* Contact::        Mailing list and IRC;
-* Bug reporting::  Support and bug trackers;
-* Contributing::   Several ways to help program's development;
-* Donating::       Supporting developer's work;
-* Hacking::        Get started with CVS checkout;
-@end menu
-@end ifset
 
 
 
@@ -122,18 +97,29 @@ tree from the CVS repository see @ref{Hacking}.
 
 
 
-@c --- file: Preface;
+@c --- file/manual: Preface;
+@ifclear homepage
 @ifset file
 @unnumbered Preface
+@end ifset
 
-This file briefly explains for what this package in intended, what are
-the rules for its distribution, how to get a copy of it, how to
-contact the community, how to fill bug reports, how to contribute to
-the package, how to make donations to support its development and how
-to get started hacking the code.  If you have checked out the source
-tree from the CVS repository see @ref{Hacking}.  For other information
-about this package you can check the following files found in the top
-level directory of the distribution:
+This @inlineifset{manual, chapter}@inlineifset{file, file} briefly
+explains for what this package is intended, gives relevant
+considerations regarding dependencies, configuration, build,
+installation and use, describes which are the rules for its
+distribution, how to get a copy of it, how to contact the community,
+how to fill bug reports, how to contribute to the package, how to make
+donations to support its development and how to get started hacking
+the code.  Bear in mind that instructions in this @inlineifset{manual,
+chapter}@inlineifset{file, file} are package-specific; for general and
+in-depth configuration, build and installation instructions refer to
+the file @file{INSTALL} present in the top-level directory of the
+source distribution.  If you have checked out the source tree from the
+CVS repository see @ref{Hacking}.
+
+@ifset file
+For other information about this package you can check the following
+files found in the top level directory of the distribution:
 
 @table @file
 @item NEWS
@@ -154,7 +140,7 @@ Generic build and installation instructions;
 Internationalization and localization matters;
 @item COPYING
 The program license;
-@item COPYING.DOC
+@item GNU-FREE-DOCUMENTATION-LICENSE
 The documentation license;
 @item ChangeLog
 Detailed list of changes of the source code;
@@ -165,23 +151,34 @@ Free Software Movement are included in the distribution --- for your
 pleasure --- in the form of some articles by Richard Stallman (RMS).
 See the top-level files:
 
-@table @file
+@itemize
 @item THE-GNU-MANIFESTO
-The GNU Manifesto;
 @item THE-GNU-PROJECT
-The GNU Project history;
 @item LINUX-AND-THE-GNU-SYSTEM
-Linux and the GNU system;
 @item WHY-SOFTWARE-SHOULD-NOT-HAVE-OWNERS
-Why Software Should Not Have Owners;
-@end table
+@item WHY-FREE-SOFTWARE-NEEDS-FREE-DOCUMENTATION
+@end itemize
+
+@end ifset
+
+@menu
+* Description::    What this package is all about;
+* Distribution::   The user's right to modify and redistribute;
+* Getting a copy:: GNU FTP server and CVS;
+* Contact::        Mailing list and IRC;
+* Bug reporting::  Support and bug trackers;
+* Contributing::   Several ways to help program's development;
+* Donating::       Supporting developer's work;
+* Hacking::        Get started with CVS checkout;
+@end menu
 
 For more information about this program you can visit its home page at
 @url{@value{webPage}}.  If you want to receive notifications about new
 releases of this program or important issues related to it, subscribe
 to the mailing list, as described in @ref{Contact}, or subscribe to
 the package atom feed @url{@value{atomFeed}}.
-@end ifset
+
+@end ifclear
 
 
 
@@ -280,10 +277,10 @@ conditions are found in the @inlineifset{file, GNU General Public
 License (@file{COPYING} file)}@inlineifset{manual, GNU
 @acronym{@url{@value{progLicenseURL}, GPL}, General Public Licence}}.
 The program manual is covered by the @inlineifset{file, GNU Free
-Documentation License (@file{COPYING.DOC} file)}@inlineifset{manual,
-GFDL (@ref{GNU Free Documentation License})}.  This license is similar
-in spirit to the GNU General Public License, but is more suitable for
-documentation.
+Documentation License (@file{GNU-FREE-DOCUMENTATION-LICENSE}
+file)}@inlineifset{manual, GFDL (@ref{GNU Free Documentation
+License})}.  This license is similar in spirit to the GNU General
+Public License, but is more suitable for documentation.
 @end ifclear
 
 
@@ -332,8 +329,8 @@ cvs -z9 -d:pserver:anonymous@@@value{CVSurl} co @value{GNUid}
 @anchor{Download}
 @majorheading Download
 
-@strong{The current stable release is @value{VERSION}} (released
-@value{DATE}).  You can download it here:
+@strong{The current stable release is @value{version}} (released
+@value{date}).  You can download it here:
 @url{@value{ftpMirrorTarball}, @value{tarball}},
 @url{@value{ftpMirrorTarSign}, @value{tarSign}} (alternative:
 @url{@value{ftpTarball}, @value{tarball}}, @url{@value{ftpTarSign},
