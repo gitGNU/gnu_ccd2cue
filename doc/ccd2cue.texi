@@ -2,7 +2,7 @@
 @c
 @c ccd2cue.texi -- The GNU ccd2cue Manual
 @c
-@c Copyright (C) 2010, 2013 Bruno Félix Rezende Ribeiro
+@c Copyright (C) 2010, 2013, 2014 Bruno Félix Rezende Ribeiro
 @c <oitofelix@gnu.org>
 @c
 @c Permission is granted to copy, distribute and/or modify this
@@ -106,6 +106,7 @@
 * Overview::   Description, distribution, obtaining, contact, bug reports,
                 contribution, donation and hacking;
 * Release::    Information specifically relevant for the current release;
+
 * Operation::  How the program works from the user's perspective;
 * Tutorial::   Easy and fast to learn case by case;
 * Invocation:: Formal and canonical list of options and meanings;
@@ -123,6 +124,7 @@ GNU philosophy:
 * The GNU Project::
 * Linux and the GNU system::
 * Why Software Should Not Have Owners::
+* Why Free Software Needs Free Documentation::
 
 Indexes:
 * Index:: Concepts and reference material.
@@ -232,7 +234,7 @@ relevant information (like album, song and artist names) on a standard
 compliant audio CD.};
 @item
 Track special sub-code flags@footnote{In-disc information that
-determines copy restriction (very bad!) and audio track
+determines copy restriction (very sad!) and audio track
 characteristics like 4 channel audio and track pre-emphasis.};
 @end itemize
 
@@ -311,10 +313,10 @@ Now that you are acquainted to the program and documentation,
 
 In this chapter one can find information that are specific to the
 current release or subject to change between releases.  It is
-presented the features this program acquired over time and what
-possibly could happen --- by our wishes --- to it in the future.  Last
-but not least, people whose contribution for this package are
-noteworthy are acknowledged.
+presented the features this package acquired over time, problems that
+affects its overall usage and what possibly could happen to it --- by
+our wishes --- in the future.  Last but not least, people whose
+contribution for this package are noteworthy are acknowledged.
 
 @menu
 Present and Future:
@@ -2331,7 +2333,7 @@ known.
 @cindex copying manual
 @cindex manual copying
 
-@include fdl.texi
+@include gnu-free-documentation-license.texi
 
 
 
@@ -2369,6 +2371,14 @@ known.
 @appendix Why Software Should Not Have Owners
 @include why-software-should-not-have-owners.texi
 
+
+
+
+
+@c --- Why Free Software Needs Free Documentation;
+@node Why Free Software Needs Free Documentation
+@appendix Why Free Software Needs Free Documentation
+@include why-free-software-needs-free-documentation.texi
 
 
 
