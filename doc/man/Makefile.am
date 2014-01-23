@@ -3,7 +3,7 @@
 ##                Makefile.in.
 ##
 #
-# Copyright (C) 2013 Bruno Félix Rezende Ribeiro
+# Copyright (C) 2013, 2014 Bruno Félix Rezende Ribeiro
 # <oitofelix@gnu.org>
 #
 # This program is free software; you can redistribute it and/or modify
@@ -24,5 +24,8 @@ dist_man_MANS = ccd2cue.1
 MAINTAINERCLEANFILES = ccd2cue.1
 
 ccd2cue.1: $(top_srcdir)/src/ccd2cue.c
-	$(MAKE) --directory=$(top_builddir)/src $(AM_MAKEFLAGS) ccd2cue
-	$(HELP2MAN) --name="CCD sheet to CUE sheet converter" --output=$@  $(top_builddir)/src/ccd2cue
+	${AM_V_GEN}
+	${AM_V_at} $(MAKE) --directory=$(top_builddir)/src $(AM_MAKEFLAGS) ccd2cue
+	${AM_V_at} $(HELP2MAN) \
+	  --name="CCD sheet to CUE sheet converter" \
+	  --output=$@  $(top_builddir)/src/ccd2cue

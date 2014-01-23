@@ -3,7 +3,7 @@
 ##                Makefile.in.
 ##
 #
-# Copyright (C) 2013 Bruno Félix Rezende Ribeiro
+# Copyright (C) 2013, 2014 Bruno Félix Rezende Ribeiro
 # <oitofelix@gnu.org>
 #
 # This program is free software; you can redistribute it and/or modify
@@ -20,98 +20,128 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
+
+
+
+
+#######################
+# Automake directives #
+#######################
+
 ACLOCAL_AMFLAGS = -I m4
 
 SUBDIRS = po src doc
 
-toplevel_doc = README NEWS AUTHORS THANKS TODO DONORS
-changelog_dirs = . po src doc doc/man
-articles = THE-GNU-MANIFESTO THE-GNU-PROJECT LINUX-AND-THE-GNU-SYSTEM	\
-WHY-SOFTWARE-SHOULD-NOT-HAVE-OWNERS
+top_level_doc = ${release_doc} $(call uc,${philosophy_doc})
 
-dist-hook:
-##	Build and distribute top level documentation if checked from CVS.
-	if test -d $(srcdir)/CVS; then \
-	  for f in $(toplevel_doc); \
-	  do \
-	    echo Generating $$f top level documentation file... && \
-	    chmod u+w $(distdir) && \
-	    $(MAKEINFO) -D file --plaintext -I $(builddir)/doc \
-	      --output=$(distdir)/"$$f" $(srcdir)/"$$f".texi; \
-	  done; \
-##	Top level documentation already built if not checked from CVS,
-##	so just distribute it.
-	else \
-	  for f in $(toplevel_doc); \
-	  do \
-	    chmod u+w $(distdir) && \
-	    cp $(srcdir)/"$$f" $(distdir); \
-	  done; \
-	fi
-##	Build and distribute GNU philosophy essays if checked from
-##	CVS.
-	if test -d $(srcdir)/CVS; then \
-	  for f in $(articles); \
-	  do \
-	    echo Generating $$f top level GNU philosophy essay file... && \
-	    chmod u+w $(distdir) && \
-	    $(MAKEINFO) -D GNUphiStandalone --plaintext --output=$(distdir)/"$$f" \
-		$(srcdir)/doc/"$$(echo $$f | tr '[:upper:]' '[:lower:]')".texi; \
-	  done; \
-##	GNU philosophy essays already built if not checked from CVS,
-##	so just distribute it.
-	else \
-	  for f in $(articles); \
-	  do \
-	    chmod u+w $(distdir) && \
-	    cp $(srcdir)/"$$f" $(distdir); \
-	  done; \
-	fi
-##	Build and distribute ChangeLog files if checked from CVS.
-	if test -d $(srcdir)/CVS; then \
-	  cd $(srcdir) && \
-	  build-aux/cvs2cl.pl --distributed --group-within-date \
-	    --no-times --no-indent && \
-	  cd $(abs_builddir) && \
-	  for d in $(changelog_dirs); \
-	  do \
-	    chmod u+w $(distdir)/"$$d" && \
-	    sed --file=$(srcdir)/changelog.sed \
-	      $(srcdir)/"$$d"/ChangeLog > $(distdir)/"$$d"/ChangeLog; \
-	  done; \
-##	ChangeLog files already built if not checked from CVS, so just
-##	distribute it.
-	else \
-	  for d in $(changelog_dirs); \
-	  do \
-	    chmod u+w $(distdir)/"$$d"/ChangeLog && \
-	    cp $(srcdir)/"$$d"/ChangeLog $(distdir)/"$$d"; \
-	  done; \
-	fi
+EXTRA_DIST = ${top_level_doc} ChangeLog build-aux/gendocs.sh po/Rules-ccd2cue
+
+
+
+
+
+#######################
+# Texinfo definitions #
+#######################
+
+export texinfo_includes = \
+-I ${abs_top_srcdir}/build-aux \
+-I ${abs_top_srcdir}/doc \
+-I ${abs_top_srcdir}/doc/release \
+-I ${abs_top_srcdir}/doc/philosophy \
+-I ${abs_top_srcdir}/doc/www
+
+export AM_MAKEINFOFLAGS = ${texinfo_includes}
+export makeinfo = ${MAKEINFO} ${AM_MAKEINFOFLAGS} ${MAKEINFOFLAGS}
+
+export MAKEINFOHTML = ${MAKEINFO} --html
+export AM_MAKEINFOHTMLFLAGS = ${texinfo_includes}
+export makeinfohtml = ${MAKEINFOHTML} ${AM_MAKEINFOHTMLFLAGS} ${MAKEINFOHTMLFLAGS}
+
+export TEXI2DVI := ${TEXI2DVI} ${texinfo_includes}
+
+
+
+
+
+#########################
+# Release documentation #
+#########################
+
+export release_texi = ${abs_top_srcdir}/doc/release/release.texi
+
+export release_doc = README NEWS TODO AUTHORS THANKS DONORS
+
+### Template recipe intended to generate the top-level release
+### documentation files from the respective Texinfo sources.
+define release_doc_recipe
+${1} : $${top_srcdir}/doc/release/${1}.texi $${release_texi}
+	$${AM_V_GEN}
+	$${AM_V_at} $${makeinfo} -D file --plaintext \
+	  --output=$$@ $$<
+endef
+
+### Instantiate the above recipe template for each top-level
+### documentation file.
+$(foreach f,${release_doc},$(eval $(call release_doc_recipe,$f)))
+
+## Change log build recipe
+ChangeLog :
+	${AM_V_GEN}
+	${AM_V_at} cd ${srcdir} && \
+	  build-aux/cvs2cl.pl --group-within-date --no-times \
+	    --no-indent --stdout | \
+	    ${SED} --file=changelog.sed > ChangeLog
+
+
+
+
+
+############################
+# Philosophy documentation #
+############################
+
+export essay_header = ${abs_top_srcdir}/doc/philosophy/essay-header.texi
+
+export philosophy_doc = the-gnu-manifesto the-gnu-project	\
+linux-and-the-gnu-system why-software-should-not-have-owners	\
+why-free-software-needs-free-documentation			\
+gnu-free-documentation-license
+
+# Lower-case to upper-case conversion funtion
+uc = $(shell echo ${1} | LC_ALL=C tr '[:lower:]' '[:upper:]')
+
+### Template recipe intended to generate the top-level release
+### documentation files from the respective Texinfo sources.
+define philosophy_doc_recipe
+$(call uc,$1) : $${top_srcdir}/doc/philosophy/${1}.texi $${essay_header}
+	$${AM_V_GEN}
+	$${AM_V_at} $${makeinfo} -D GNUphiStandalone --plaintext \
+	  --output=$$@ $$<
+endef
+
+### Instantiate the above recipe template for each top-level
+### documentation file.
+$(foreach f,${philosophy_doc},$(eval $(call philosophy_doc_recipe,$f)))
+
+
+
+
+
+#############################
+# Source-code documentation #
+#############################
 
 include doxygen.am
 MOSTLYCLEANFILES = $(DX_CLEANFILES)
 
-# Update of the online web pages for the documentation with the
-# gendocs.sh script; see
-# http://www.gnu.org/prep/maintain/html_node/Invoking-gendocs_002esh.html
-gendocs = $(abs_top_srcdir)/build-aux/gendocs.sh
-gendocs_envvars = TEXINPUTS="../../build-aux:$TEXINPUTS" GENDOCS_TEMPLATE_DIR=..
 
-doctemp = doc/wwwtemp
-www_target = $(HOME)/savannah/web/ccd2cue/manual
 
-manual = "ccd2cue"
-manual_title = "<strong>GNU ccd2cue</strong> - <em>CCD sheet to CUE sheet converter</em>"
-email = $(PACKAGE_BUGREPORT)
-gendocs_args = --email $(email) $(manual) $(manual_title)
 
-wwwdoc:
-	rm -rf $(doctemp) && mkdir $(doctemp)
-	cd $(doctemp) \
-	&& ln -s ../*.texi . \
-	&& env $(gendocs_envvars) $(gendocs) $(gendocs_args)
-	cp -arf $(doctemp)/manual/. $(www_target)
+
+################
+# Distribution #
+################
 
-maintainer-clean-local:
-	-rm -rf $(doctemp)
+## Distribute top-level release and philosophy documentation.
+dist-hook : ${top_level_doc}
