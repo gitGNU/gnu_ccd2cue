@@ -66,9 +66,19 @@ file}, or subscribe to the package atom feed @url{@value{atomFeed}}.
 
 @table @asis
 @item 0.3
+@itemize
+@item
 The program ccd2cue has become a GNU package, and therefore is now
 dubbed GNU ccd2cue.  Its code and documentation have been updated to
 reflect such remarkable occurrence.
+@item
+The target @code{homepage} generates the package homepage primarily
+from release documentation.
+@item
+Some interesting GNU philosophy essays were added to documentation.
+@item
+Various bugs in the program and documentation were fixed.
+@end itemize
 @item 0.2
 @itemize
 @item
