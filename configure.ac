@@ -1,8 +1,7 @@
 dnl
-dnl configure.ac -- Process this file with autoconf to produce a
-dnl                 configure script.
+dnl configure.ac -- configuration script;
 dnl
-dnl Copyright (C) 2013 Bruno Félix Rezende Ribeiro <oitofelix@gnu.org>
+dnl Copyright (C) 2013, 2014 Bruno Félix Rezende Ribeiro <oitofelix@gnu.org>
 dnl
 dnl This program is free software: you can redistribute it and/or modify
 dnl it under the terms of the GNU General Public License as published by
@@ -18,77 +17,142 @@ dnl You should have received a copy of the GNU General Public License
 dnl along with this program.  If not, see <http://www.gnu.org/licenses/>.
 dnl
 
+
+
+
+
+##################
+# Initialization #
+##################
+
+# Release definitions;
 AC_INIT([GNU ccd2cue], [0.3],
 [https://savannah.gnu.org/bugs/?group=ccd2cue], [ccd2cue],
 [https://www.gnu.org/software/ccd2cue])
-
-AC_DEFINE(PACKAGE_MAILING_LIST, "bug-ccd2cue@gnu.org", Users mailing list)
+AC_DEFINE(PACKAGE_MAILING_LIST, ["bug-ccd2cue@gnu.org"], [Users mailing list])
 AC_DEFINE(PACKAGE_TRANSLATION_BUGREPORT,
-"http://translationproject.org/team/", Translation bug reporting address)
-AC_DEFINE(PACKAGE_COPYRIGHT_HOLDER, "Bruno Félix Rezende Ribeiro",
-Copyright holder's name)
+["http://translationproject.org/team/"], [Translation bug reporting address])
+AC_DEFINE(PACKAGE_COPYRIGHT_HOLDER, ["Bruno Félix Rezende Ribeiro"],
+[Copyright holder's name])
 
+# GNU Autoconf settings;
 AC_CONFIG_AUX_DIR([build-aux])
-AM_INIT_AUTOMAKE([-Wall])
 AC_PREREQ(2.60)
 AC_CONFIG_HEADERS([config.h])
 AC_CONFIG_SRCDIR([src/ccd2cue.c])
-AC_PROG_CC
+AC_SUBST([CONFIG_STATUS_DEPENDENCIES], ['$(top_srcdir)/doc/Doxyfile.in'])
+
+# GNUlib initialization;
 dnl gl_EARLY
 dnl gl_INIT
 
-# i18n support from GNU gettext.
+# GNU Automake settings;
+AM_INIT_AUTOMAKE([-Wall -Wno-portability -Wno-override])
+AM_SILENT_RULES([yes])
+AM_EXTRA_RECURSIVE_TARGETS([homepage install-man])
 AM_GNU_GETTEXT_VERSION([0.18.1])
 AM_GNU_GETTEXT([external])
 
-AC_MSG_NOTICE([checking presence of programs necessary to build documentation])
+# Decide whether you are configuring from CVS.
+AS_IF([[test -d "$srcdir"/CVS]], [[CVS=y]], [[CVS=n]])
 
-# Define whether it is building from CVS.
-AS_IF(test -d "$srcdir"/CVS, cvs_build=y, cvs_build=n)
+
+
+
+
+################################
+# Programs Search and Checking #
+################################
+
+# Check for `mkdir'.
+AC_PROG_MKDIR_P
+
+# Check for `ln'.
+AC_PROG_LN_S
 
 # Check for `sed'.
 AC_PROG_SED
 
-dnl Define GNU Texinfo minimal version.
-m4_define([texinfo_minver], 5.1)
+# Check for `cc'.
+AC_PROG_CC
+
+
+##########
+### Check for programs needed to build documentation.
+######
+
+AC_MSG_NOTICE([checking programs needed in order to build documentation])
+
+# Check for GNU Texinfo program `makeinfo'.
+
+### Define GNU Texinfo minimal version.
+m4_define([TEXINFO_MINVER], 5.1)
+
+### Declare `MAKEINFO' as a precious variable.
+AC_ARG_VAR([MAKEINFO], [Texinfo `makeinfo' program])
+
+### Check for `makeinfo'.
+AC_PATH_PROG([MAKEINFO], [makeinfo])
 
 # Check for GNU Texinfo existence.  If not building from a CVS
 # checkout, GNU Texinfo is not required.
-AC_PATH_PROG(MAKEINFO, makeinfo)
-AS_IF(test x$MAKEINFO = x && test x$cvs_build = xy,
+AS_IF([[test x$MAKEINFO = x && test x$CVS = xy]],
   AC_MSG_ERROR(
-GNU Texinfo not found.  It is required at least version texinfo_minver.
-You can find it at https://gnu.org/software/texinfo/.))
+[[GNU Texinfo not found.  It is required at least version ]]TEXINFO_MINVER.
+[[You can find it at https://gnu.org/software/texinfo/.]]))
 
-AS_IF(test x$MAKEINFO != x,
-  texinfo_version=`$MAKEINFO --version |
-    $SED -n 's/^makeinfo.* \(@<:@@<:@:digit:@:>@.@:>@*\)$/\1/p'`
+# If GNU Texinfo was not found and you are not building from a CVS
+# checkout, warn the user about what the lack of that optional
+# dependence means.
+AS_IF([[test x$MAKEINFO = x]],
+  AC_MSG_WARN(
+[[GNU Texinfo not found.  It is required at least version ]]TEXINFO_MINVER.
+[[You can find it at https://gnu.org/software/texinfo/.]]
+[[It will not be possible to rebuild the Info documentation
+nor generate any other documentation format.]]))
 
-  # Check GNU Texinfo version.
-  AX_COMPARE_VERSION($texinfo_version, lt, texinfo_minver,
-    AS_IF(test x$cvs_build = xy,
+### If `makeinfo' was found, test whether its version is at least
+### TEXINFO_MINVER.
+AS_IF([[test x$MAKEINFO != x]],
+  # Put `makeinfo' version in variable `texinfo_version'.
+  [[texinfo_version=`$MAKEINFO --version |
+      $SED -n 's/^makeinfo.* \(@<:@@<:@:digit:@:>@.@:>@*\)$/\1/p'`]]
+
+  # If `makeinfo' version is less than TEXINFO_VER, print an error
+  # message and abort when building from CVS checkout or warn the user
+  # otherwise.
+  AS_VERSION_COMPARE([[$texinfo_version]], TEXINFO_MINVER,
+    [AS_IF([test x$CVS = xy ],
       AC_MSG_ERROR(
-GNU Texinfo is too old.  It is required at least version texinfo_minver.
-You can find it at https://gnu.org/software/texinfo/.))))
+[[GNU Texinfo is too old.  It is required at least version ]]TEXINFO_MINVER.
+[[You can find it at https://gnu.org/software/texinfo/.]]),
+      AC_MSG_WARN(
+[[GNU Texinfo is too old.  It is required at least version ]]TEXINFO_MINVER.
+[[You can find it at https://gnu.org/software/texinfo/.]]
+[[It will not be possible to rebuild the Info documentation
+nor generate any other documentation format.]]))]))
 
-AM_MISSING_PROG(MAKEINFO, makeinfo)
+AM_MISSING_PROG([MAKEINFO], [makeinfo])
 
 # Check for GNU help2man existence.  It should only be used if not
 # cross-compiling.
-AS_IF(test $cross_compiling = no,
-  [AM_MISSING_PROG(HELP2MAN, help2man)], HELP2MAN=:)
+AS_IF([[test $cross_compiling = no]],
+  [AM_MISSING_PROG([HELP2MAN], [help2man])], HELP2MAN=:)
 
 # Check for Doxygen existence and configure it;
 DX_DOT_FEATURE(ON)
 DX_PDF_FEATURE(OFF)
 DX_PS_FEATURE(OFF)
-DX_INIT_DOXYGEN(ccd2cue, '$(top_builddir)/doc/Doxyfile', '$(top_builddir)/doc/doxygen')
+DX_INIT_DOXYGEN([ccd2cue], ['$(top_builddir)/doc/Doxyfile'],
+  ['$(top_builddir)/doc/doxygen'])
 
-# Rerun configure script when the following files are modified.
-AC_SUBST([CONFIG_STATUS_DEPENDENCIES],
-['$(top_srcdir)/package.texi.in \
-$(top_srcdir)/doc/copying.texi.in \
-$(top_srcdir)/doc/Doxyfile.in'])
+
+
+
+
+################
+# Output Files #
+################
 
 # Output files;
 AC_CONFIG_FILES(
@@ -96,9 +160,75 @@ AC_CONFIG_FILES(
 po/Makefile.in
 src/Makefile
 doc/Makefile
-package.texi
-doc/copying.texi
 doc/Doxyfile
 doc/man/Makefile])
 
 AC_OUTPUT
+
+
+
+
+
+###########################
+# Help about Make targets #
+###########################
+
+AS_ECHO("")
+AS_BOX([[GNU Make Targets Table]])
+AS_ECHO("")
+AS_ECHO("")
+
+AS_ECHO(["\
+Build:
+
+ all            Compile entire program.
+
+ info, html, pdf, ps, dvi
+                Build documentation in the respective format.
+
+ doxygen-doc    Build source-code documentation.
+ check          Run test suite.
+
+ tags, ctags
+                Build respective tags table file.
+
+ homepage       Generate package's homepage.
+
+
+Installation:
+
+ install-exec     Install architecture-dependent files.
+ install-data     Install architecture-independent files.
+ install          Same as \`install-exec' followed by \`install-data'.
+ install-strip    Same as \`install' but strip executables.
+
+ install-{info,html,pdf,ps,dvi}
+                  Install documentation in the respective format.
+
+ install-man      Install man pages.
+ installdirs      Create the installation directory tree.
+ installcheck     Perform installation tests.
+ uninstall        Delete installed files.
+
+
+Cleaning:
+
+ mostlyclean         Delete files that \`make' built and usually
+                      one would like to rebuild.
+ clean               Same as \`mostlyclean' but delete also
+                      any file \`make' built but was ignored by
+                      \`mostlyclean'.
+ distclean           Same as \`clean' but delete also files
+                      generated by the configuration script.
+ maintainer-clean    Same as \`distclean' but delete also
+                      files maintainers built.
+
+
+Distribution:
+
+ distdir      Create distribution directory.
+ dist         Same as \`distdir' but package the distribution
+               directory into a tarball.
+ distcheck    Same as \`dist' but also check generated
+               tarball for correctness.
+"])
