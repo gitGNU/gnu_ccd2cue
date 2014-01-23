@@ -21,7 +21,7 @@
 @set tarName ccd2cue
 @set version 0.3
 @set GNUid ccd2cue
-@set date January, 2014
+@set date January 23, 2014
 
 
 
