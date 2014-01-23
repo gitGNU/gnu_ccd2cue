@@ -47,7 +47,7 @@ dnl gl_EARLY
 dnl gl_INIT
 
 # GNU Automake settings;
-AM_INIT_AUTOMAKE([-Wall -Wno-portability -Wno-override])
+AM_INIT_AUTOMAKE([-Wall -Wno-portability -Wno-override foreign])
 AM_SILENT_RULES([yes])
 AM_EXTRA_RECURSIVE_TARGETS([homepage install-man])
 AM_GNU_GETTEXT_VERSION([0.18.1])
