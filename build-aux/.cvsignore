@@ -1,5 +1,10 @@
 compile
 missing
 snippet
+config.guess
+config.sub
 config.rpath
+depcomp
+install-sh
+mdate-sh
 ChangeLog
