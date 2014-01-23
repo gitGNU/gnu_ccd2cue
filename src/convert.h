@@ -1,7 +1,7 @@
 /*
  convert.h -- CCD sheet structure to CUE sheet structure conversion;
 
- Copyright (C) 2013 Bruno Félix Rezende Ribeiro <oitofelix@gnu.org>
+ Copyright (C) 2013, 2014 Bruno Félix Rezende Ribeiro <oitofelix@gnu.org>
 
  This program is free software; you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
@@ -143,7 +143,7 @@
  *
  */
 
-struct cue * ccd2cue (const struct ccd *, const char *img_name, const char *cdt_name)
+struct cue * ccd2cue (const struct ccd *ccd, const char *img_name, const char *cdt_name)
   __attribute__ ((nonnull));
 
 /**
@@ -189,7 +189,7 @@ struct cue * ccd2cue (const struct ccd *, const char *img_name, const char *cdt_
  *
  */
 
-int ccd2cdt (const struct ccd *, struct cdt *)
+int ccd2cdt (const struct ccd *ccd, struct cdt *cdt)
   __attribute__ ((nonnull));
 
 #endif	/* CCD2CUE_CONVERT_H */

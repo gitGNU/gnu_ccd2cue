@@ -1,7 +1,7 @@
 /*
  ccd2cue.c -- convert CCD sheet to CUE sheet;
 
- Copyright (C) 2010, 2013 Bruno Félix Rezende Ribeiro
+ Copyright (C) 2010, 2013, 2014 Bruno Félix Rezende Ribeiro
  <oitofelix@gnu.org>
 
  This program is free software; you can redistribute it and/or modify
@@ -185,6 +185,10 @@ struct arguments
 
 };
 
+
+
+
+
 
 /**
  * Main entry point;
@@ -262,6 +266,10 @@ main (int argc, char *argv[])
   return 0;
 }
 
+
+
+
+
 /**
  * \fn static error_t parse_opt (int key, char *arg, struct argp_state *state)
  *
@@ -528,7 +536,26 @@ parse_opt (int key, char *arg, struct argp_state *state)
 }
 
 
-/* Print version and copyright information.  */
+
+
+
+/**
+ * Print version, copyright and license notices.
+ *
+ * \param[in]  stream  Output stream;
+ * \param[in]  state  Pointer to Argp state structure;
+ *
+ * \return Nothing;
+ *
+ * Argp engine calls this function when the user pass the command-line
+ * option `--version'.  This function is hooked by
+ * ::argp_program_version_hook.
+ *
+ * \since 0.2
+ *
+ * \sa ::argp_program_version_hook
+ *
+ */
 
 static void
 print_version (FILE *stream, struct argp_state *state)
@@ -558,7 +585,26 @@ There is NO WARRANTY, to the extent permitted by law."),
   exit (EXIT_SUCCESS);
 }
 
+
+
+
 
+/**
+ * Print handful help information.
+ *
+ * \param[in]  key  Category of message TEXT;
+ * \param[in]  text  Predefined message of category KEY;
+ * \param[in]  input  Argp input data;
+ *
+ * \return The function should return either TEXT if it remains as-is,
+ * or a replacement string allocated using `malloc'.
+ *
+ * \since 0.2
+ *
+ * \sa [Customizing Argp Help Output] (https://gnu.org/software/libc/manual/html_node/Argp-Help-Filtering.html#Argp-Help-Filtering)
+ *
+ */
+
 static char *
 help_filter (int key, const char *text, void *input)
 {

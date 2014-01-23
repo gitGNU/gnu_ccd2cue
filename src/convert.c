@@ -1,7 +1,7 @@
 /*
  convert.c -- CCD sheet structure to CUE sheet structure conversion;
 
- Copyright (C) 2013 Bruno Félix Rezende Ribeiro <oitofelix@gnu.org>
+ Copyright (C) 2013, 2014 Bruno Félix Rezende Ribeiro <oitofelix@gnu.org>
 
  This program is free software; you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
@@ -70,14 +70,15 @@ static void frames2msf (int frames, struct cue_time *msf)
   __attribute__ ((nonnull));
 
 
+/* Frame temporal definition */
+#define FRAMES_PER_SECOND 75 	/**< How many frames a second has; */
+#define SECONDS_PER_MINUTE 60	/**< How many seconds a minute has; */
+  /** How many frames a minute has; */
+#define FRAMES_PER_MINUTE (FRAMES_PER_SECOND * SECONDS_PER_MINUTE)
+
 static void
 frames2msf (int frames, struct cue_time *msf)
 {
-/* Frame temporal definition */
-#define FRAMES_PER_SECOND 75
-#define SECONDS_PER_MINUTE 60
-#define FRAMES_PER_MINUTE (FRAMES_PER_SECOND * SECONDS_PER_MINUTE)
-
   /* Assert frames time is positive.  */
   assert(frames >= 0);
 
