@@ -1,5 +1,5 @@
 /* Continuous integration of GNU with Hydra/Nix.
-   Copyright (C) 2013 Bruno Félix Rezende Ribeiro <oitofelix@gnu.org>
+   Copyright (C) 2013, 2014 Bruno Félix Rezende Ribeiro <oitofelix@gnu.org>
 
    This program is free software: you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
