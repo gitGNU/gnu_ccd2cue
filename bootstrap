@@ -1,0 +1,4 @@
+#!/bin/sh
+
+touch README AUTHORS NEWS ChangeLog
+autoreconf --install
