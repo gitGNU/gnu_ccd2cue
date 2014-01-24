@@ -643,15 +643,13 @@ is called gnu.ccd, you are done with the command:"),
 				_("ccd2cue -o gnu.cue gnu.ccd"),
 				_("Burning:"),
 				_("\
-If you are willing to burn or already burned a CD from a CUE sheet \
-produced by this program and all audio tracks became only senseless \
-static noise, you may need to ask your burning software to swap the \
-byte order of all samples sent to the CD-recorder when writing audio \
-tracks.  For instance, that can be accomplished with the '--swap' \
-option when using the cdrdao program.  Be warned that at least for \
-mixed-mode discs, by author's own experience, the rule is to use that \
-option; if you fail to specify it when burning, you almost certainly \
-will pointless waste your CD."),
+If you have burned a CD from a CUE sheet produced by this program and \
+all audio tracks became only senseless static noise, you may need to \
+tell your burning software to swap the byte order of all samples sent \
+to the CD-recorder.  This can be accomplished with (for example) the \
+'--swap' option when using the 'cdrdao' program.  Experience has shown \
+that at least for mixed-mode discs it is necessary to use that option \
+when burning, otherwise you will almost certainly waste a CD."),
 				_("Homepage:"),
 				PACKAGE_URL,
 				_("Mailing list:"),
