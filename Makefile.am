@@ -70,7 +70,7 @@ export TEXI2DVI := ${TEXI2DVI} ${texinfo_includes}
 
 export release_texi = ${abs_top_srcdir}/doc/release/release.texi
 
-export release_doc = README NEWS TODO AUTHORS THANKS DONORS
+export release_doc = README NEWS TODO AUTHORS THANKS DONORS ANNOUNCEMENT
 
 ### Template recipe intended to generate the top-level release
 ### documentation files from the respective Texinfo sources.
