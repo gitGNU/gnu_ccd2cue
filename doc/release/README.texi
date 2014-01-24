@@ -341,6 +341,15 @@ You can find that and earlier releases at a nearby
 redirection does not work use the @url{@value{ftpDir},
 GNU@tie{}main@tie{}ftp@tie{}server}.
 
+Use a @file{.sig} file to verify that the corresponding file (without
+the @file{.sig} suffix) is intact.  First, be sure to download both
+the @file{.sig} file and the corresponding tarball.  Then, run a
+command like this:
+
+@example
+gpg --verify @value{tarSign}
+@end example
+
 This release is signed by @emph{@value{signer}}.  His key ID is
 @code{@value{keyID}}.  You can retrieve that key from a key server
 using the command
