@@ -30,7 +30,7 @@
 
 SUBDIRS = man
 
-EXTRA_DIST = www
+EXTRA_DIST = www release/ANNOUNCEMENT.texi
 
 TEXI2DVI := ${TEXI2DVI} ${texinfo_includes}
 
@@ -98,8 +98,8 @@ gendocs_envvars := TEXINPUTS="${abs_top_srcdir}/build-aux:$$TEXINPUTS"	\
   GENDOCS_TEMPLATE_DIR=${abs_top_srcdir}/doc/www
 
 # Arguments
-gendocs_args := --email ${PACKAGE_BUGREPORT} -s ${abs_srcdir}/${PACKAGE}.texi	\
-  ${manual_title} ${texinfo_includes}
+gendocs_args := ${texinfo_includes} --email ${PACKAGE_BUGREPORT} \
+  -s ${abs_srcdir}/${PACKAGE}.texi ${PACKAGE} ${manual_title}
 
 homepage-doc:
 	${AM_V_GEN}
