@@ -22,6 +22,9 @@
 @set version 0.3
 @set GNUid ccd2cue
 @set date January 23, 2014
+@set autoconfVersion 2.69
+@set automakeVersion 1.14.1
+@set texinfoVersion 5.2
 
 
 
