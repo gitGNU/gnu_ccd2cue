@@ -47,9 +47,9 @@
  *
  * In this context, a file name's _reference name_ is a name used to
  * derive another names for correlate files.  For instance, if we have
- * the file `qux/foo.bar` a correlate file name would be `qux/foo.baz`
- * or even `foo.baz`, where the reference names are `qux/foo` and
- * `foo`, respectively.
+ * the file 'qux/foo.bar' a correlate file name would be 'qux/foo.baz'
+ * or even 'foo.baz', where the reference names are 'qux/foo' and
+ * 'foo', respectively.
  *
  * So, basically, a _reference name_ is the original name without
  * extension, if it has one, regardless if one takes its full

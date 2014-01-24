@@ -128,7 +128,7 @@ stream2ccd (FILE *stream, struct ccd *ccd)
 				   section;*/
 
       /* Temporary entry values; these are used as place holders to
-	 detect `scanf' assignments and, except INDEX_tmp, are not
+	 detect 'scanf' assignments and, except INDEX_tmp, are not
 	 used in any other fashion.  It works that way because this
 	 function disregards the CCD sheet original numbering to avoid
 	 invalid input from resulting unpredictable behavior.

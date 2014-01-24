@@ -63,7 +63,7 @@
  *
  * This function returns a pointer to a newly allocated block SIZE
  * bytes long, or exits with failure if the block could not be
- * allocated.  It is just a wrapper around `malloc'.
+ * allocated.  It is just a wrapper around 'malloc'.
  *
  * \sa [Basic Memory Allocation] (https://gnu.org/software/libc/manual/html_node/Basic-Allocation.html#Basic-Allocation)
  *
@@ -86,7 +86,7 @@ void * xmalloc (size_t size)
  * be NEWSIZE.  If it succeeds, the address of the newly allocated
  * block is returned.  If it is not possible to reallocate the memory
  * block this function exits with failure.  It is just a wrapper
- * around `realloc'.
+ * around 'realloc'.
  *
  * \sa [Changing the Size of a Block] (https://gnu.org/software/libc/manual/html_node/Changing-Block-Size.html#Changing-Block-Size)
  *

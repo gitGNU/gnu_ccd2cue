@@ -39,19 +39,19 @@ make_reference_name (const char *filename, const int dirname_flag)
 {
   char *str, *str_end;
 
-  /* Don't modify the original string `FILENAME`, generate your own
-     copy of it in `str`.  If `dirname_flag` is true, conserve the
+  /* Don't modify the original string 'FILENAME', generate your own
+     copy of it in 'str'.  If 'dirname_flag' is true, conserve the
      components names, otherwise only take the base name. */
   if (dirname_flag) str = xstrdup (filename);
   else str = xstrdup (basename (filename));
 
   /* To make a reference name it's necessary to discard any possible
-     extension from the file name.  If `STR` has an extension,
+     extension from the file name.  If 'STR' has an extension,
      it's all trailing the last dot.  Try to find that last dot.*/
   str_end = strrchr (str, '.');
 
-  /* If you have found the referred dot, `STR` has an extension, thus
-     free the space occupied by it and mark the new end of `STR`: the
+  /* If you have found the referred dot, 'STR' has an extension, thus
+     free the space occupied by it and mark the new end of 'STR': the
      location of that last dot. */
   if (str_end != NULL)
     {

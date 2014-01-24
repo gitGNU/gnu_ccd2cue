@@ -50,7 +50,7 @@ static void memory_obstack_alloc_failed (void);
  * Obstack failed allocation handler
  *
  * The Obstack failed allocation handler specified here gets called
- * when `obstack_chunck_alloc' fails to allocate memory.
+ * when 'obstack_chunck_alloc' fails to allocate memory.
  *
  * \sa [Preparing for Using Obstacks] (https://gnu.org/software/libc/manual/html_node/Preparing-for-Obstacks.html#Preparing-for-Obstacks)
  *

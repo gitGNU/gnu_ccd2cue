@@ -83,10 +83,10 @@ static char * help_filter (int, const char *, void *);
 
 
 /**
- * Argp `--version` option customization.
+ * Argp '--version' option customization.
  *
  * This hook is called by Argp command line option processing engine to customize
- * arbitrarily sections of `--version` option output.
+ * arbitrarily sections of '--version' option output.
  *
  * \sa [Argp Global Variables] (https://gnu.org/software/libc/manual/html_node/Argp-Global-Variables.html#Argp-Global-Variables)
  *
@@ -101,7 +101,7 @@ void (*argp_program_version_hook) (FILE *, struct argp_state *) = print_version;
  * Command line options.
  *
  * This structure store the data that Argp will use to construct
- * `--help` option output and option process logic.  The function
+ * '--help' option output and option process logic.  The function
  * ::parse_opt is the Argp parse function that will deal with it.
  *
  * The options are organized in groups and each group has a header and
@@ -113,13 +113,13 @@ void (*argp_program_version_hook) (FILE *, struct argp_state *) = print_version;
 
 static struct argp_option options[] = {
   { NULL, 0, NULL, 0, __("Output:"), 0 },
-  { "output", 'o', "cue-file", 0, __("write output to `cue-file'"), 0 },
-  { "cd-text", 'c', "cdt-file", 0, __("write CD-Text data to `cdt-file'"), 0 },
-  { NULL, 0, NULL, OPTION_DOC, __("While the main output file `cue-file' is always generated, the `cdt-file' is created only when there is CD-Text data.  If `cue-file' is `-', or `--output' is omitted, standard output is used."), 0 },
+  { "output", 'o', "cue-file", 0, __("write output to 'cue-file'"), 0 },
+  { "cd-text", 'c', "cdt-file", 0, __("write CD-Text data to 'cdt-file'"), 0 },
+  { NULL, 0, NULL, OPTION_DOC, __("While the main output file 'cue-file' is always generated, the 'cdt-file' is created only when there is CD-Text data.  If 'cue-file' is '-', or '--output' is omitted, standard output is used."), 0 },
   { NULL, 0, NULL, 0, __("Conversion:"), 0 },
-  { "image", 'i', "img-file", 0, __("reference `img-file' as the image file"), 0 },
+  { "image", 'i', "img-file", 0, __("reference 'img-file' as the image file"), 0 },
   { "absolute-file-name", 'a', NULL, 0, __("use absolute file name deduction"), 0 },
-  { NULL, 0, NULL, OPTION_DOC, __("The `img-file' is a reference to a data file required only in burning time and thus its existence is not enforced in conversion stage."), 0 },
+  { NULL, 0, NULL, OPTION_DOC, __("The 'img-file' is a reference to a data file required only in burning time and thus its existence is not enforced in conversion stage."), 0 },
   { NULL, 0, NULL, 0, __("Help:"), -1},
   { 0 }
 };
@@ -167,14 +167,14 @@ struct argp argp = { options, parse_opt, "[ccd-file]", NULL, &argp_child, help_f
 
 struct arguments
 {
-  const char *img_name;		/**< `--image` argument. */
-  const char *cdt_name;		/**< `--cd-text` argument. */
+  const char *img_name;		/**< '--image' argument. */
+  const char *cdt_name;		/**< '--cd-text' argument. */
   const char *ccd_name;		/**< The only non-option argument; the
 				   input CCD sheet file name. */
   const char *cue_name; 	/**< The output file name; the input
 				   CUE sheet file name. */
   int abs_fname_flag;		/**< Boolean. True if, and only if,
-				   `--absolute-file-name` is
+				   '--absolute-file-name' is
 				   supplied. */
   const char *reference_name; 	/**< Reference name to deduce the
 				   possible needed but not supplied
@@ -232,12 +232,12 @@ main (int argc, char *argv[])
 
   /* Parse the CCD sheet input into a CCD structure. */
   if (stream2ccd (arguments.ccd_stream, &ccd) < 0)
-    error_pop (EX_DATAERR, _("cannot parse CCD sheet stream from `%s'"), arguments.ccd_name);
+    error_pop (EX_DATAERR, _("cannot parse CCD sheet stream from '%s'"), arguments.ccd_name);
 
   /* Convert the CCD structure into a CUE structure. */
   cue = ccd2cue (&ccd, arguments.img_name, arguments.cdt_name);
   if (cue == NULL)
-    error_pop (EX_SOFTWARE, _("cannot convert `%s' to `%s'"),
+    error_pop (EX_SOFTWARE, _("cannot convert '%s' to '%s'"),
 	       arguments.ccd_name, arguments.cue_name);
 
   /* Convert the CD-Text data in the CCD structure into a CDT
@@ -248,19 +248,19 @@ main (int argc, char *argv[])
       cdt_stream = fopen (arguments.cdt_name, "w");
       cdt2stream (&cdt, cdt_stream);
       if (fclose (cdt_stream) == EOF)
-	error (EX_IOERR, errno, _("cannot close `%s'"), arguments.cdt_name);
+	error (EX_IOERR, errno, _("cannot close '%s'"), arguments.cdt_name);
     }
 
   /* Convert the CUE structure into the CUE sheet output. */
   if (cue2stream (cue, arguments.cue_stream) < 0)
-    error_pop (EX_SOFTWARE, _("cannot convert `%s' to `%s'"),
+    error_pop (EX_SOFTWARE, _("cannot convert '%s' to '%s'"),
 	       arguments.ccd_name, arguments.cue_name);
 
   /* Close the CCD sheet input and the CUE sheet output streams. */
   if (fclose (arguments.ccd_stream) == EOF) error (EX_IOERR, errno,
-					 _("cannot close `%s'"), arguments.ccd_name);
+					 _("cannot close '%s'"), arguments.ccd_name);
   if (fclose (arguments.cue_stream) == EOF) error (EX_IOERR, errno,
-					 _("cannot close `%s'"), arguments.cue_name);
+					 _("cannot close '%s'"), arguments.cue_name);
 
   /* Exit with success. */
   return 0;
@@ -289,14 +289,14 @@ main (int argc, char *argv[])
  * \ref arguments instance based on options and arguments provided in the
  * command line.  Afterwards we will serve ourselves with the language
  * abuse "arguments structure" to refer to the main function's
- * instance of it. In the touching of `KEY` arguments the following
+ * instance of it. In the touching of 'KEY' arguments the following
  * holds:
  *
- * - When `KEY` is `ARGP_KEY_INIT`, namely before any command line
+ * - When 'KEY' is 'ARGP_KEY_INIT', namely before any command line
  *   option is parsed, the \ref arguments structure has its pointers
  *   members initialized to NULL and its booleans members to false.
  *
- * - If `--image`, `--cd-text` or `--output` options are supplied, its
+ * - If '--image', '--cd-text' or '--output' options are supplied, its
  *   arguments are put in the respective fields on \ref arguments
  *   structure, i.e., [img_name], [cdt_name] and [cue_name],
  *   respectively.  If there isn't argument for any of those options
@@ -306,30 +306,30 @@ main (int argc, char *argv[])
  *   [cdt_name]: \ref arguments.cdt_name
  *   [cue_name]: \ref arguments.cue_name
  *
- * - If `--absolute-file-name` is supplied the respective flag in
+ * - If '--absolute-file-name' is supplied the respective flag in
  *   \ref arguments structure are marked as so, i.e., true.
  *
- * - If `KEY` is `ARGP_KEY_ARG`, namely when a non-option argument is
+ * - If 'KEY' is 'ARGP_KEY_ARG', namely when a non-option argument is
  *    supplied, that argument is put in [ccd_name] on \ref arguments
  *    structure.  If there is more than one non-option argument an
  *    error is raised.
  *
  *   [ccd_name]: \ref arguments.ccd_name
  *
- * - If `KEY` is `ARGP_KEY_NO_ARGS`, then it means that no non-option
+ * - If 'KEY' is 'ARGP_KEY_NO_ARGS', then it means that no non-option
  *   arguments were supplied and thus there isn't any input CCD sheet
  *   specified.  When it happens the standard input is in place.  So,
  *   the [ccd_name] and [ccd_stream] \ref arguments' members are
- *   pointed to a string like "stdin" and stream `stdin`,
+ *   pointed to a string like "stdin" and stream 'stdin',
  *   respectively.
  *
  *   [ccd_stream]: \ref arguments.ccd_stream
  *
- * - When `KEY` is `ARGP_KEY_END` there is no more command line
+ * - When 'KEY' is 'ARGP_KEY_END' there is no more command line
  *   arguments to parse, and if there is no provided argument in
  *   command line an error is raised.
  *
- * - When `KEY` is `ARG_KEY_SUCESS`, all options and non-options
+ * - When 'KEY' is 'ARG_KEY_SUCESS', all options and non-options
  *   arguments were successfully parsed and some procedures are taken
  *   to make sure that \ref arguments structure gets in a consistent
  *   state in order to resume main function's execution properly.  The
@@ -345,13 +345,13 @@ main (int argc, char *argv[])
  *     1. The CCD sheet name; the only non-option argument; the input;
  *        [ccd_name].
  *
- *     2. The CUE sheet name; the argument of `--output` option; the
+ *     2. The CUE sheet name; the argument of '--output' option; the
  *        output; [cue_name].
  *
- *     3. The disc image name; the argument of `--image` option;
+ *     3. The disc image name; the argument of '--image' option;
  *        [img_name].
  *
- *     4. The CD-Text info file name; the argument of `--cd-text`; an
+ *     4. The CD-Text info file name; the argument of '--cd-text'; an
  *     output; [cdt_name].
  *
  *     If none of those are provided on command line an error is
@@ -359,7 +359,7 @@ main (int argc, char *argv[])
  *
  *   + If the arguments related to input and output &mdash; the former
  *     being the only accepted non-option argument, and the last being
- *     the argument of `--output` &mdash; are a dash "-", the standard
+ *     the argument of '--output' &mdash; are a dash "-", the standard
  *     input and output are placed in [ccd_stream] and [cue_stream],
  *     respectively, with strings like "stdin" and "stdout" in
  *     [ccd_name] and [cue_name] members of \ref arguments structure.
@@ -367,7 +367,7 @@ main (int argc, char *argv[])
  *     [cue_stream]: \ref arguments.cue_stream
  *
  * To get the user's visible consequences of these rules, take a look
- * at the `--help` output or, equivalently, at ::argp and ::options
+ * at the '--help' output or, equivalently, at ::argp and ::options
  * global variables.
  *
  * \sa [Argp]
@@ -395,40 +395,40 @@ parse_opt (int key, char *arg, struct argp_state *state)
 	arguments->cue_stream = NULL;
 	arguments->ccd_stream = NULL;
 	break;
-      case 'i': 		/* `--image' option supplied. */
+      case 'i': 		/* '--image' option supplied. */
 	/* If it was already supplied raise an error. */
 	if (arguments->img_name != NULL)
 	   argp_error
-	     (state, _("more than one disc image file name provided (`--image'): `%s' and `%s'"),
+	     (state, _("more than one disc image file name provided ('--image'): '%s' and '%s'"),
 	       arguments->img_name, arg);
 	/* Save the argument supplied. */
 	arguments->img_name = arg;
         break;
-      case 'c':			/* `--cd-text' option supplied. */
+      case 'c':			/* '--cd-text' option supplied. */
 	/* If it was already supplied raise an error. */
 	if (arguments->cdt_name != NULL)
 	  argp_error
-	    (state, _("more than one CD-Text file name provided (`--cd-text'): `%s' and `%s'"),
+	    (state, _("more than one CD-Text file name provided ('--cd-text'): '%s' and '%s'"),
 	     arguments->cdt_name, arg);
 	/* Save the argument supplied. */
 	arguments->cdt_name = arg;
         break;
-      case 'o':			/* `--output' option supplied. */
+      case 'o':			/* '--output' option supplied. */
 	/* If it was already supplied raise an error. */
 	if (arguments->cue_name != NULL)
 	  argp_error
-	    (state, _("more than one output CUE sheet provided (`--output'): `%s' and `%s'"),
+	    (state, _("more than one output CUE sheet provided ('--output'): '%s' and '%s'"),
 	     arguments->cue_name, arg);
 	/* Save the argument supplied. */
 	arguments->cue_name = arg;
         break;
-      case 'a': 		/* `--absolute-file-name' option supplied. */
+      case 'a': 		/* '--absolute-file-name' option supplied. */
         arguments->abs_fname_flag = 1;
 	break;
       case ARGP_KEY_ARG: 	/* A non-option argument supplied. */
 	/* If more than one argument was supplied raise an error. */
 	if (state->arg_num > 0)
-	  argp_error (state, _("%s: more than one input CCD sheet provided: `%s' and `%s'"),
+	  argp_error (state, _("%s: more than one input CCD sheet provided: '%s' and '%s'"),
 	  	      __func__, arguments->ccd_name, arg);
 	/* Save the argument supplied. */
 	arguments->ccd_name = arg;
@@ -467,7 +467,7 @@ parse_opt (int key, char *arg, struct argp_state *state)
 	    make_reference_name (arguments->cdt_name, arguments->abs_fname_flag);
 	/* If none of the above file names were supplied raise an error. */
 	else
-	  argp_error (state, _("%s: no image name provided (`--image')"), __func__);
+	  argp_error (state, _("%s: no image name provided ('--image')"), __func__);
 
 	/* If occurred any failure determining the reference name
 	   raise an error. */
@@ -490,7 +490,7 @@ parse_opt (int key, char *arg, struct argp_state *state)
 	if (arguments->cdt_name == NULL)
 	  error_fatal_pop (EX_OSERR, _("cannot deduce CD-Text file name"));
 
-	/* If the user specified `-' as CCD sheet's name, mark it to
+	/* If the user specified '-' as CCD sheet's name, mark it to
 	   read from standard input. */
 	if (arguments->ccd_name == NULL || ! strcmp (arguments->ccd_name, "-"))
 	  {
@@ -504,11 +504,11 @@ parse_opt (int key, char *arg, struct argp_state *state)
 	    arguments->ccd_stream = fopen (arguments->ccd_name, "r");
 	    if (arguments->ccd_stream == NULL)
 	      error_fatal_pop_lib (fopen, EX_NOINPUT,
-	      		            _("cannot open CCD sheet `%s'"),
+	      		            _("cannot open CCD sheet '%s'"),
 				   arguments->ccd_name);
 	  }
 
-	/* If the user specified `-' as CUE sheet's name or not
+	/* If the user specified '-' as CUE sheet's name or not
 	   specified its name at all, mark it to write to standard
 	   output. */
 	if (arguments->cue_name == NULL || ! strcmp (arguments->cue_name, "-"))
@@ -523,7 +523,7 @@ parse_opt (int key, char *arg, struct argp_state *state)
 	    arguments->cue_stream = fopen (arguments->cue_name, "w");
 	    if (arguments->cue_stream == NULL)
 	      error_fatal_pop_lib (fopen, EX_CANTCREAT,
-	      		            _("cannot open CUE sheet `%s'"),
+	      		            _("cannot open CUE sheet '%s'"),
 				   arguments->cue_name);
 	  }
 
@@ -548,7 +548,7 @@ parse_opt (int key, char *arg, struct argp_state *state)
  * \return Nothing;
  *
  * Argp engine calls this function when the user pass the command-line
- * option `--version'.  This function is hooked by
+ * option '--version'.  This function is hooked by
  * ::argp_program_version_hook.
  *
  * \since 0.2
@@ -597,7 +597,7 @@ There is NO WARRANTY, to the extent permitted by law."),
  * \param[in]  input  Argp input data;
  *
  * \return The function should return either TEXT if it remains as-is,
- * or a replacement string allocated using `malloc'.
+ * or a replacement string allocated using 'malloc'.
  *
  * \since 0.2
  *
@@ -616,8 +616,8 @@ help_filter (int key, const char *text, void *input)
       case ARGP_KEY_HELP_PRE_DOC:
 	alloc_status = asprintf(&newtext, "%s\n\n%s",
 		 _("Convert CCD sheet to CUE sheet."),
-		 _("The input file, referred as `ccd-file', must exist.  If `ccd-file' is \
-`-', or omitted, standard input is used.  It is necessary to supply at \
+		 _("The input file, referred as 'ccd-file', must exist.  If 'ccd-file' is \
+'-', or omitted, standard input is used.  It is necessary to supply at \
 least one file name, in an option or non-option argument, in order to \
 deduce the remaining file names needed, and only one file name of each \
 type can be supplied.  The following options are accepted:"));
@@ -647,7 +647,7 @@ If you are willing to burn or already burned a CD from a CUE sheet \
 produced by this program and all audio tracks became only senseless \
 static noise, you may need to ask your burning software to swap the \
 byte order of all samples sent to the CD-recorder when writing audio \
-tracks.  For instance, that can be accomplished with the `--swap' \
+tracks.  For instance, that can be accomplished with the '--swap' \
 option when using the cdrdao program.  Be warned that at least for \
 mixed-mode discs, by author's own experience, the rule is to use that \
 option; if you fail to specify it when burning, you almost certainly \
@@ -660,7 +660,7 @@ will pointless waste your CD."),
 				PACKAGE_BUGREPORT,
 				_("Report translation bugs to:"),
 				PACKAGE_TRANSLATION_BUGREPORT,
-	  _("For complete documentation, run: `info ccd2cue'"));
+	  _("For complete documentation, run: 'info ccd2cue'"));
         break;
     default:
       newtext = (char *) text;

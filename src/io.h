@@ -76,7 +76,7 @@ int io_optimize_stream_buffer (FILE *stream, int mode)
  * the function exits with error.  Therefore, this function only
  * returns with success.
  *
- * This function is just a wrapper around `fwrite' that adds fatal
+ * This function is just a wrapper around 'fwrite' that adds fatal
  * error handling.
  *
  * \sa [Block Input/Output] (https://gnu.org/software/libc/manual/html_node/Block-Input_002fOutput.html#Block-Input_002fOutput)
@@ -96,14 +96,14 @@ size_t xfwrite (const void *data, size_t size, size_t count, FILE *stream)
  *
  * \since 0.2
  *
- * The `fputc' function converts the character C to type `unsigned
+ * The 'fputc' function converts the character C to type 'unsigned
  * char', and writes it to the stream STREAM.  This function always
  * returns the character C.
  *
  * If the call fails for an obscure writing error, the function exits
  * with error.  Therefore, this function only returns with success.
  *
- * This function is just a wrapper around `putc' macro that adds fatal
+ * This function is just a wrapper around 'putc' macro that adds fatal
  * error handling.
  *
  * \sa [Simple Output] (https://gnu.org/software/libc/manual/html_node/Simple-Output.html#Simple-Output)
@@ -128,8 +128,8 @@ int xputc (int c, FILE *stream)
  * If the call fails for an obscure writing error, the function exits
  * with error.  Therefore, this function only returns with success.
  *
- * This function is just a wrapper around `vfprintf' function that is
- * meant to add fatal error handling to `fprintf' function.
+ * This function is just a wrapper around 'vfprintf' function that is
+ * meant to add fatal error handling to 'fprintf' function.
  *
  * \sa [Formatted Output Functions] (https://gnu.org/software/libc/manual/html_node/Formatted-Output-Functions.html#Formatted-Output-Functions)
  *

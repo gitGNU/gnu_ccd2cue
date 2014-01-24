@@ -59,7 +59,7 @@ char * concat (const char *str, ...)
  *
  * This function returns a pointer to a newly allocated string, that
  * is a copy of the supplied one, or exits with failure if the string
- * could not be allocated.  It is just a wrapper around `strdup'.
+ * could not be allocated.  It is just a wrapper around 'strdup'.
  *
  * \sa [Copying and Concatenation] (https://gnu.org/software/libc/manual/html_node/Copying-and-Concatenation.html#Copying-and-Concatenation)
  *
