@@ -83,6 +83,8 @@
 @c --- --- --- GNU
 @set ftp https://ftp.gnu.org/gnu/
 @set ftpMirror http://ftpmirror.gnu.org/
+@set ftpOld http://download.savannah.gnu.org/releases/@value{GNUid}/
+@set ftpOldMirror http://download-mirror.savannah.gnu.org/releases/@value{GNUid}/
 @c --- --- --- non-GNU
 @c @set ftp http://download.savannah.nongnu.org/releases/
 @c @set ftpMirror http://download-mirror.savannah.nongnu.org/releases/
