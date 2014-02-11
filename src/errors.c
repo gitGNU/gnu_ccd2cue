@@ -96,7 +96,7 @@ error_pop_f (void)
 
   for (i = 0; i < error_entries; i++)
     {
-      error (0, 0, error_stack[i]);
+      error (0, 0, "%s", error_stack[i]);
       free (error_stack[i]);
     }
 
