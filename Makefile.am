@@ -88,8 +88,7 @@ $(foreach f,${release_doc},$(eval $(call release_doc_recipe,$f)))
 ## Change log build recipe
 ChangeLog :
 	${AM_V_GEN}
-	${AM_V_at} cd ${srcdir} && \
-	  build-aux/git2cl | ${SED} --file=changelog.sed > ChangeLog
+	${AM_V_at} cd ${srcdir} && build-aux/git2cl > ChangeLog
 
 
 
