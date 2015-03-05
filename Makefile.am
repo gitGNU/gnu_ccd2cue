@@ -131,6 +131,7 @@ $(foreach f,${philosophy_doc},$(eval $(call philosophy_doc_recipe,$f)))
 
 include doxygen.am
 MOSTLYCLEANFILES = $(DX_CLEANFILES)
+MAINTAINERCLEANFILES = ${top_level_doc}
 
 
 
