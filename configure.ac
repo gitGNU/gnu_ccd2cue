@@ -53,8 +53,8 @@ AM_EXTRA_RECURSIVE_TARGETS([homepage install-man])
 AM_GNU_GETTEXT_VERSION([0.18.1])
 AM_GNU_GETTEXT([external])
 
-# Decide whether you are configuring from CVS.
-AS_IF([[test -d "$srcdir"/CVS]], [[CVS=y]], [[CVS=n]])
+# Decide whether you are configuring from VCS.
+AS_IF([[test -d "$srcdir"/.git]], [[VCS=y]], [[VCS=n]])
 
 
 
@@ -94,14 +94,14 @@ AC_ARG_VAR([MAKEINFO], [Texinfo `makeinfo' program])
 ### Check for `makeinfo'.
 AC_PATH_PROG([MAKEINFO], [makeinfo])
 
-# Check for GNU Texinfo existence.  If not building from a CVS
+# Check for GNU Texinfo existence.  If not building from a VCS
 # checkout, GNU Texinfo is not required.
-AS_IF([[test x$MAKEINFO = x && test x$CVS = xy]],
+AS_IF([[test x$MAKEINFO = x && test x$VCS = xy]],
   AC_MSG_ERROR(
 [[GNU Texinfo not found.  It is required at least version ]]TEXINFO_MINVER.
 [[You can find it at https://gnu.org/software/texinfo/.]]))
 
-# If GNU Texinfo was not found and you are not building from a CVS
+# If GNU Texinfo was not found and you are not building from a VCS
 # checkout, warn the user about what the lack of that optional
 # dependence means.
 AS_IF([[test x$MAKEINFO = x]],
@@ -119,10 +119,10 @@ AS_IF([[test x$MAKEINFO != x]],
       $SED -n 's/^makeinfo.* \(@<:@@<:@:digit:@:>@.@:>@*\)$/\1/p'`]]
 
   # If `makeinfo' version is less than TEXINFO_VER, print an error
-  # message and abort when building from CVS checkout or warn the user
+  # message and abort when building from VCS checkout or warn the user
   # otherwise.
   AS_VERSION_COMPARE([[$texinfo_version]], TEXINFO_MINVER,
-    [AS_IF([test x$CVS = xy ],
+    [AS_IF([test x$VCS = xy ],
       AC_MSG_ERROR(
 [[GNU Texinfo is too old.  It is required at least version ]]TEXINFO_MINVER.
 [[You can find it at https://gnu.org/software/texinfo/.]]),
