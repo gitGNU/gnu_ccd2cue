@@ -18,4 +18,4 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-s/oitofelix/Bruno Félix Rezende Ribeiro <oitofelix@gnu.org>/
+s/oitofelix <>/Bruno Félix Rezende Ribeiro <oitofelix@gnu.org>/

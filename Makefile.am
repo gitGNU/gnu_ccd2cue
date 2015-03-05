@@ -89,9 +89,7 @@ $(foreach f,${release_doc},$(eval $(call release_doc_recipe,$f)))
 ChangeLog :
 	${AM_V_GEN}
 	${AM_V_at} cd ${srcdir} && \
-	  build-aux/cvs2cl.pl --group-within-date --no-times \
-	    --no-indent --stdout | \
-	    ${SED} --file=changelog.sed > ChangeLog
+	  build-aux/git2cl | ${SED} --file=changelog.sed > ChangeLog
 
 
 
