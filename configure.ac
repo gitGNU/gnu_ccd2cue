@@ -134,10 +134,24 @@ nor generate any other documentation format.]]))]))
 
 AM_MISSING_PROG([MAKEINFO], [makeinfo])
 
+
+### Declare `HELP2MAN' as a precious variable.
+AC_ARG_VAR([HELP2MAN], ['help2man' program])
+
+### Check for `help2man'.
+AC_PATH_PROG([HELP2MAN], [help2man])
+
+# Check for GNU help2man existence.  If not building from a VCS
+# checkout, it is not required.
+AS_IF([[test x$HELP2MAN = x && test x$VCS = xy]],
+  AC_MSG_ERROR(
+[[GNU help2man not found.  You can get it at https://gnu.org/software/help2man/.]]))
+
 # Check for GNU help2man existence.  It should only be used if not
 # cross-compiling.
 AS_IF([[test $cross_compiling = no]],
   [AM_MISSING_PROG([HELP2MAN], [help2man])], HELP2MAN=:)
+
 
 # Check for Doxygen existence and configure it;
 DX_DOT_FEATURE(ON)
