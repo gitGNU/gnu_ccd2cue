@@ -102,6 +102,12 @@
 @set CVSdir /sources/@value{GNUid}
 @set CVSurl @value{CVSserver}:@value{CVSdir}
 
+@c --- --- GIT;
+@set GITsavannah https://savannah.@value{domain}/git/?group=@value{GNUid}
+@set GITserver git://git.savannah.@value{domain}
+@set GITdir @value{GNUid}.git
+@set GITurl @value{GITserver}/@value{GITdir}
+
 
 
 

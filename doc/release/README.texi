@@ -115,7 +115,7 @@ chapter}@inlineifset{file, file} are package-specific; for general and
 in-depth configuration, build and installation instructions refer to
 the file @file{INSTALL} present in the top-level directory of the
 source distribution.  If you have checked out the source tree from the
-CVS repository see @ref{Hacking}.
+VCS repository see @ref{Hacking}.
 
 @ifset file
 For other information about this package you can check the following
@@ -164,12 +164,12 @@ See the top-level files:
 @menu
 * Description::    What this package is all about;
 * Distribution::   The user's right to modify and redistribute;
-* Getting a copy:: GNU FTP server and CVS;
+* Getting a copy:: GNU FTP server and VCS;
 * Contact::        Mailing list and IRC;
 * Bug reporting::  Support and bug trackers;
 * Contributing::   Several ways to help program's development;
 * Donating::       Supporting developer's work;
-* Hacking::        Get started with CVS checkout;
+* Hacking::        Get started with the VCS checkout;
 @end menu
 
 For more information about this program you can visit its home page at
@@ -307,7 +307,7 @@ distribution version of this program at @url{@value{ftpDir}}.  Please,
 use a mirror if possible; you will be automatically redirected to the
 nearest mirror at @url{@value{ftpMirrorDir}}.
 
-A CVS repository, where the development takes place, is also
+A VCS repository, where the development takes place, is also
 available.  It maintains the full history of modifications of every
 single source file.  You can checkout any given revision of any file
 or get a snapshot of the entire source tree in a particular desired
@@ -316,7 +316,7 @@ required to build from those checkouts, though.  Notably, to stay up
 to date with the latest developments in the source tree, you can
 anonymously checkout the repository with the following command:
 @example
-cvs -z9 -d:pserver:anonymous@@@value{CVSurl} co @value{GNUid}
+git clone @value{GITurl}
 @end example
 @end ifclear
 
@@ -391,12 +391,12 @@ It must print the following fingerprint:
 Otherwise something is wrong!  In that case don't use the downloaded
 tarball and contact the developers as described in @ref{Contact}.
 
-A CVS repository, where the development takes place, is also
+A VCS repository, where the development takes place, is also
 available.  To stay up to date with the latest developments in the
 source tree, you can anonymously checkout the repository with the
 following command:
 @example
-cvs -z9 -d:pserver:anonymous@@@value{CVSurl} co @value{GNUid}
+git clone @value{GITurl}
 @end example
 @end ifset
 
@@ -548,18 +548,18 @@ much you want to pay and how much maintenance we can offer in return.
 @metaSection Hacking
 
 @noindent
-The development sources are available through CVS at Savannah:
+The development sources are available through VCS at Savannah:
 
 @display
-@value{CVSsavannah}
+@value{GITsavannah}
 @end display
 
-If you are getting the sources from CVS (or change
-@file{configure.ac}), you'll need to have Automake, Autoconf and
-Gettext installed to (re)build.  You'll also need help2man.  All of
-these programs are available from @url{@value{ftp}}.
+If you are getting the sources from a VCS (or change
+@file{configure.ac}), you'll need to have Automake, Autoconf and Gettext
+installed to (re)build.  You'll also need help2man.  All of these
+programs are available from @url{@value{ftp}}.
 
-After getting the CVS sources, and installing the tools above, you can
+After getting the VCS sources, and installing the tools above, you can
 run @code{./bootstrap} to do a fresh build.  After that first time,
 running @command{make} should suffice.  See file @file{INSTALL}.
 
