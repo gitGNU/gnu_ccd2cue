@@ -1,7 +1,7 @@
 /*
  ccd2cue.c -- convert CCD sheet to CUE sheet;
 
- Copyright (C) 2010, 2013, 2014 Bruno Félix Rezende Ribeiro
+ Copyright (C) 2010, 2013, 2014, 2015 Bruno Félix Rezende Ribeiro
  <oitofelix@gnu.org>
 
  This program is free software; you can redistribute it and/or modify

@@ -2,7 +2,7 @@
 @c
 @c ccd2cue.texi -- The GNU ccd2cue Manual
 @c
-@c Copyright (C) 2010, 2013, 2014 Bruno Félix Rezende Ribeiro
+@c Copyright (C) 2010, 2013, 2014, 2015 Bruno Félix Rezende Ribeiro
 @c <oitofelix@gnu.org>
 @c
 @c Permission is granted to copy, distribute and/or modify this

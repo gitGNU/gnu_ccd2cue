@@ -1,7 +1,7 @@
 @c
 @c copying.texi -- The copyright and license notice;
 @c
-@c Copyright (C) 2010, 2013, 2014 Bruno Félix Rezende Ribeiro
+@c Copyright (C) 2010, 2013, 2014, 2015 Bruno Félix Rezende Ribeiro
 @c <oitofelix@gnu.org>
 @c
 @c Permission is granted to copy, distribute and/or modify this
@@ -48,7 +48,7 @@ developed by the GNU Project.
 @sp 1
 @end iftex
 
-Copyright @copyright{} 2010, 2013, 2014 Bruno Félix Rezende Ribeiro
+Copyright @copyright{} 2010, 2013, 2014, 2015 Bruno Félix Rezende Ribeiro
 
 @quotation
 Permission is granted to copy, distribute and/or modify this document
