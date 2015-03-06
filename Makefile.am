@@ -145,7 +145,7 @@ MAINTAINERCLEANFILES = ${top_level_doc}
 distdir-hook dist-hook : ${top_level_doc}
 
 distgnu : ensure-vcs distcheck
-	${AM_V_at} echo PATH=build-aux gnupload \
+	${AM_V_at} PATH=build-aux gnupload \
 	  --to ftp.gnu.org:${PACKAGE_TARNAME} ${PACKAGE_TARNAME}-${PACKAGE_VERSION}.tar.gz
 
 ensure-vcs :
