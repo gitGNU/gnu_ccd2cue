@@ -54,7 +54,7 @@
 @centerchap Announcement: @value{package} @value{version}
 @end ifclear
 
-I'm pleased to announce @value{package} @value{version} released
+I'm pleased to announce @value{package} @value{version}, released in
 @value{date}.
 
 
@@ -67,18 +67,19 @@ I'm pleased to announce @value{package} @value{version} released
 @item
 The code repository moved from CVS to Git.
 @item
-Mailing lists were re-purposed.  Now @email{bug-ccd2cue} is used
-exclusive for bug reporting and @email{ccd2cue} for user support.
+Mailing lists were re-purposed.  Now @email{@value{mailBugAddr}} is
+exclusively used for bug reporting and @email{@value{mailHelpAddr}} for
+user support.
 @item
-Fixed bad wording in @option{--help} ``burning'' section's text.  Bug
-reported by Benno Schulenberg of the Translation Project.
+Fixed bad wording in @option{--help} text.  Bug reported by Benno
+Schulenberg of the Translation Project.
 @item
 Fixed potential crash caused by calling @code{error} function with wrong
 arguments inside error handling routines.  Bug first noticed by Rosa
 (GNU/)Linux maintainers.
 @item
 Fixed documentation distribution bug in which the @file{INSTALL} file
-didn't get redistributed.  Bug reported by Darren S.
+didn't get redistributed.  Bug reported by Darren S..
 @item
 Added @code{distgnu} Make target which aids the maintainer in uploading
 release tarballs to the GNU ftp site.  It only can be made from VCS
