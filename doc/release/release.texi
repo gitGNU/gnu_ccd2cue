@@ -21,7 +21,7 @@
 @set tarName ccd2cue
 @set version 0.4
 @set GNUid ccd2cue
-@set date March 5, 2015
+@set date March 6, 2015
 @set autoconfVersion 2.69
 @set automakeVersion 1.14.1
 @set texinfoVersion 5.2
