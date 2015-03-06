@@ -26,7 +26,7 @@ dnl
 ##################
 
 # Release definitions;
-AC_INIT([GNU ccd2cue], [0.3],
+AC_INIT([GNU ccd2cue], [0.4],
 [https://savannah.gnu.org/bugs/?group=ccd2cue], [ccd2cue],
 [https://www.gnu.org/software/ccd2cue])
 AC_DEFINE(PACKAGE_MAILING_LIST, ["bug-ccd2cue@gnu.org"], [Users mailing list])
