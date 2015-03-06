@@ -143,7 +143,3 @@ MAINTAINERCLEANFILES = ${top_level_doc}
 
 ## Distribute top-level release and philosophy documentation.
 distdir-hook dist-hook : ${top_level_doc}
-
-distdir:
-	${AM_V_at} echo "This target is not currently implemented \
-	because Automake does not provide a 'distdir-hook' target."

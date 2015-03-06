@@ -83,8 +83,6 @@ didn't get redistributed.  Bug reported by Darren S.
 Fixed build system bug in which @command{configure} didn't detect the
 absence of @command{help2man} for maintainer builds.
 @item
-Mitigated failure of @code{distdir} Make target.
-@item
 Improved @code{maintainer-clean} Make target effectiveness.
 @end itemize
 
