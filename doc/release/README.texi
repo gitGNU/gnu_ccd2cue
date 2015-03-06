@@ -174,9 +174,9 @@ See the top-level files:
 
 For more information about this program you can visit its home page at
 @url{@value{webPage}}.  If you want to receive notifications about new
-releases of this program or important issues related to it, subscribe
-to the mailing list, as described in @ref{Contact}, or subscribe to
-the package atom feed @url{@value{atomFeed}}.
+releases of this program or important issues related to it, subscribe to
+its mailing list, as described in @ref{Contact}, or subscribe to the
+package atom feed @url{@value{atomFeed}}.
 
 @end ifclear
 
@@ -407,16 +407,16 @@ git clone @value{GITurl}
 @c --- Contact
 @metaSection Contact
 
-You can get in touch with other users and the developers of this
-program subscribing to the mailing list.  Anyone is welcome to join
-the list; to do so, visit the @url{@value{mailBugWeb},
-@value{mailBugName} web interface}.  You can use this list for all
-discussion, including asking for help and bug reporting, although the
-preferred method for reporting bugs is the dedicated bug tracking web
-interface described in @ref{Bug reporting}.  To post a message to all
-the list members, send email to @email{@value{mailBugAddr}}.  To see
-the collection of prior postings to the list, visit the
-@url{@value{mailBugArch}, @value{mailBugName} archive}.
+You can get in touch with other users and the developers of this program
+by subscribing to its mailing list.  Anyone is welcome to join the list;
+to do so, visit @url{@value{mailHelpWeb}, ccd2cue's help and support
+mailing list web interface}.  To post a message to all the list members,
+send email to @email{@value{mailHelpAddr}}.  To see the collection of
+prior postings to the list, visit @url{@value{mailHelpArch}, its
+archive}.  You can use this list for all discussion, including asking
+for help and bug reporting, although the preferred method for reporting
+bugs is sending a mail to @email{@value{mailBugAddr}}, the ccd2cue's bug
+reporting mailing list.  See @ref{Bug reporting}.
 
 If you feel somewhat chatty, eager for a somewhat more instantaneous
 response from community, you can join us on our friendly IRC channel:
@@ -429,15 +429,18 @@ response from community, you can join us on our friendly IRC channel:
 @c --- Bug reporting
 @metaSection Bug reporting
 
-If you come across some problem and need help you can contact the
-community as described in @ref{Contact}.  If you think you found a
-bug, but is not quite sure about it, you can instead ask for support
-on our @url{@value{supportTrack}, support tracker}.  We will revise
-your post, advise you and take the appropriate measures.  If you are
-confident you have found a bug, you can submit a bug report directly
-at our @url{@value{bugTrack}, bug tracker}.  Please, when reporting a
-bug include enough information for the maintainers to reproduce the
-problem.  Generally speaking, that means:
+If you came across some problem and need help you can contact the
+community as described in @ref{Contact}.  If you think you found a bug,
+but is not quite sure about it, you can ask for support sending a mail
+to @email{@value{mailHelpAddr}}.  We will revise your post, advise you
+and take the appropriate measures.  If you are confident you have found
+a bug, you can submit a bug report directly to
+@email{@value{mailBugAddr}}.  You can subscribe to this ccd2cue's bug
+reporting mailing list at @url{@value{mailBugWeb}, its web interface}.
+To see the collection of prior reported bugs, visit
+@url{@value{mailBugArch}, its archive}.  Please, when reporting a bug
+include enough information for the maintainers to reproduce the problem.
+Generally speaking, that means:
 
 @itemize
 @item
@@ -531,10 +534,10 @@ and on @file{DONORS} file for the next release.
 We are also happy to consider making particular improvements or
 changes, or giving specific technical assistance, in return for a
 substantial donation over 0.5@tie{}BTC.  If you would like to discuss
-this possibility, write to us at @email{@value{mailPrivAddr}}.
+this possibility, write to me at @email{oitofelix@@gnu.org}.
 
 Another possibility is to pay a software maintenance fee.  Again,
-write to us about this at @email{@value{mailPrivAddr}} to discuss how
+write to me about this at @email{oitofelix@@gnu.org} to discuss how
 much you want to pay and how much maintenance we can offer in return.
 
 @center @strong{Thanks for your support!}

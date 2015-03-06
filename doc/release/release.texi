@@ -62,12 +62,12 @@
 
 @c --- --- --- Private
 @c --- --- --- --- GNU
-@set mailPrivName @value{GNUid}
+@set mailHelpName @value{GNUid}
 @c --- --- --- --- non-GNU
-@c @set mailPrivName @value{GNUid}-support
-@set mailPrivAddr @value{mailPrivName}@@@value{domain}
-@set mailPrivWeb https://lists.@value{domain}/mailman/listinfo/@value{mailPrivName}/
-@set mailPrivArch https://lists.@value{domain}/archive/html/@value{mailPrivName}/
+@c @set mailHelpName @value{GNUid}-support
+@set mailHelpAddr @value{mailHelpName}@@@value{domain}
+@set mailHelpWeb https://lists.@value{domain}/mailman/listinfo/@value{mailHelpName}/
+@set mailHelpArch https://lists.@value{domain}/archive/html/@value{mailHelpName}/
 
 
 
