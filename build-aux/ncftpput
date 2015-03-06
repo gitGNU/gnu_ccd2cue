@@ -48,7 +48,8 @@ else
   dir="cd $dir"
 fi
 
-ftp -i $host <<END_SESSION
+ftp -in $host <<END_SESSION
+user anonymous
 $dir
 bin
 verbose
