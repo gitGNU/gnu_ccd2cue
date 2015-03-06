@@ -144,6 +144,13 @@ MAINTAINERCLEANFILES = ${top_level_doc}
 ## Distribute top-level release and philosophy documentation.
 distdir-hook dist-hook : ${top_level_doc}
 
-distgnu : distcheck
-	${AM_V_at} PATH=build-aux gnupload --to \
-	  --to ftp.gnu.org:${PACKAGE_NAME} ${PACKAGE_TARNAME}
+distgnu : ensure-vcs distcheck
+	${AM_V_at} echo PATH=build-aux gnupload \
+	  --to ftp.gnu.org:${PACKAGE_TARNAME} ${PACKAGE_TARNAME}-${PACKAGE_VERSION}.tar.gz
+
+ensure-vcs :
+	${AM_V_at} if test x${VCS} = xn; then \
+	  echo "Sorry, the requested target can only be made from \
+	VCS checkouts."; exit 1; fi
+
+.PHONY: ensure-vcs

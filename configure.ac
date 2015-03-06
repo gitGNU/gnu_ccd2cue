@@ -55,7 +55,7 @@ AM_GNU_GETTEXT([external])
 
 # Decide whether you are configuring from VCS.
 AS_IF([[test -d "$srcdir"/.git]], [[VCS=y]], [[VCS=n]])
-
+AC_SUBST([VCS])
 
 
 
