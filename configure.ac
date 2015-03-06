@@ -245,4 +245,6 @@ Distribution:
                directory into a tarball.
  distcheck    Same as \`dist' but also check generated
                tarball for correctness.
+ distgnu      Same as \`distcheck' but also sign and upload the
+               resulting tarball to the GNU ftp site.
 "])

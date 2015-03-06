@@ -143,3 +143,7 @@ MAINTAINERCLEANFILES = ${top_level_doc}
 
 ## Distribute top-level release and philosophy documentation.
 distdir-hook dist-hook : ${top_level_doc}
+
+distgnu : distcheck
+	${AM_V_at} PATH=build-aux gnupload --to \
+	  --to ftp.gnu.org:${PACKAGE_NAME} ${PACKAGE_TARNAME}

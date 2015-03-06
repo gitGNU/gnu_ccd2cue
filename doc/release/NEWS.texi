@@ -83,6 +83,9 @@ arguments inside error handling routines.  Bug first noticed by Rosa
 Fixed documentation distribution bug in which the @file{INSTALL} file
 didn't get redistributed.  Bug reported by Darren S.
 @item
+Added @code{distgnu} Make target which aids the maintainer in uploading
+release tarballs to the GNU ftp site.
+@item
 Fixed build system bug in which @command{configure} didn't detect the
 absence of @command{help2man} for maintainer builds.
 @item

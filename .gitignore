@@ -44,7 +44,8 @@ build-aux/*
 !git2cl
 !gendocs.sh
 !texinfo.tex
-
+!gnupload
+!ncftpput
 
 ### src/
 
