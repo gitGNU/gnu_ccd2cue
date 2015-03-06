@@ -27,11 +27,11 @@ dnl
 
 # Release definitions;
 AC_INIT([GNU ccd2cue], [0.4],
-[https://savannah.gnu.org/bugs/?group=ccd2cue], [ccd2cue],
+[bug-ccd2cue@gnu.org], [ccd2cue],
 [https://www.gnu.org/software/ccd2cue])
-AC_DEFINE(PACKAGE_MAILING_LIST, ["bug-ccd2cue@gnu.org"], [Users mailing list])
+AC_DEFINE(PACKAGE_MAILING_LIST, ["ccd2cue@gnu.org"], [Help and support mailing list])
 AC_DEFINE(PACKAGE_TRANSLATION_BUGREPORT,
-["http://translationproject.org/team/"], [Translation bug reporting address])
+["http://translationproject.org/team/"], [Translation bugs reporting address])
 AC_DEFINE(PACKAGE_COPYRIGHT_HOLDER, ["Bruno Félix Rezende Ribeiro"],
 [Copyright holder's name])
 
