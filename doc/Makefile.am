@@ -30,7 +30,7 @@
 
 SUBDIRS = man
 
-EXTRA_DIST = www release/ANNOUNCEMENT.texi
+EXTRA_DIST = release/ANNOUNCEMENT.texi
 
 TEXI2DVI := ${TEXI2DVI} ${texinfo_includes}
 
@@ -65,7 +65,7 @@ homepage_dir = homepage
 homepage_header := ${srcdir}/www/header.shtml
 homepage_footer := ${srcdir}/www/footer.texi
 
-homepage-local : ${release_doc:%=${homepage_dir}/%.html}
+homepage-local : ensure-vcs ${release_doc:%=${homepage_dir}/%.html}
 
 ${homepage_dir}/%.html : release/%.texi ${release_texi} \
   ${homepage_header} ${homepage_footer} homepage-doc
@@ -113,4 +113,10 @@ homepage-doc:
 	${AM_V_at} rm -f ${homepage_dir}/${PACKAGE}.*
 
 
-.PHONY: homepage-doc
+ensure-vcs :
+	${AM_V_at} if test x${VCS} = xn; then \
+	  echo "***** Sorry, the requested target can only be made from \
+	VCS checkouts. *****"; exit 1; fi
+
+
+.PHONY: ensure-vcs homepage-doc

@@ -84,7 +84,12 @@ Fixed documentation distribution bug in which the @file{INSTALL} file
 didn't get redistributed.  Bug reported by Darren S.
 @item
 Added @code{distgnu} Make target which aids the maintainer in uploading
-release tarballs to the GNU ftp site.
+release tarballs to the GNU ftp site.  It only can be made from VCS
+checkouts.
+@item
+Likewise, the @code{homepage} Make target now can only be made from VCS
+checkouts.  Therefore the exclusive infrastructure for building the
+package's homepage doesn't get distributed.
 @item
 Fixed build system bug in which @command{configure} didn't detect the
 absence of @command{help2man} for maintainer builds.

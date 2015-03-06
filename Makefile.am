@@ -34,7 +34,7 @@ SUBDIRS = po src doc
 
 top_level_doc = ${release_doc} $(call uc,${philosophy_doc})
 
-EXTRA_DIST = ${top_level_doc} ChangeLog build-aux/gendocs.sh po/Rules-ccd2cue
+EXTRA_DIST = ${top_level_doc} ChangeLog po/Rules-ccd2cue
 
 
 
@@ -150,7 +150,7 @@ distgnu : ensure-vcs distcheck
 
 ensure-vcs :
 	${AM_V_at} if test x${VCS} = xn; then \
-	  echo "Sorry, the requested target can only be made from \
-	VCS checkouts."; exit 1; fi
+	  echo "***** Sorry, the requested target can only be made from \
+	VCS checkouts. *****"; exit 1; fi
 
-.PHONY: ensure-vcs
+.PHONY : ensure-vcs
