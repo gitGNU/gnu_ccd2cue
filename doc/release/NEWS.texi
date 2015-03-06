@@ -65,6 +65,31 @@ Contact}}@inlineifset{file, ``Contact'' section of @file{README}
 file}, or subscribe to the package atom feed @url{@value{atomFeed}}.
 
 @table @asis
+@item 0.4
+@itemize
+@item
+The code repository moved from CVS to Git.
+@item
+Mailing lists were re-purposed.  Now @email{bug-ccd2cue} is used
+exclusive for bug reporting and @email{ccd2cue} for user support.
+@item
+Fixed bad wording in @option{--help} ``burning'' section's text.  Bug
+reported by Benno Schulenberg of the Translation Project.
+@item
+Fixed potential crash caused by calling @code{error} function with wrong
+arguments inside error handling routines.  Bug first noticed by Rosa
+(GNU/)Linux maintainers.
+@item
+Fixed documentation distribution bug in which the @file{INSTALL} file
+didn't get redistributed.  Bug reported by Darren S.
+@item
+Fixed build system bug in which @command{configure} didn't detect the
+absence of @command{help2man} for maintainer builds.
+@item
+Mitigated failure of @code{distdir} Make target.
+@item
+Improved @code{maintainer-clean} Make target effectiveness.
+@end itemize
 @item 0.3
 @itemize
 @item

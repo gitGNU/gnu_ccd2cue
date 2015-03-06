@@ -55,11 +55,7 @@
 @end ifclear
 
 I'm pleased to announce @value{package} @value{version} released
-@value{date}.  This is a stable release and the first official GNU
-release.
-
-Special thanks to Lucas Sköldqvist (frusen) who kindly tested
-pre-release versions, reported bugs and donated.
+@value{date}.
 
 
 
@@ -69,16 +65,27 @@ pre-release versions, reported bugs and donated.
 
 @itemize
 @item
-The program ccd2cue has become a GNU package, and therefore is now
-dubbed GNU ccd2cue.  Its code and documentation have been updated to
-reflect such remarkable occurrence.
+The code repository moved from CVS to Git.
 @item
-The target @code{homepage} generates the package homepage primarily
-from release documentation.
+Mailing lists were re-purposed.  Now @email{bug-ccd2cue} is used
+exclusive for bug reporting and @email{ccd2cue} for user support.
 @item
-Some interesting GNU philosophy essays were added to documentation.
+Fixed bad wording in @option{--help} ``burning'' section's text.  Bug
+reported by Benno Schulenberg of the Translation Project.
 @item
-Various bugs in the program and documentation were fixed.
+Fixed potential crash caused by calling @code{error} function with wrong
+arguments inside error handling routines.  Bug first noticed by Rosa
+(GNU/)Linux maintainers.
+@item
+Fixed documentation distribution bug in which the @file{INSTALL} file
+didn't get redistributed.  Bug reported by Darren S.
+@item
+Fixed build system bug in which @command{configure} didn't detect the
+absence of @command{help2man} for maintainer builds.
+@item
+Mitigated failure of @code{distdir} Make target.
+@item
+Improved @code{maintainer-clean} Make target effectiveness.
 @end itemize
 
 
@@ -170,7 +177,9 @@ community.
 @value{webPage}
 @item Atom feed
 @value{atomFeed}
-@item Mailing list
+@item Help and support mailing list
+@value{mailHelpAddr}
+@item Bug reporting mailing list
 @value{mailBugAddr}
 @item IRC channel
 @value{IRCurl}
