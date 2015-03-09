@@ -91,5 +91,9 @@ static void
 memory_obstack_alloc_failed (void)
 {
   /* Print an error message and exit with failure. */
+
+  /* TRANSLATORS: See
+     http://www.gnu.org/software/libc/manual/html_node/Obstacks.html
+     for context. */
   error (EX_OSERR, errno, _("%s: error allocating chunk for obstack"), __func__);
 }

@@ -22,7 +22,7 @@
 #ifndef CCD2CUE_I18N_H
 #define CCD2CUE_I18N_H
 
-#include "libintl.h"
+#include <libintl.h>
 
 
 #define __(str) (str)

@@ -113,11 +113,11 @@ void (*argp_program_version_hook) (FILE *, struct argp_state *) = print_version;
 
 static struct argp_option options[] = {
   { NULL, 0, NULL, 0, __("Output:"), 0 },
-  { "output", 'o', "cue-file", 0, __("write output to 'cue-file'"), 0 },
-  { "cd-text", 'c', "cdt-file", 0, __("write CD-Text data to 'cdt-file'"), 0 },
+  { "output", 'o', __("cue-file"), 0, __("write output to 'cue-file'"), 0 },
+  { "cd-text", 'c', __("cdt-file"), 0, __("write CD-Text data to 'cdt-file'"), 0 },
   { NULL, 0, NULL, OPTION_DOC, __("While the main output file 'cue-file' is always generated, the 'cdt-file' is created only when there is CD-Text data.  If 'cue-file' is '-', or '--output' is omitted, standard output is used."), 0 },
   { NULL, 0, NULL, 0, __("Conversion:"), 0 },
-  { "image", 'i', "img-file", 0, __("reference 'img-file' as the image file"), 0 },
+  { "image", 'i', __("img-file"), 0, __("reference 'img-file' as the image file"), 0 },
   { "absolute-file-name", 'a', NULL, 0, __("use absolute file name deduction"), 0 },
   { NULL, 0, NULL, OPTION_DOC, __("The 'img-file' is a reference to a data file required only in burning time and thus its existence is not enforced in conversion stage."), 0 },
   { NULL, 0, NULL, 0, __("Help:"), -1},

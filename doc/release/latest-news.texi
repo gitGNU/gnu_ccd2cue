@@ -22,6 +22,10 @@
 
 @itemize
 @item
+Fixed i18n bug in which meta-variables in @option{--help} text were not
+localizable.  This bug was reported by German language translator Mario
+Blättermann.
+@item
 Centralized the latest release news in a single file in order to avoid
 duplication of information and syncing work.
 @item
