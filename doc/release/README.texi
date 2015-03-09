@@ -591,6 +591,15 @@ the @file{version.texi} auto-generated file, because that provision is
 not flexible enough to address this package's complex documentation
 build system.
 
+When committing changes to the repository always create an entry in the
+@file{doc/release/latest-news.texi} file for any user-visible changes or
+additions made.  This file is intended to provide the latest release
+news for the @file{NEWS.texi} and @file{ANNOUNCEMENT.texi} files to
+avoid duplication of information and syncing work.  After a release is
+made the news items should be moved to the @file{NEWS.texi} file and
+another one should be built from scratch there.
+
+
 
 
 
