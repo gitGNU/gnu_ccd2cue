@@ -563,8 +563,9 @@ installed to (re)build.  You'll also need help2man.  All of these
 programs are available from @url{@value{ftp}}.
 
 After getting the VCS sources, and installing the tools above, you can
-run @code{./bootstrap} to do a fresh build.  After that first time,
-running @command{make} should suffice.  See file @file{INSTALL}.
+run @code{./bootstrap && ./configure && make} to do a fresh build.
+After that first time, running @command{make} should suffice to rebuild
+the program with your changes.  See file @file{INSTALL}.
 
 When modifying the sources, or making a distribution, more is needed,
 as follows:
