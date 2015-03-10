@@ -22,6 +22,9 @@
 
 @itemize
 @item
+Re-factored @option{--help} text in order to generate respectable Unix
+manual pages.
+@item
 Fixed i18n bug in which meta-variables in @option{--help} text were not
 localizable.  This bug was reported by German language translator Mario
 Blättermann.
