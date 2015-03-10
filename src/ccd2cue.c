@@ -112,15 +112,12 @@ void (*argp_program_version_hook) (FILE *, struct argp_state *) = print_version;
  */
 
 static struct argp_option options[] = {
-  { NULL, 0, NULL, 0, __("Output:"), 0 },
   { "output", 'o', __("cue-file"), 0, __("write output to 'cue-file'"), 0 },
   { "cd-text", 'c', __("cdt-file"), 0, __("write CD-Text data to 'cdt-file'"), 0 },
-  { NULL, 0, NULL, OPTION_DOC, __("While the main output file 'cue-file' is always generated, the 'cdt-file' is created only when there is CD-Text data.  If 'cue-file' is '-', or '--output' is omitted, standard output is used."), 0 },
-  { NULL, 0, NULL, 0, __("Conversion:"), 0 },
+  { NULL, 0, NULL, OPTION_DOC, __("While the main output file 'cue-file' is always generated, the 'cdt-file' is created only when there is CD-Text data.  If 'cue-file' is '-', or '--output' is omitted, standard output is used.\n"), 0 },
   { "image", 'i', __("img-file"), 0, __("reference 'img-file' as the image file"), 0 },
   { "absolute-file-name", 'a', NULL, 0, __("use absolute file name deduction"), 0 },
-  { NULL, 0, NULL, OPTION_DOC, __("The 'img-file' is a reference to a data file required only in burning time and thus its existence is not enforced in conversion stage."), 0 },
-  { NULL, 0, NULL, 0, __("Help:"), -1},
+  { NULL, 0, NULL, OPTION_DOC, __("The 'img-file' is a reference to a data file required only in burning time and thus its existence is not enforced at conversion stage."), 0 },
   { 0 }
 };
 
@@ -562,25 +559,21 @@ print_version (FILE *stream, struct argp_state *state)
 {
   xfprintf (stream,
 	    "%s (%s) %s\n\n"	/* ccd2cue (GNU ccd2cue) a.b */
-	    "%s\n\n"		/* GNU ccd2cue is a... */
-	    "%s\n\n"		/* This program is a component... */
+
+	    /* TRANSLATORS: Use "Félix" in place of "F'elix" */
 	    "Copyright (C) %s " PACKAGE_COPYRIGHT_HOLDER " <%s>\n\n"
+
 	    "%s\n\n"		/* License GPLv3+... */
 	    "%s\n",		/* Written by... */
 	    PACKAGE, PACKAGE_NAME, VERSION,
-	    _("\
-GNU ccd2cue is a CCD sheet to CUE sheet converter.  It supports the\n\
-full extent of CUE sheet format expressiveness, including mixed-mode\n\
-discs and CD-Text meta-data."),
-	    _("\
-This program is a component of the GNU Operating System and is\n\
-developed by the GNU Project."),
-	    "2010, 2013", "oitofelix@gnu.org",
+	    "2010, 2013, 2014, 2015", "oitofelix@gnu.org",
 	    _("\
 License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>\n\
 This is free software: you are free to change and redistribute it.\n\
 There is NO WARRANTY, to the extent permitted by law."),
-	    _("Written by Bruno Félix Rezende Ribeiro."));
+
+	    /* TRANSLATORS: Use "Félix" in place of "F'elix" */
+	    _("Written by Bruno Fe'lix Rezende Ribeiro."));
 
   exit (EXIT_SUCCESS);
 }
@@ -614,26 +607,27 @@ help_filter (int key, const char *text, void *input)
   switch (key)
     {
       case ARGP_KEY_HELP_PRE_DOC:
-	alloc_status = asprintf(&newtext, "%s\n\n%s",
+	alloc_status = asprintf(&newtext, "%s\n\n%s\n\n%s",
 		 _("Convert CCD sheet to CUE sheet."),
-		 _("The input file, referred as 'ccd-file', must exist.  If 'ccd-file' is \
+		 _("\
+The input file, referred as 'ccd-file', must exist.  If 'ccd-file' is \
 '-', or omitted, standard input is used.  It is necessary to supply at \
 least one file name, in an option or non-option argument, in order to \
 deduce the remaining file names needed, and only one file name of each \
-type can be supplied.  The following options are accepted:"));
+type can be supplied."),
+		_("Options:"));
 	break;
       case ARGP_KEY_HELP_EXTRA:
         alloc_status = asprintf(&newtext,
 				"%s\n\n"	/* Examples: */
 				"%s\n\n"	/* The most... */
 				"  %s\n\n"	/* ccd2cue -o... */
-				"%s\n\n"	/* Burning: */
-				"%s\n\n"	/* If you burned... */
-				"%s <%s>\n"	/* Homepage: <%s> */
-				"%s <%s>\n"	/* Mailing list: <%s> */
-				"%s <%s>\n"	/* Report bugs at: <%s>*/
-				"%s <%s>\n\n"	/* Report translation bugs to: <%s> */
-				"%s\n",		/* For complete documentation... */
+				"%s\n\n"	/* If you have... */
+				"%s\n\n"	/* Supposing you want... */
+				"  %s\n\n"	/* cdrdao write... */
+				"%s\n\n"	/* That way 'cdrdao'... */
+				"%s <%s>\n"	/* Report bugs to: <%s>*/
+				"%s <%s>\n",	/* Report translation bugs to: <%s> */
 				_("Examples:"),
 				_("\
 The most ordinary use case is when you have a CCD set of files and \
@@ -641,7 +635,6 @@ just want to generate a CUE sheet file in order to burn or otherwise \
 access the data inside the image file.  Supposing your CCD sheet file \
 is called gnu.ccd, you are done with the command:"),
 				_("ccd2cue -o gnu.cue gnu.ccd"),
-				_("Burning:"),
 				_("\
 If you have burned a CD from a CUE sheet produced by this program and \
 all audio tracks became only senseless static noise, you may need to \
@@ -650,16 +643,20 @@ to the CD-recorder.  This can be accomplished with (for example) the \
 '--swap' option when using the 'cdrdao' program.  Experience has shown \
 that at least for mixed-mode discs it is necessary to use that option \
 when burning, otherwise you will almost certainly waste a CD."),
-				_("Homepage:"),
-				PACKAGE_URL,
-				_("Mailing list:"),
-                                PACKAGE_MAILING_LIST,
-				_("Report bugs at:"),
+				_("\
+Supposing you want to burn a CD using the 'cdrdao' program and a CUE \
+sheet file named 'gnu.cue', and wisely want to ensure the correct \
+behavior of your burnt disc, use the command:"),
+				_("cdrdao write --swap --speed 1 --eject gnu.cue"),
+				_("\
+That way 'cdrdao' will swap the byte order of audio samples, cautiously \
+burning in the smallest possible speed and will eject your CD when it \
+is done."),
+				_("Report bugs to:"),
 				PACKAGE_BUGREPORT,
 				_("Report translation bugs to:"),
-				PACKAGE_TRANSLATION_BUGREPORT,
-	  _("For complete documentation, run: 'info ccd2cue'"));
-        break;
+				PACKAGE_TRANSLATION_BUGREPORT);
+	break;
     default:
       newtext = (char *) text;
       break;

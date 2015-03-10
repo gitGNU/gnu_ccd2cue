@@ -32,7 +32,7 @@ AC_INIT([GNU ccd2cue], [0.4.1],
 AC_DEFINE(PACKAGE_MAILING_LIST, ["ccd2cue@gnu.org"], [Help and support mailing list])
 AC_DEFINE(PACKAGE_TRANSLATION_BUGREPORT,
 ["http://translationproject.org/team/"], [Translation bugs reporting address])
-AC_DEFINE(PACKAGE_COPYRIGHT_HOLDER, ["Bruno Félix Rezende Ribeiro"],
+AC_DEFINE(PACKAGE_COPYRIGHT_HOLDER, ["Bruno Fe'lix Rezende Ribeiro"],
 [Copyright holder's name])
 
 # GNU Autoconf settings;
