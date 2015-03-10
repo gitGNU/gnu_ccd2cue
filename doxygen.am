@@ -25,8 +25,6 @@
 
 if DX_COND_doc
 
-.PHONY: doxygen-run doxygen-doc
-
 .INTERMEDIATE: doxygen-run
 
 doxygen-run: @DX_DOCDIR@/@PACKAGE@.tag

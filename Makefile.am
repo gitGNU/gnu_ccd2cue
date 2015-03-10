@@ -156,4 +156,4 @@ ensure-vcs :
 	  echo "***** Sorry, the requested target can only be made from \
 	VCS checkouts. *****"; exit 1; fi
 
-.PHONY : ensure-vcs
+.PHONY : doxygen-run doxygen-doc ensure-vcs
