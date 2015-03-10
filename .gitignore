@@ -61,6 +61,8 @@ m4/*
 
 ### po/
 
+LINGUAS
+
 Makefile.in.in
 
 POTFILES
@@ -81,6 +83,10 @@ remove-potcdate.sed
 stamp-po
 
 .reference
+
+*.gmo
+
+en@*quot*
 
 
 # doc/
@@ -122,3 +128,4 @@ wwwtemp
 
 # doc/man/
 ccd2cue.1
+ccd2cue.??.1

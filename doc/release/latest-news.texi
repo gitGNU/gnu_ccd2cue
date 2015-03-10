@@ -25,13 +25,15 @@
 Re-factored @option{--help} text in order to generate respectable Unix
 manual pages.
 @item
-Fixed i18n bug in which meta-variables in @option{--help} text were not
-localizable.  This bug was reported by German language translator Mario
-Blättermann.
+Added support for localized Unix manual pages.  This feature was
+requested by Mario Blättermann (German translator).
 @item
-Centralized the latest release news in a single file in order to avoid
-duplication of information and syncing work.
+Fixed i18n bug in which meta-variables in @option{--help} text were not
+localizable.  This bug was reported by Mario Blättermann.
 @item
 Improved documentation's ``Hacking'' section to explain various topics
 related to ccd2cue's specific development work-flow.
+@item
+Centralized the latest release news in a single file in order to avoid
+duplication of information and syncing work.
 @end itemize

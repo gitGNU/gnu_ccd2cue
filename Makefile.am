@@ -34,7 +34,9 @@ SUBDIRS = po src doc
 
 top_level_doc = ${release_doc} $(call uc,${philosophy_doc})
 
-EXTRA_DIST = ${top_level_doc} ChangeLog po/Rules-ccd2cue
+EXTRA_DIST = ${top_level_doc} ChangeLog po/Rules-ccd2cue po/LINGUAS.in
+
+DISTCLEANFILES = po/LINGUAS
 
 
 
@@ -142,7 +144,8 @@ MAINTAINERCLEANFILES = ${top_level_doc}
 ################
 
 ## Distribute top-level release and philosophy documentation.
-distdir-hook dist-hook : ${top_level_doc}
+dist-hook : ${top_level_doc}
+	$(RM) ${distdir}/po/LINGUAS
 
 distgnu : ensure-vcs distcheck
 	${AM_V_at} PATH=build-aux:${PATH} gnupload \

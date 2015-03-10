@@ -59,6 +59,7 @@ AC_SUBST([VCS])
 
 
 
+
 
 ################################
 # Programs Search and Checking #
@@ -70,11 +71,15 @@ AC_PROG_MKDIR_P
 # Check for `ln'.
 AC_PROG_LN_S
 
+# Check for `grep'.
+AC_PROG_GREP
+
 # Check for `sed'.
 AC_PROG_SED
 
 # Check for `cc'.
 AC_PROG_CC
+
 
 
 ##########
@@ -164,6 +169,16 @@ DX_INIT_DOXYGEN([ccd2cue], ['$(top_builddir)/doc/Doxyfile'],
 
 
 
+##########
+### Translations
+######
+LINGUAS=$(echo $(ls $srcdir/po/*.po | $GREP -v quot | $SED 's,^.*po/\(.*\)\.po$,\1,'))
+AC_SUBST([LINGUAS])
+
+
+
+
+
 ################
 # Output Files #
 ################
@@ -172,6 +187,7 @@ DX_INIT_DOXYGEN([ccd2cue], ['$(top_builddir)/doc/Doxyfile'],
 AC_CONFIG_FILES(
 [Makefile
 po/Makefile.in
+po/LINGUAS
 src/Makefile
 doc/Makefile
 doc/Doxyfile

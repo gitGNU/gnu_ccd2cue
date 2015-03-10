@@ -81,6 +81,9 @@ static error_t parse_opt (int, char *, struct argp_state *);
 static void print_version (FILE *, struct argp_state *);
 static char * help_filter (int, const char *, void *);
 
+
+
+
 
 /**
  * Argp '--version' option customization.
@@ -211,6 +214,9 @@ main (int argc, char *argv[])
   struct ccd ccd;   /* CCD structure filled by stream2ccd; */
   struct cue *cue;  /* Pointer to CUE structure filled by ccd2cue; */
   struct cdt cdt;   /* CDT structure filled by ccd2cdt; */
+
+  /* TRANSLATORS: This is the Unix manual page 'NAME' description. */
+  _("CCD sheet to CUE sheet converter");
 
   /* Set locale via LC_ALL.  */
   setlocale (LC_ALL, "");
