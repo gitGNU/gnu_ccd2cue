@@ -1,0 +1,335 @@
+# Ukrainian translation of ccd2cue.
+# Copyright (C) 2015 Bruno Félix Rezende Ribeiro
+# This file is distributed under the same license as the ccd2cue package.
+#
+# Yuri Chornoivan <yurchor@ukr.net>, 2015.
+msgid ""
+msgstr ""
+"Project-Id-Version: GNU ccd2cue 0.4\n"
+"Report-Msgid-Bugs-To: ccd2cue-bug@nongnu.org\n"
+"POT-Creation-Date: 2015-03-10 19:30-0300\n"
+"PO-Revision-Date: 2015-03-07 10:04+0200\n"
+"Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
+"Language-Team: Ukrainian <translation-team-uk@lists.sourceforge.net>\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Lokalize 1.5\n"
+
+#: src/ccd2cue.c:118
+msgid "cue-file"
+msgstr ""
+
+#: src/ccd2cue.c:118
+msgid "write output to 'cue-file'"
+msgstr "записати дані до вказаного файла"
+
+#: src/ccd2cue.c:119
+msgid "cdt-file"
+msgstr ""
+
+#: src/ccd2cue.c:119
+msgid "write CD-Text data to 'cdt-file'"
+msgstr "записати дані CD-Text до вказаного файла cdt"
+
+#: src/ccd2cue.c:120
+#, fuzzy
+msgid ""
+"While the main output file 'cue-file' is always generated, the 'cdt-file' is "
+"created only when there is CD-Text data.  If 'cue-file' is '-', or '--"
+"output' is omitted, standard output is used.\n"
+msgstr ""
+"Хоча основним результатом обробки є файл cue, якщо буде виявлено дані CD-"
+"Text, програма створити файл cdt. Якщо файл cue буде вказано як «-» або буде "
+"пропущено параметр «--output», програма використовуватиме стандартне "
+"виведення."
+
+#: src/ccd2cue.c:121
+msgid "img-file"
+msgstr ""
+
+#: src/ccd2cue.c:121
+msgid "reference 'img-file' as the image file"
+msgstr "вважати файл img файлом образу"
+
+#: src/ccd2cue.c:122
+msgid "use absolute file name deduction"
+msgstr "використовувати абсолютне визначення назв файлів"
+
+#: src/ccd2cue.c:123
+#, fuzzy
+msgid ""
+"The 'img-file' is a reference to a data file required only in burning time "
+"and thus its existence is not enforced at conversion stage."
+msgstr ""
+"Файл img є посиланням на файл даних, який потрібен лише під час запису даних "
+"на диск, отже, на кроці перетворення його існування є необов’язковим."
+
+#. TRANSLATORS: This is the Unix manual page 'NAME' description.
+#: src/ccd2cue.c:219
+#, fuzzy
+msgid "CCD sheet to CUE sheet converter"
+msgstr "Перетворення таблиці CCD на таблицю CUE."
+
+#: src/ccd2cue.c:238
+#, c-format
+msgid "cannot parse CCD sheet stream from '%s'"
+msgstr "не вдалося обробити потік даних таблиці CCD з «%s»"
+
+#: src/ccd2cue.c:243 src/ccd2cue.c:259
+#, c-format
+msgid "cannot convert '%s' to '%s'"
+msgstr "не вдалося перетворити «%s» на «%s»"
+
+#: src/ccd2cue.c:254 src/ccd2cue.c:264 src/ccd2cue.c:266
+#, c-format
+msgid "cannot close '%s'"
+msgstr "не вдалося закрити «%s»"
+
+#: src/ccd2cue.c:405
+#, c-format
+msgid "more than one disc image file name provided ('--image'): '%s' and '%s'"
+msgstr "вказано понад одну назву файла образу диска («--image»): «%s» та «%s»"
+
+#: src/ccd2cue.c:414
+#, c-format
+msgid "more than one CD-Text file name provided ('--cd-text'): '%s' and '%s'"
+msgstr "вказано понад одну назву файла CD-Text («--cd-text»): «%s» та «%s»"
+
+#: src/ccd2cue.c:423
+#, c-format
+msgid "more than one output CUE sheet provided ('--output'): '%s' and '%s'"
+msgstr "вказано понад одну вихідну таблицю CUE («--output»): «%s» та «%s»"
+
+#: src/ccd2cue.c:434
+#, c-format
+msgid "%s: more than one input CCD sheet provided: '%s' and '%s'"
+msgstr "%s: вказано понад одну вхідну таблицю CCD: «%s» та «%s»"
+
+#: src/ccd2cue.c:473
+#, c-format
+msgid "%s: no image name provided ('--image')"
+msgstr "%s: не вказано назви образу («--image»)"
+
+#: src/ccd2cue.c:478
+msgid "cannot process command line arguments"
+msgstr "не вдалося обробити параметри командного рядка"
+
+#: src/ccd2cue.c:486
+msgid "cannot deduce image file name"
+msgstr "не вдалося визначити назву файла образу"
+
+#: src/ccd2cue.c:494
+msgid "cannot deduce CD-Text file name"
+msgstr "не вдалося визначити назву файла CD-Text"
+
+#: src/ccd2cue.c:510
+#, c-format
+msgid "cannot open CCD sheet '%s'"
+msgstr "не вдалося відкрити таблицю CCD «%s»"
+
+#: src/ccd2cue.c:529
+#, c-format
+msgid "cannot open CUE sheet '%s'"
+msgstr "не вдалося відкрити таблицю CUE «%s»"
+
+#: src/ccd2cue.c:576
+msgid ""
+"License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl."
+"html>\n"
+"This is free software: you are free to change and redistribute it.\n"
+"There is NO WARRANTY, to the extent permitted by law."
+msgstr ""
+"Умови ліцензування викладено у GPLv3+: GNU GPL версії 3 або новішій, <http://"
+"gnu.org/licenses/gpl.html>\n"
+"Це вільне програмне забезпечення: ви можете вільно змінювати і поширювати "
+"його. Вам не надається ЖОДНИХ ГАРАНТІЙ, окрім гарантій передбачених "
+"законодавством."
+
+#. TRANSLATORS: Use "Félix" in place of "F'elix"
+#: src/ccd2cue.c:582
+#, fuzzy
+msgid "Written by Bruno Fe'lix Rezende Ribeiro."
+msgstr "Автором програми є Bruno Félix Rezende Ribeiro."
+
+#: src/ccd2cue.c:617
+msgid "Convert CCD sheet to CUE sheet."
+msgstr "Перетворення таблиці CCD на таблицю CUE."
+
+#: src/ccd2cue.c:618
+#, fuzzy
+msgid ""
+"The input file, referred as 'ccd-file', must exist.  If 'ccd-file' is '-', "
+"or omitted, standard input is used.  It is necessary to supply at least one "
+"file name, in an option or non-option argument, in order to deduce the "
+"remaining file names needed, and only one file name of each type can be "
+"supplied."
+msgstr ""
+"Файл вхідних даних, файл ccd, має бути доступним файлом у системі. Якщо файл "
+"ccd вказано як «-» або не вказано взагалі, використовуватиметься стандартне "
+"джерело вхідних даних. Слід вказати назву принаймні одного файла за "
+"допомогою параметра або аргументу поза параметрами, щоб програма змогла "
+"визначити назви решти файлів. Для кожного з типів даних можна вказувати лише "
+"одну назву файла. Передбачено можливість використання таких параметрів:"
+
+#: src/ccd2cue.c:624
+msgid "Options:"
+msgstr ""
+
+#: src/ccd2cue.c:637
+msgid "Examples:"
+msgstr "Приклади:"
+
+#: src/ccd2cue.c:638
+msgid ""
+"The most ordinary use case is when you have a CCD set of files and just want "
+"to generate a CUE sheet file in order to burn or otherwise access the data "
+"inside the image file.  Supposing your CCD sheet file is called gnu.ccd, you "
+"are done with the command:"
+msgstr ""
+"Основним випадком використання програми є випадок, коли у вас є набір файлів "
+"CCD, і вам потрібно створити файл таблиці CUE для запису або доступу у інших "
+"спосіб до даних у файлі образу. Припустімо, що файл таблиці CCD називається "
+"gnu.ccd. Тоді ви можете виконати перетворення за допомогою такої команди:"
+
+#: src/ccd2cue.c:643
+msgid "ccd2cue -o gnu.cue gnu.ccd"
+msgstr "ccd2cue -o gnu.cue gnu.ccd"
+
+#: src/ccd2cue.c:644
+msgid ""
+"If you have burned a CD from a CUE sheet produced by this program and all "
+"audio tracks became only senseless static noise, you may need to tell your "
+"burning software to swap the byte order of all samples sent to the CD-"
+"recorder.  This can be accomplished with (for example) the '--swap' option "
+"when using the 'cdrdao' program.  Experience has shown that at least for "
+"mixed-mode discs it is necessary to use that option when burning, otherwise "
+"you will almost certainly waste a CD."
+msgstr ""
+"Якщо після запису компакт-диска на основі даних таблиці CUE, створених цією "
+"програмою, замість очікуваних звукових даних ви чуєте лише шум, вам, "
+"ймовірно, слід наказати програмі для запису даних на компакт-диск поміняти "
+"порядок байтів для усіх даних, що надсилається на пристрій для записування "
+"компакт-дисків. Це можна зробити, наприклад, за допомогою параметра «--"
+"swap», якщо використано програму «cdrdao». Наш досвід свідчить, що "
+"використовувати цей параметр слід принаймні для дисків мішаного режиму "
+"запису, оскільки, якщо ви цього не зробите, компакт-диск майже напевне буде "
+"зіпсовано."
+
+#: src/ccd2cue.c:652
+msgid ""
+"Supposing you want to burn a CD using the 'cdrdao' program and a CUE sheet "
+"file named 'gnu.cue', and wisely want to ensure the correct behavior of your "
+"burnt disc, use the command:"
+msgstr ""
+
+#: src/ccd2cue.c:656
+msgid "cdrdao write --swap --speed 1 --eject gnu.cue"
+msgstr ""
+
+#: src/ccd2cue.c:657
+msgid ""
+"That way 'cdrdao' will swap the byte order of audio samples, cautiously "
+"burning in the smallest possible speed and will eject your CD when it is "
+"done."
+msgstr ""
+
+#: src/ccd2cue.c:661
+#, fuzzy
+msgid "Report bugs to:"
+msgstr "Адреса для сповіщень про вади:"
+
+#: src/ccd2cue.c:663
+msgid "Report translation bugs to:"
+msgstr "Адреса для сповіщення про вади у перекладі:"
+
+#: src/ccd2cue.c:671 src/memory.c:70
+#, c-format
+msgid "%s: error allocating memory"
+msgstr "%s: помилка під час розподілу пам’яті"
+
+#: src/memory.c:84
+#, c-format
+msgid "%s: error reallocating memory"
+msgstr "%s: помилка під час внесення змін до розподілу пам’яті"
+
+#. TRANSLATORS: See
+#. http://www.gnu.org/software/libc/manual/html_node/Obstacks.html
+#. for context.
+#: src/memory.c:98
+#, c-format
+msgid "%s: error allocating chunk for obstack"
+msgstr "%s: помилка під час отримання фрагмента пам’яті для obstack"
+
+#: src/io.c:80 src/io.c:94 src/io.c:120
+#, c-format
+msgid "%s: error writing to stream"
+msgstr "%s: помилка під час спроби запису потоку даних"
+
+#: src/array.c:67
+msgid "cannot concatenate strings"
+msgstr "не вдалося розділити рядки"
+
+#: src/array.c:92
+#, c-format
+msgid "%s: error copying string"
+msgstr "%s: помилка під час копіювання рядка"
+
+#: src/errors.c:80 src/errors.c:82
+#, c-format
+msgid "%s: cannot push error into stack"
+msgstr "%s: не вдалося заштовхнути помилку до стека"
+
+#: src/ccd.c:146
+msgid "cannot parse CCD sheet stream"
+msgstr "не вдалося обробити потік таблиці CCD"
+
+#: src/convert.c:156
+#, c-format
+msgid "unknown track data type %d; please report a bug"
+msgstr ""
+"невідомі дані доріжки типу %d; будь ласка, повідомте розробникам про цю "
+"помилку"
+
+#~ msgid "Output:"
+#~ msgstr "Виведення:"
+
+#~ msgid "Conversion:"
+#~ msgstr "Перетворення:"
+
+#~ msgid "Help:"
+#~ msgstr "Довідка:"
+
+#~ msgid ""
+#~ "GNU ccd2cue is a CCD sheet to CUE sheet converter.  It supports the\n"
+#~ "full extent of CUE sheet format expressiveness, including mixed-mode\n"
+#~ "discs and CD-Text meta-data."
+#~ msgstr ""
+#~ "GNU ccd2cue є програмою для перетворення таблиць даних CCD на таблиці\n"
+#~ "даних CUE. У ній передбачено обробку усіх розширень формату таблиць CUE,\n"
+#~ "зокрема дисків мішаного режиму та метаданих CD-Text."
+
+#~ msgid ""
+#~ "This program is a component of the GNU Operating System and is\n"
+#~ "developed by the GNU Project."
+#~ msgstr ""
+#~ "Ця програма є частиною операційної системи GNU, її розроблено у межах\n"
+#~ "Проекту GNU."
+
+#~ msgid "Burning:"
+#~ msgstr "Запис:"
+
+#~ msgid "Homepage:"
+#~ msgstr "Домашня сторінка:"
+
+#~ msgid "Mailing list:"
+#~ msgstr "Список листування:"
+
+#~ msgid "For complete documentation, run: 'info ccd2cue'"
+#~ msgstr ""
+#~ "З повною документацією можна ознайомитися за допомогою команди «info "
+#~ "ccd2cue».\n"
+#~ "'"

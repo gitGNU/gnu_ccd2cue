@@ -1,0 +1,326 @@
+# Vietnamese translations for GNU ccd2cue package
+# Bản dịch Tiếng Việt dành cho gói GNU ccd2cue.
+# Copyright (C) 2015 Bruno Félix Rezende Ribeiro
+# This file is distributed under the same license as the ccd2cue package.
+# Trần Ngọc Quân <vnwildman@gmail.com>, 2015.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ccd2cue 0.4\n"
+"Report-Msgid-Bugs-To: ccd2cue-bug@nongnu.org\n"
+"POT-Creation-Date: 2015-03-10 19:30-0300\n"
+"PO-Revision-Date: 2015-03-08 14:30+0700\n"
+"Last-Translator: Trần Ngọc Quân <vnwildman@gmail.com>\n"
+"Language-Team: Vietnamese <translation-team-vi@lists.sourceforge.net>\n"
+"Language: vi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/ccd2cue.c:118
+msgid "cue-file"
+msgstr ""
+
+#: src/ccd2cue.c:118
+msgid "write output to 'cue-file'"
+msgstr "ghi đầu ra vào “tập-tin-cue”"
+
+#: src/ccd2cue.c:119
+msgid "cdt-file"
+msgstr ""
+
+#: src/ccd2cue.c:119
+msgid "write CD-Text data to 'cdt-file'"
+msgstr "ghi dữ liệu CD-Text đến “tập-tin-cdt”"
+
+#: src/ccd2cue.c:120
+#, fuzzy
+msgid ""
+"While the main output file 'cue-file' is always generated, the 'cdt-file' is "
+"created only when there is CD-Text data.  If 'cue-file' is '-', or '--"
+"output' is omitted, standard output is used.\n"
+msgstr ""
+"Trong khi tập tin đầu ra chính “tập-tin-cue” luôn được tạo, “tập-tin-cdt” "
+"chỉ được tạo khi có dữ liệu CD-Textên. Nếu “tập-tin-cue” là “-”, hoặc bỏ qua "
+"tùy chọn “--output”, đầu ra tiêu chuẩn sẽ được dùng."
+
+#: src/ccd2cue.c:121
+msgid "img-file"
+msgstr ""
+
+#: src/ccd2cue.c:121
+msgid "reference 'img-file' as the image file"
+msgstr "xem “tập-tin-ảnh” là một tập tin ảnh"
+
+#: src/ccd2cue.c:122
+msgid "use absolute file name deduction"
+msgstr "dùng suy diễn tên tập tin cũ"
+
+#: src/ccd2cue.c:123
+#, fuzzy
+msgid ""
+"The 'img-file' is a reference to a data file required only in burning time "
+"and thus its existence is not enforced at conversion stage."
+msgstr ""
+"“tập-tin-ảnh” là một tham chiếu đến một tập tin dữ liệu chỉ cần trong lúc "
+"ghi đĩa và sự tồn tại của nó không quan trọng trong bước chuyển đổi."
+
+#. TRANSLATORS: This is the Unix manual page 'NAME' description.
+#: src/ccd2cue.c:219
+#, fuzzy
+msgid "CCD sheet to CUE sheet converter"
+msgstr "Chuyển đổi từ bảng CCD sang CUE."
+
+#: src/ccd2cue.c:238
+#, c-format
+msgid "cannot parse CCD sheet stream from '%s'"
+msgstr "không thể phân tích luồng dữ liệu bảng CCD từ “%s”"
+
+#: src/ccd2cue.c:243 src/ccd2cue.c:259
+#, c-format
+msgid "cannot convert '%s' to '%s'"
+msgstr "không thể chuyển đổi “%s” sang “%s”"
+
+#: src/ccd2cue.c:254 src/ccd2cue.c:264 src/ccd2cue.c:266
+#, c-format
+msgid "cannot close '%s'"
+msgstr "không thể đóng %s”"
+
+#: src/ccd2cue.c:405
+#, c-format
+msgid "more than one disc image file name provided ('--image'): '%s' and '%s'"
+msgstr ""
+"đã đưa ra nhiều hơn một tập tin ảnh đĩa mang tên (“--image”): “%s” và “%s”"
+
+#: src/ccd2cue.c:414
+#, c-format
+msgid "more than one CD-Text file name provided ('--cd-text'): '%s' and '%s'"
+msgstr ""
+"đã đưa ra nhiều hơn một tập tin CD-Text mang tên (“--cd-text'”): “%s” và “%s”"
+
+#: src/ccd2cue.c:423
+#, c-format
+msgid "more than one output CUE sheet provided ('--output'): '%s' and '%s'"
+msgstr "đã đưa ra nhiều hơn bản CUE đầu ra (“--output'”): “%s” và “%s”"
+
+#: src/ccd2cue.c:434
+#, c-format
+msgid "%s: more than one input CCD sheet provided: '%s' and '%s'"
+msgstr "%s: đã đưa ra nhiều hơn một bảng CCD đầu vào: “%s” và “%s”"
+
+#: src/ccd2cue.c:473
+#, c-format
+msgid "%s: no image name provided ('--image')"
+msgstr "%s: chưa đưa tên ảnh (“--image”)"
+
+#: src/ccd2cue.c:478
+msgid "cannot process command line arguments"
+msgstr "không thể xử lý đối số dòng lệnh"
+
+#: src/ccd2cue.c:486
+msgid "cannot deduce image file name"
+msgstr "không thể suy luận tên tập tin ảnh"
+
+#: src/ccd2cue.c:494
+msgid "cannot deduce CD-Text file name"
+msgstr "không thể suy luận tên tập tin CD-Text"
+
+#: src/ccd2cue.c:510
+#, c-format
+msgid "cannot open CCD sheet '%s'"
+msgstr "không thể mở bảng CCD “%s”"
+
+#: src/ccd2cue.c:529
+#, c-format
+msgid "cannot open CUE sheet '%s'"
+msgstr "không thể mở bảng CUE “%s”"
+
+#: src/ccd2cue.c:576
+msgid ""
+"License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl."
+"html>\n"
+"This is free software: you are free to change and redistribute it.\n"
+"There is NO WARRANTY, to the extent permitted by law."
+msgstr ""
+"GPLv3+: Giấy Phép Công Cộng GNU, phiên bản 3 hay mới hơn <http://gnu.org/"
+"licenses/gpl.html>\n"
+"Đây là phần mềm tự do: bạn có quyền thay đổi và phát hành lại nó.\n"
+"KHÔNG CÓ BẢO HÀNH GÌ CẢ, với điều kiện được pháp luật cho phép."
+
+#. TRANSLATORS: Use "Félix" in place of "F'elix"
+#: src/ccd2cue.c:582
+#, fuzzy
+msgid "Written by Bruno Fe'lix Rezende Ribeiro."
+msgstr "Viết bởi Félix Rezende Ribeiro."
+
+#: src/ccd2cue.c:617
+msgid "Convert CCD sheet to CUE sheet."
+msgstr "Chuyển đổi từ bảng CCD sang CUE."
+
+#: src/ccd2cue.c:618
+#, fuzzy
+msgid ""
+"The input file, referred as 'ccd-file', must exist.  If 'ccd-file' is '-', "
+"or omitted, standard input is used.  It is necessary to supply at least one "
+"file name, in an option or non-option argument, in order to deduce the "
+"remaining file names needed, and only one file name of each type can be "
+"supplied."
+msgstr ""
+"Tập tin đầu vào, là “ccd-file”, phải tồn tại.  Nếu “ccd-file” là “-”, hay để "
+"trống thì đầu vào tiêu chuẩn sẽ được dùng. Nó là cần thiết để áp dụng ít "
+"nhất là một tên tập tin, trong một đối số tùy chọn hay không tùy chọn, để mà "
+"suy diễn tên tập tin còn lại khi cần, và chỉ có một tên tập tin của từng "
+"kiểu có thể được cung cấp.  Các tùy chọn sau đây được chấp nhận:"
+
+#: src/ccd2cue.c:624
+msgid "Options:"
+msgstr ""
+
+#: src/ccd2cue.c:637
+msgid "Examples:"
+msgstr "Ví dụ:"
+
+#: src/ccd2cue.c:638
+msgid ""
+"The most ordinary use case is when you have a CCD set of files and just want "
+"to generate a CUE sheet file in order to burn or otherwise access the data "
+"inside the image file.  Supposing your CCD sheet file is called gnu.ccd, you "
+"are done with the command:"
+msgstr ""
+"Trong phần lớn trường hợp thông thường là khi bạn có một tập hợp các tập tin "
+"CCD và chỉ muốn tạo ra tập tin bảng CUE để mà ghi đĩa hoặc không thì truy "
+"cập dữ liệu bên trong tập tin ảnh. Giả sử tập tin bảng CCD của bạn là gnu."
+"ccd, bạn thực hiện lệnh sau:"
+
+#: src/ccd2cue.c:643
+msgid "ccd2cue -o gnu.cue gnu.ccd"
+msgstr "ccd2cue -o gnu.cue gnu.ccd"
+
+#: src/ccd2cue.c:644
+msgid ""
+"If you have burned a CD from a CUE sheet produced by this program and all "
+"audio tracks became only senseless static noise, you may need to tell your "
+"burning software to swap the byte order of all samples sent to the CD-"
+"recorder.  This can be accomplished with (for example) the '--swap' option "
+"when using the 'cdrdao' program.  Experience has shown that at least for "
+"mixed-mode discs it is necessary to use that option when burning, otherwise "
+"you will almost certainly waste a CD."
+msgstr ""
+"Nếu bạn phải ghi đĩa CD từ một bảng CUE sản sinh bởi chương trình này và mọi "
+"rãnh âm thanh trở nên toàn tạp âm, bạn có lẽ cần nói với phần mềm ghi đĩa "
+"của mình hãy hoán đổi thứ tự byte của mọi mẫu gửi đến đầu ghi CD. Điều này "
+"có thể thực hiện với (thí dụ vậy) tùy chọn  “--swap” khi dùng chương trình "
+"“cdrdao”. Kinh nghiệm chỉ ra rằng ít nhất cho các đĩa chế độ trộn điều này "
+"là cần thiết để dùng tùy chọn này khi ghi, nếu không bạn gần như chắc chắn "
+"sẽ lãng phí một đĩa CD."
+
+#: src/ccd2cue.c:652
+msgid ""
+"Supposing you want to burn a CD using the 'cdrdao' program and a CUE sheet "
+"file named 'gnu.cue', and wisely want to ensure the correct behavior of your "
+"burnt disc, use the command:"
+msgstr ""
+
+#: src/ccd2cue.c:656
+msgid "cdrdao write --swap --speed 1 --eject gnu.cue"
+msgstr ""
+
+#: src/ccd2cue.c:657
+msgid ""
+"That way 'cdrdao' will swap the byte order of audio samples, cautiously "
+"burning in the smallest possible speed and will eject your CD when it is "
+"done."
+msgstr ""
+
+#: src/ccd2cue.c:661
+#, fuzzy
+msgid "Report bugs to:"
+msgstr "Báo cáo lỗi cho:"
+
+#: src/ccd2cue.c:663
+msgid "Report translation bugs to:"
+msgstr "Gửi báo cáo lỗi dịch cho:"
+
+#: src/ccd2cue.c:671 src/memory.c:70
+#, c-format
+msgid "%s: error allocating memory"
+msgstr "%s: gặp lỗi khi phân bổ bộ nhớ"
+
+#: src/memory.c:84
+#, c-format
+msgid "%s: error reallocating memory"
+msgstr "%s: gặp lỗi khi tái phân bổ bộ nhớ"
+
+#. TRANSLATORS: See
+#. http://www.gnu.org/software/libc/manual/html_node/Obstacks.html
+#. for context.
+#: src/memory.c:98
+#, c-format
+msgid "%s: error allocating chunk for obstack"
+msgstr "%s: gặp lỗi khi phân bỏ mảnh cho obstack"
+
+#: src/io.c:80 src/io.c:94 src/io.c:120
+#, c-format
+msgid "%s: error writing to stream"
+msgstr "%s: gặp lỗi khi ghi vào luồng dữ liệu"
+
+#: src/array.c:67
+msgid "cannot concatenate strings"
+msgstr "không thể nối các chuỗi lại"
+
+#: src/array.c:92
+#, c-format
+msgid "%s: error copying string"
+msgstr "%s: gặp lỗi khi sao chép chuỗi"
+
+#: src/errors.c:80 src/errors.c:82
+#, c-format
+msgid "%s: cannot push error into stack"
+msgstr "%s: không thể đẩy lỗi vào ngăn xếp"
+
+#: src/ccd.c:146
+msgid "cannot parse CCD sheet stream"
+msgstr "không thể phân tích cú pháp luồng bảng CCD"
+
+#: src/convert.c:156
+#, c-format
+msgid "unknown track data type %d; please report a bug"
+msgstr "không hiểu kiểu dữ liệu rãnh %d; vui lòng báo cáo lỗi này"
+
+#~ msgid "Output:"
+#~ msgstr "Đầu ra:"
+
+#~ msgid "Conversion:"
+#~ msgstr "Chuyển đổi:"
+
+#~ msgid "Help:"
+#~ msgstr "Trợ giúp:"
+
+#~ msgid ""
+#~ "GNU ccd2cue is a CCD sheet to CUE sheet converter.  It supports the\n"
+#~ "full extent of CUE sheet format expressiveness, including mixed-mode\n"
+#~ "discs and CD-Text meta-data."
+#~ msgstr ""
+#~ "GNU ccd2cue là ứng dụng chuyển đổi bảng từ CCD sang CUE. Nó hỗ trợ\n"
+#~ "đầy đủ quy mô của diễn tả định dạng bảng CUE, bao gồm đĩa chế độ\n"
+#~ "pha trộn và CD-Text dữ-liệu-meta."
+
+#~ msgid ""
+#~ "This program is a component of the GNU Operating System and is\n"
+#~ "developed by the GNU Project."
+#~ msgstr ""
+#~ "Chương trình này là một thành phần của hệ điều hành GNU và được\n"
+#~ "phát triển bởi dự án GNU."
+
+#~ msgid "Burning:"
+#~ msgstr "Ghi đĩa:"
+
+#~ msgid "Homepage:"
+#~ msgstr "Trang chủ:"
+
+#~ msgid "Mailing list:"
+#~ msgstr "Hộp thư chung:"
+
+#~ msgid "For complete documentation, run: 'info ccd2cue'"
+#~ msgstr "Để đọc toàn bộ tài liệu, hãy chạy: “info ccd2cue”"

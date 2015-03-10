@@ -1,0 +1,332 @@
+# German translation of ccd2cue.
+# Copyright (C) 2015 Bruno Félix Rezende Ribeiro
+# This file is distributed under the same license as the ccd2cue package.
+# Mario Blättermann <mario.blaettermann@gmail.com>, 2015.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: GNU ccd2cue 0.4\n"
+"Report-Msgid-Bugs-To: ccd2cue-bug@nongnu.org\n"
+"POT-Creation-Date: 2015-03-10 19:30-0300\n"
+"PO-Revision-Date: 2015-03-06 23:19+0100\n"
+"Last-Translator: Mario Blättermann <mario.blaettermann@gmail.com>\n"
+"Language-Team: German <translation-team-de@lists.sourceforge.net>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.7.4\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: src/ccd2cue.c:118
+msgid "cue-file"
+msgstr ""
+
+#: src/ccd2cue.c:118
+msgid "write output to 'cue-file'"
+msgstr "Ausgabe in eine cue-Datei schreiben"
+
+#: src/ccd2cue.c:119
+msgid "cdt-file"
+msgstr ""
+
+#: src/ccd2cue.c:119
+msgid "write CD-Text data to 'cdt-file'"
+msgstr "CD-Textdaten in eine cdt-Datei schreiben"
+
+#: src/ccd2cue.c:120
+#, fuzzy
+msgid ""
+"While the main output file 'cue-file' is always generated, the 'cdt-file' is "
+"created only when there is CD-Text data.  If 'cue-file' is '-', or '--"
+"output' is omitted, standard output is used.\n"
+msgstr ""
+"Die Haupt-Ausgabedatei mit der Endung .cue wird immer erstellt, die .cdt-"
+"Datei dagegen nur dann, wenn CD-Textdaten vorhanden sind. Falls die .cue-"
+"Datei als »-« angegeben wird oder »--output« nicht vorhanden ist, wird die "
+"Standardausgabe verwendet."
+
+#: src/ccd2cue.c:121
+msgid "img-file"
+msgstr ""
+
+#: src/ccd2cue.c:121
+msgid "reference 'img-file' as the image file"
+msgstr "»Abbilddatei« als Abbilddatei referenzieren"
+
+#: src/ccd2cue.c:122
+msgid "use absolute file name deduction"
+msgstr "Dateinamen absolut ableiten"
+
+#: src/ccd2cue.c:123
+#, fuzzy
+msgid ""
+"The 'img-file' is a reference to a data file required only in burning time "
+"and thus its existence is not enforced at conversion stage."
+msgstr ""
+"Die Abbilddatei ist eine Referenz zu einer Datendatei, die nur beim Brennen "
+"erforderlich ist. Daher muss Sie für den Umwandlungsvorgang nicht vorhanden "
+"sein."
+
+#. TRANSLATORS: This is the Unix manual page 'NAME' description.
+#: src/ccd2cue.c:219
+#, fuzzy
+msgid "CCD sheet to CUE sheet converter"
+msgstr "CCD-Sheet in CUE-Sheet umwandeln."
+
+#: src/ccd2cue.c:238
+#, c-format
+msgid "cannot parse CCD sheet stream from '%s'"
+msgstr "CCD-Sheet-Datenstrom von »%s« kann nicht ausgewertet werden"
+
+#: src/ccd2cue.c:243 src/ccd2cue.c:259
+#, c-format
+msgid "cannot convert '%s' to '%s'"
+msgstr "»%s« kann nicht in »%s« umgewandelt werden"
+
+#: src/ccd2cue.c:254 src/ccd2cue.c:264 src/ccd2cue.c:266
+#, c-format
+msgid "cannot close '%s'"
+msgstr "»%s« kann nicht geschlossen werden"
+
+#: src/ccd2cue.c:405
+#, c-format
+msgid "more than one disc image file name provided ('--image'): '%s' and '%s'"
+msgstr ""
+"Es wurde mehr als eine Disk-Abbilddatei angegeben (--image): »%s« und »%s«"
+
+#: src/ccd2cue.c:414
+#, c-format
+msgid "more than one CD-Text file name provided ('--cd-text'): '%s' and '%s'"
+msgstr ""
+"Es wurde mehr als ein Dateiname für CD-Text angegeben (--cd-text): »%s« und "
+"»%s«"
+
+#: src/ccd2cue.c:423
+#, c-format
+msgid "more than one output CUE sheet provided ('--output'): '%s' and '%s'"
+msgstr ""
+"Es wurde mehr als ein CUE-Sheet für die Ausgabe angegeben (--output): »%s« "
+"und »%s«"
+
+#: src/ccd2cue.c:434
+#, c-format
+msgid "%s: more than one input CCD sheet provided: '%s' and '%s'"
+msgstr ""
+"%s: Es wurde mehr als ein CCD-Sheet als Eingabe angegeben: »%s« und »%s«"
+
+#: src/ccd2cue.c:473
+#, c-format
+msgid "%s: no image name provided ('--image')"
+msgstr "%s: Es wurde keine Abbilddatei angegeben (--image)"
+
+#: src/ccd2cue.c:478
+msgid "cannot process command line arguments"
+msgstr "Befehlszeilenargumente können nicht verarbeitet werden"
+
+#: src/ccd2cue.c:486
+msgid "cannot deduce image file name"
+msgstr "Name der Abbilddatei konnte nicht abgeleitet werden"
+
+#: src/ccd2cue.c:494
+msgid "cannot deduce CD-Text file name"
+msgstr "Name der Cd-Textdatei konnte nicht abgeleitet werden"
+
+#: src/ccd2cue.c:510
+#, c-format
+msgid "cannot open CCD sheet '%s'"
+msgstr "CCD-Sheet »%s« kann nicht geöffnet werden"
+
+#: src/ccd2cue.c:529
+#, c-format
+msgid "cannot open CUE sheet '%s'"
+msgstr "CUE-Sheet »%s« kann nicht geöffnet werden"
+
+#: src/ccd2cue.c:576
+msgid ""
+"License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl."
+"html>\n"
+"This is free software: you are free to change and redistribute it.\n"
+"There is NO WARRANTY, to the extent permitted by law."
+msgstr ""
+"Lizenz GPLv3+: GNU GPL in Version 3 oder neuer <http://gnu.org/licenses/gpl."
+"html>\n"
+"Dies ist freie Software: Es ist Ihnen gestattet, sie zu verändern und\n"
+"weiterzugeben. Es gibt keinerlei Garantie, soweit gesetzlich zulässig."
+
+#. TRANSLATORS: Use "Félix" in place of "F'elix"
+#: src/ccd2cue.c:582
+#, fuzzy
+msgid "Written by Bruno Fe'lix Rezende Ribeiro."
+msgstr "Geschrieben von Bruno Félix Rezende Ribeiro."
+
+#: src/ccd2cue.c:617
+msgid "Convert CCD sheet to CUE sheet."
+msgstr "CCD-Sheet in CUE-Sheet umwandeln."
+
+#: src/ccd2cue.c:618
+#, fuzzy
+msgid ""
+"The input file, referred as 'ccd-file', must exist.  If 'ccd-file' is '-', "
+"or omitted, standard input is used.  It is necessary to supply at least one "
+"file name, in an option or non-option argument, in order to deduce the "
+"remaining file names needed, and only one file name of each type can be "
+"supplied."
+msgstr ""
+"Die Eingabedatei (die .ccd-Datei) muss existieren. Falls die CCD-Datei als "
+"»-« oder gar nicht angegeben ist, wird die Standardeingabe verwendet. Die "
+"Angabe mindestens eines Dateinamens ist erforderlich, um daraus die anderen "
+"Dateinamen abzuleiten. Außerdem kann nur ein Dateiname für jeden Dateityp "
+"angegeben werden. Die folgenden Optionen werden akzeptiert:"
+
+#: src/ccd2cue.c:624
+msgid "Options:"
+msgstr ""
+
+#: src/ccd2cue.c:637
+msgid "Examples:"
+msgstr "Beispiele:"
+
+#: src/ccd2cue.c:638
+msgid ""
+"The most ordinary use case is when you have a CCD set of files and just want "
+"to generate a CUE sheet file in order to burn or otherwise access the data "
+"inside the image file.  Supposing your CCD sheet file is called gnu.ccd, you "
+"are done with the command:"
+msgstr ""
+"Der typischste Anwendungsfall ist eine Reihe von CCD-Dateien, aus denen eine "
+"CUE-Sheet-Datei zum Brennen oder anderweitigen Zugriff auf die Daten in der "
+"Abbilddatei. Ausgehend davon, dass Ihre CCD-Sheet-Datei gnu.ccd heißt, "
+"erreichen Sie dies mit folgendem Befehl:"
+
+#: src/ccd2cue.c:643
+msgid "ccd2cue -o gnu.cue gnu.ccd"
+msgstr "ccd2cue -o gnu.cue gnu.ccd"
+
+#: src/ccd2cue.c:644
+msgid ""
+"If you have burned a CD from a CUE sheet produced by this program and all "
+"audio tracks became only senseless static noise, you may need to tell your "
+"burning software to swap the byte order of all samples sent to the CD-"
+"recorder.  This can be accomplished with (for example) the '--swap' option "
+"when using the 'cdrdao' program.  Experience has shown that at least for "
+"mixed-mode discs it is necessary to use that option when burning, otherwise "
+"you will almost certainly waste a CD."
+msgstr ""
+"Wenn Sie eine CD aus einem mit diesem Programm erstellten CUE-Sheet gebrannt "
+"haben und alle Audiospuren enthalten nur statisches Rauschen, dann müssen "
+"Sie in Ihrem Brennprogramm die Bytereihenfolge der an den Brenner gesendeten "
+"Daten ändern. Beim Brennen mit »cdrdao« erreichen Sie dies mit der Option »--"
+"swap«. Die Erfahrung hat gezeigt, dass dies zumindest für Mixed-Mode-CDs "
+"notwendig ist, sonst werden Sie höchstwahrscheinlich einen Rohling "
+"verschwenden."
+
+#: src/ccd2cue.c:652
+msgid ""
+"Supposing you want to burn a CD using the 'cdrdao' program and a CUE sheet "
+"file named 'gnu.cue', and wisely want to ensure the correct behavior of your "
+"burnt disc, use the command:"
+msgstr ""
+
+#: src/ccd2cue.c:656
+msgid "cdrdao write --swap --speed 1 --eject gnu.cue"
+msgstr ""
+
+#: src/ccd2cue.c:657
+msgid ""
+"That way 'cdrdao' will swap the byte order of audio samples, cautiously "
+"burning in the smallest possible speed and will eject your CD when it is "
+"done."
+msgstr ""
+
+#: src/ccd2cue.c:661
+#, fuzzy
+msgid "Report bugs to:"
+msgstr "Fehler bitte melden an:"
+
+#: src/ccd2cue.c:663
+msgid "Report translation bugs to:"
+msgstr "Fehler in der Übersetzung bitte melden an:"
+
+#: src/ccd2cue.c:671 src/memory.c:70
+#, c-format
+msgid "%s: error allocating memory"
+msgstr "%s: Fehler bei der Speicherzuweisung"
+
+#: src/memory.c:84
+#, c-format
+msgid "%s: error reallocating memory"
+msgstr "%s: Fehler bei der erneuten Speicherzuweisung"
+
+#. TRANSLATORS: See
+#. http://www.gnu.org/software/libc/manual/html_node/Obstacks.html
+#. for context.
+#: src/memory.c:98
+#, c-format
+msgid "%s: error allocating chunk for obstack"
+msgstr "%s: Fehler beim Zuweisen des Chunks für Obstack"
+
+#: src/io.c:80 src/io.c:94 src/io.c:120
+#, c-format
+msgid "%s: error writing to stream"
+msgstr "%s: Fehler beim Schreiben in den Datenstrom"
+
+#: src/array.c:67
+msgid "cannot concatenate strings"
+msgstr "Zeichenketten können nicht verkettet werden"
+
+#: src/array.c:92
+#, c-format
+msgid "%s: error copying string"
+msgstr "%s: Fehler beim Kopieren der Zeichenkette"
+
+#: src/errors.c:80 src/errors.c:82
+#, c-format
+msgid "%s: cannot push error into stack"
+msgstr "%s: Fehlermeldung kann nicht in den Stack geschoben werden"
+
+#: src/ccd.c:146
+msgid "cannot parse CCD sheet stream"
+msgstr "CCD-Sheet-Datenstrom kann nicht ausgewertet werden"
+
+#: src/convert.c:156
+#, c-format
+msgid "unknown track data type %d; please report a bug"
+msgstr "Unbekannter Datentyp %d der Spur; bitte melden Sie dies als Fehler"
+
+#~ msgid "Output:"
+#~ msgstr "Ausgabe:"
+
+#~ msgid "Conversion:"
+#~ msgstr "Umwandlung:"
+
+#~ msgid "Help:"
+#~ msgstr "Hilfe:"
+
+#~ msgid ""
+#~ "GNU ccd2cue is a CCD sheet to CUE sheet converter.  It supports the\n"
+#~ "full extent of CUE sheet format expressiveness, including mixed-mode\n"
+#~ "discs and CD-Text meta-data."
+#~ msgstr ""
+#~ "GNU ccd2cue ist ein Programm zum Umwandeln von CCD-Sheets in CUE-Sheets.\n"
+#~ "Es unterstützt die Fähigkeiten des CUE-Sheet-Formats vollständig,\n"
+#~ "einschließlich Mixed-Mode-Disks und CD-Text-Metadaten."
+
+#~ msgid ""
+#~ "This program is a component of the GNU Operating System and is\n"
+#~ "developed by the GNU Project."
+#~ msgstr ""
+#~ "Dieses Programm ist ein Bestandteil des GNU-Betriebssystems und\n"
+#~ "wird vom GNU-Projekt entwickelt."
+
+#~ msgid "Burning:"
+#~ msgstr "Brennen:"
+
+#~ msgid "Homepage:"
+#~ msgstr "Homepage:"
+
+#~ msgid "Mailing list:"
+#~ msgstr "Mailingliste:"
+
+#~ msgid "For complete documentation, run: 'info ccd2cue'"
+#~ msgstr "Die vollständige Dokumentation erhalten Sie mit »info ccd2cue«."
