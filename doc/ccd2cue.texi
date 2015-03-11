@@ -320,14 +320,25 @@ contribution for this package are noteworthy are acknowledged.
 
 @menu
 Present and Future:
-* News::     User-visible changes since previous versions;
-* To do::    Features we want to see implemented someday;
+* Announcement::  Published message used to announce this new release;
+* News::          User-visible changes since previous versions;
+* To do::         Features we want to see implemented someday;
 
 People:
 * Authors::  List of major contributors;
 * Thanks::   List of minor contributors;
 * Donors::   People who supported the development by donations;
 @end menu
+
+
+
+
+
+@c --- News;
+@page
+@node Announcement
+@section Announcement
+@include ANNOUNCEMENT.texi
 
 
 

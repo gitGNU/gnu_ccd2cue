@@ -43,6 +43,8 @@ Package meta-information like release date and build system tools
 versions are automatically generated at configuration time and don't
 need maintainer intervention.
 @item
+Announcement message is available in the manual's ``release'' chapter.
+@item
 @code{distdir} Make target can be made made when top-level documentation
 files are not present.
 @end itemize
