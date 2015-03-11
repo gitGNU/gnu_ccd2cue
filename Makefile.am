@@ -70,9 +70,9 @@ export TEXI2DVI := ${TEXI2DVI} ${texinfo_includes}
 # Release documentation #
 #########################
 
-export release_texi = ${abs_top_srcdir}/doc/release/release.texi
+release_texi = ${abs_top_srcdir}/doc/release/release.texi
 
-export release_doc = README NEWS TODO AUTHORS THANKS DONORS ANNOUNCEMENT
+release_doc = README NEWS TODO AUTHORS THANKS DONORS ANNOUNCEMENT
 
 ### Template recipe intended to generate the top-level release
 ### documentation files from the respective Texinfo sources.
@@ -100,9 +100,9 @@ ChangeLog :
 # Philosophy documentation #
 ############################
 
-export essay_header = ${abs_top_srcdir}/doc/philosophy/essay-header.texi
+essay_header = ${abs_top_srcdir}/doc/philosophy/essay-header.texi
 
-export philosophy_doc = the-gnu-manifesto the-gnu-project	\
+philosophy_doc = the-gnu-manifesto the-gnu-project		\
 linux-and-the-gnu-system why-software-should-not-have-owners	\
 why-free-software-needs-free-documentation			\
 gnu-free-documentation-license
@@ -144,7 +144,7 @@ MAINTAINERCLEANFILES = ${top_level_doc}
 ################
 
 ## Distribute top-level release and philosophy documentation.
-dist-hook : ${top_level_doc}
+dist-hook :
 	$(RM) ${distdir}/po/LINGUAS
 
 distgnu : ensure-vcs distcheck
