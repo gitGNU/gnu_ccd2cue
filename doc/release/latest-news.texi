@@ -22,6 +22,8 @@
 
 @itemize
 @item
+Program translated in Danish, German, Ukrainian and Vietnamese.
+@item
 Re-factored @option{--help} text in order to generate respectable Unix
 manual pages.
 @item
