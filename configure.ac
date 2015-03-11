@@ -35,6 +35,7 @@ AC_DEFINE(PACKAGE_TRANSLATION_BUGREPORT,
 AC_DEFINE(PACKAGE_COPYRIGHT_HOLDER, ["Bruno Fe'lix Rezende Ribeiro"],
 [Copyright holder's name])
 
+
 # GNU Autoconf settings;
 AC_CONFIG_AUX_DIR([build-aux])
 AC_PREREQ(2.60)
@@ -173,11 +174,36 @@ AM_MISSING_PROG([RSYNC], [rsync])
 
 
 
-##########
-### Translations
-######
-LINGUAS=$(echo $(ls $srcdir/po/*.po | $GREP -v quot | $SED 's,^.*po/\(.*\)\.po$,\1,'))
-AC_SUBST([LINGUAS])
+####################
+# Meta-information #
+####################
+
+AC_MSG_NOTICE([[Checking meta-information]])
+
+AC_MSG_CHECKING([available translations])
+AC_SUBST([LINGUAS], $(echo $(ls $srcdir/po/*.po | $GREP -v quot |
+  $SED 's,^.*po/\(.*\)\.po$,\1,')))
+AC_MSG_RESULT([$LINGUAS])
+
+AS_IF([test x$VCS = xy],
+
+  AC_MSG_CHECKING([release date])
+  AC_SUBST([RELEASE_DATE], $(LINGUA=C LANG=C date '+%B %d, %Y'))
+  AC_MSG_RESULT([$RELEASE_DATE])
+
+  AC_MSG_CHECKING([Autoconf version])
+  AC_SUBST([AUTOCONF_VERSION], m4_defn([AC_AUTOCONF_VERSION]))
+  AC_MSG_RESULT([$AUTOCONF_VERSION])
+
+  AC_MSG_CHECKING([Automake version])
+  AC_SUBST([AUTOMAKE_VERSION], `automake --version |
+    $SED -n 's/^automake.* \(@<:@@<:@:digit:@:>@.@:>@*\)$/\1/p'`)
+  AC_MSG_RESULT([$AUTOMAKE_VERSION])
+
+  AC_MSG_CHECKING([Texinfo version])
+  AC_SUBST([TEXINFO_VERSION], `$MAKEINFO --version |
+    $SED -n 's/^makeinfo.* \(@<:@@<:@:digit:@:>@.@:>@*\)$/\1/p'`)
+  AC_MSG_RESULT([$TEXINFO_VERSION]))
 
 
 
@@ -195,7 +221,8 @@ po/LINGUAS
 src/Makefile
 doc/Makefile
 doc/Doxyfile
-doc/man/Makefile])
+doc/man/Makefile
+doc/release/release.texi])
 
 AC_OUTPUT
 

@@ -582,15 +582,6 @@ update the @file{po/} infrastructure.  After doing so, rerun
 imported.  @xref{,,, gnulib, Gnulib Manual}, for more information.
 @end itemize
 
-When starting development after a release, it's necessary to bump the
-package's version.  There are two files that need to be changed:
-@file{configure.ac} and @file{doc/release/release.texi}.  The former
-defines the package's version in the @code{AC_INIT} macro call, and the
-latter in the @code{version} Texinfo variable.  This package doesn't use
-the @file{version.texi} auto-generated file, because that provision is
-not flexible enough to address this package's complex documentation
-build system.
-
 When committing changes to the repository always create an entry in the
 @file{doc/release/latest-news.texi} file for any user-visible changes or
 additions made.  This file is intended to provide the latest release

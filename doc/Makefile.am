@@ -20,6 +20,8 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
+include ../documentation.am
+
 
 
 
@@ -29,8 +31,6 @@
 #######################
 
 SUBDIRS = man
-
-EXTRA_DIST = release/ANNOUNCEMENT.texi
 
 TEXI2DVI := ${TEXI2DVI} ${texinfo_includes}
 
@@ -44,12 +44,19 @@ TEXI2DVI := ${TEXI2DVI} ${texinfo_includes}
 
 info_TEXINFOS = ccd2cue.texi
 
+# 'release/release.texi' file is not in the list below because
+# although 'ccd2cue.texi' includes it, as does every other Texinfo
+# source, we don't want to trigger a rebuild of the manual after the
+# user has configured the package, since it is generated at that
+# phase.  Therefore, before a release it's best to start with a clean
+# source tree to ensure every file is up to date.
+
 ccd2cue_TEXINFOS = \
-release/release.texi \
-$(addprefix release/,${release_doc:=.texi}) \
-philosophy/essay-header.texi \
-$(addprefix philosophy/,${philosophy_doc:=.texi}) \
-copying.texi
+  release/release.texi.in \
+  $(addprefix release/,${release_doc:=.texi}) \
+  philosophy/essay-header.texi \
+  $(addprefix philosophy/,${philosophy_doc:=.texi}) \
+  copying.texi
 
 
 

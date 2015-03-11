@@ -17,14 +17,14 @@
 @ifclear packageInclude
 
 @c --- Basic information;
-@set package GNU ccd2cue
-@set tarName ccd2cue
-@set version 0.4.1
-@set GNUid ccd2cue
-@set date March 6, 2015
-@set autoconfVersion 2.69
-@set automakeVersion 1.14.1
-@set texinfoVersion 5.2
+@set package @PACKAGE_NAME@
+@set tarName @PACKAGE_TARNAME@
+@set version @PACKAGE_VERSION@
+@set GNUid @PACKAGE_TARNAME@
+@set date @RELEASE_DATE@
+@set autoconfVersion @AUTOCONF_VERSION@
+@set automakeVersion @AUTOMAKE_VERSION@
+@set texinfoVersion @TEXINFO_VERSION@
 
 
 

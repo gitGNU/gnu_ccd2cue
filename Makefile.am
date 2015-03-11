@@ -20,6 +20,8 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
+include documentation.am
+
 
 
 
@@ -32,35 +34,9 @@ ACLOCAL_AMFLAGS = -I m4
 
 SUBDIRS = po src doc
 
-top_level_doc = ${release_doc} $(call uc,${philosophy_doc})
-
 EXTRA_DIST = ${top_level_doc} ChangeLog po/Rules-ccd2cue po/LINGUAS.in
 
 DISTCLEANFILES = po/LINGUAS
-
-
-
-
-
-#######################
-# Texinfo definitions #
-#######################
-
-export texinfo_includes = \
--I ${abs_top_srcdir}/build-aux \
--I ${abs_top_srcdir}/doc \
--I ${abs_top_srcdir}/doc/release \
--I ${abs_top_srcdir}/doc/philosophy \
--I ${abs_top_srcdir}/doc/www
-
-export AM_MAKEINFOFLAGS = ${texinfo_includes}
-export makeinfo = ${MAKEINFO} ${AM_MAKEINFOFLAGS} ${MAKEINFOFLAGS}
-
-export MAKEINFOHTML = ${MAKEINFO} --html
-export AM_MAKEINFOHTMLFLAGS = ${texinfo_includes}
-export makeinfohtml = ${MAKEINFOHTML} ${AM_MAKEINFOHTMLFLAGS} ${MAKEINFOHTMLFLAGS}
-
-export TEXI2DVI := ${TEXI2DVI} ${texinfo_includes}
 
 
 
@@ -70,9 +46,7 @@ export TEXI2DVI := ${TEXI2DVI} ${texinfo_includes}
 # Release documentation #
 #########################
 
-release_texi = ${abs_top_srcdir}/doc/release/release.texi
-
-release_doc = README NEWS TODO AUTHORS THANKS DONORS ANNOUNCEMENT
+release_texi = ${abs_top_srcdir}/doc/release/release.texi.in
 
 ### Template recipe intended to generate the top-level release
 ### documentation files from the respective Texinfo sources.
@@ -101,14 +75,6 @@ ChangeLog :
 ############################
 
 essay_header = ${abs_top_srcdir}/doc/philosophy/essay-header.texi
-
-philosophy_doc = the-gnu-manifesto the-gnu-project		\
-linux-and-the-gnu-system why-software-should-not-have-owners	\
-why-free-software-needs-free-documentation			\
-gnu-free-documentation-license
-
-# Lower-case to upper-case conversion funtion
-uc = $(shell echo ${1} | LC_ALL=C tr '[:lower:]' '[:upper:]')
 
 ### Template recipe intended to generate the top-level release
 ### documentation files from the respective Texinfo sources.
