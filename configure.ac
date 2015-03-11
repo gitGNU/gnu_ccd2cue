@@ -222,8 +222,6 @@ Build:
  tags, ctags
                 Build respective tags table file.
 
- homepage       Generate package's homepage.
-
 
 Installation:
 
@@ -261,6 +259,13 @@ Distribution:
                directory into a tarball.
  distcheck    Same as \`dist' but also check generated
                tarball for correctness.
+
+
+Maintenance:
+
+ These can only be made from VCS checkouts.
+
+ homepage     Generate package's homepage.
  distgnu      Same as \`distcheck' but also sign and upload the
                resulting tarball to the GNU ftp site.
 "])
