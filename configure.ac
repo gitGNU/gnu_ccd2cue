@@ -166,6 +166,10 @@ DX_INIT_DOXYGEN([ccd2cue], ['$(top_builddir)/doc/Doxyfile'],
   ['$(top_builddir)/doc/doxygen'])
 
 
+# rsync is needed to fetch PO files from 'translationproject.org'.
+AM_MISSING_PROG([RSYNC], [rsync])
+
+
 
 
 
@@ -268,4 +272,6 @@ Maintenance:
  homepage     Generate package's homepage.
  distgnu      Same as \`distcheck' but also sign and upload the
                resulting tarball to the GNU ftp site.
+ fetchpo      Fetch the latest PO translation files from the
+               Translation Project.
 "])

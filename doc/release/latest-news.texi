@@ -34,6 +34,10 @@ localizable.  This bug was reported by Mario Blättermann.
 Fixed 'distdir' Make target bug in which the target failed to be made
 when top-level documentation files were not present.
 @item
+Added 'fetchpo' Make target which aids maintainers in getting the latest
+PO translation files available at their discretion.  That target can
+only be made in VCS checkouts.
+@item
 Improved documentation's ``Hacking'' section to explain various topics
 related to ccd2cue's specific development work-flow.
 @item

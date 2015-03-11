@@ -143,9 +143,22 @@ MAINTAINERCLEANFILES = ${top_level_doc}
 # Distribution #
 ################
 
-## Distribute top-level release and philosophy documentation.
+# 'po/LINGUAS' file is generated automatically at configuration time
+# and thus should not be included.
 dist-hook :
 	$(RM) ${distdir}/po/LINGUAS
+
+
+
+
+
+###############
+# Maintenance #
+###############
+
+fetchpo : ensure-vcs
+	${AM_V_at} echo 'Fetching PO files...'
+	${AM_V_at} $(RSYNC) -Lrtvz translationproject.org::tp/latest/ccd2cue/ po
 
 distgnu : ensure-vcs distcheck
 	${AM_V_at} PATH=build-aux:${PATH} gnupload \
