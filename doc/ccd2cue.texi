@@ -303,7 +303,7 @@ contribution for this package are noteworthy are acknowledged.
 
 @menu
 Present and Future:
-* Announcement::  Published message used to announce this new release;
+* Announcement::  Published announcement message of this new release;
 * News::          User-visible changes since previous versions;
 * To do::         Features we want to see implemented someday;
 
