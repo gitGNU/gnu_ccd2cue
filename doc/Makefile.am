@@ -57,7 +57,8 @@ ccd2cue_TEXINFOS = \
   philosophy/essay-header.texi \
   $(addprefix philosophy/,${philosophy_doc:=.texi}) \
   copying.texi \
-  manifesto.texi
+  release/manifesto.texi \
+  release/description.texi
 
 
 

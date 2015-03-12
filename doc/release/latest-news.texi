@@ -44,8 +44,8 @@ Make target @code{fetchpo} Make target which fetches from the
 Translation Project the latest PO files available .  This target can
 only be made in VCS checkouts.
 @item
-Latest release news, manifesto and package version in a single point of
-maintenance.
+Latest release news, manifesto, package's description and version in a
+single point of maintenance.
 @item
 Package meta-information, as release date and build system version,
 automatically generated at configuration time.

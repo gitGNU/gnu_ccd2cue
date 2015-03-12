@@ -199,47 +199,7 @@ package atom feed @url{@value{atomFeed}}.
 @end cartouche
 @end ifclear
 
-GNU ccd2cue is a CCD sheet to CUE sheet converter.  It supports the
-full extent of CUE sheet format expressiveness, including mixed-mode
-discs and CD-Text meta-data.  It plays an important role for those who
-need to use optical disc data which is only available in the
-proprietary sheet format CCD, but don't want to surrender their
-freedom.  It fills an important gap in the free software world because
-before its conception it was impossible to use complex forms of
-optical disc data laid out by CCD sheets in a whole/holy free
-operating system.
-
-@ifset homepage
-@multitable {} {}
-@item @image{images/gpl} @tab
-@emph{The GNU ccd2cue software is free software}; you can redistribute
-it and/or modify it under the terms of the GNU
-@acronym{@url{@value{progLicenseURL}, GPL}, General Public Licence} as
-published by the @acronym{FSF, Free Software Foundation}; either
-version 3, or (at your option) any later version.
-@end multitable
-@end ifset
-
-The GNU ccd2cue documentation is also intended to be a reference
-documentation for both sheet format specifications.  That way we can
-reverse engineer the secret CCD sheet proprietary format only once and
-then make the information available for developers in order to benefit
-all free software users that want their software to be interoperable.
-The CUE sheet format is not a secret, but with this package we take
-the opportunity to ensure that its specification is available under a
-free documentation license for the sake of the whole free software
-community.
-
-@ifset homepage
-@multitable {} {}
-@item @image{images/fdl} @tab
-@emph{The GNU ccd2cue documentation is free documentation}; you can
-redistribute it and/or modify it under the terms of the GNU
-@acronym{@url{@value{docLicenseURL}, FDL}, Free Documentation Licence}
-as published by the FSF --- with no Invariant Sections; either version
-1.3, or (at your option) any later version.
-@end multitable
-@end ifset
+@include description.texi
 
 
 

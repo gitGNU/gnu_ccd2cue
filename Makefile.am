@@ -47,6 +47,11 @@ DISTCLEANFILES = po/LINGUAS
 #########################
 
 release_texi = ${abs_top_srcdir}/doc/release/release.texi.in
+description_texi = ${abs_top_srcdir}/doc/release/description.texi
+manifesto_texi = ${abs_top_srcdir}/doc/release/manifesto.texi
+
+README : ${manifesto_texi} ${description_texi}
+ANNOUNCEMENT : ${description_texi}
 
 ### Template recipe intended to generate the top-level release
 ### documentation files from the respective Texinfo sources.

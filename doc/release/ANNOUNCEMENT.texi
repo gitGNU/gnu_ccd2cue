@@ -54,26 +54,7 @@
 @centerchap @value{package} @value{version} (@value{date})
 @end ifclear
 
-GNU ccd2cue is a CCD sheet to CUE sheet converter.  It supports the
-full extent of CUE sheet format expressiveness, including mixed-mode
-discs and CD-Text meta-data.  It plays an important role for those who
-need to use optical disc data which is only available in the
-proprietary sheet format CCD, but don't want to surrender their
-freedom.  It fills an important gap in the free software world because
-before its conception it was impossible to use complex forms of
-optical disc data laid out by CCD sheets in a whole/holy free
-operating system.
-
-The GNU ccd2cue documentation is also intended to be a reference
-documentation for both sheet format specifications.  That way we can
-reverse engineer the secret CCD sheet proprietary format only once and
-then make the information available for developers in order to benefit
-all free software users that want their software to be interoperable.
-The CUE sheet format is not a secret, but with this package we take
-the opportunity to ensure that its specification is available under a
-free documentation license for the sake of the whole free software
-community.
-
+@include description.texi
 
 
 
