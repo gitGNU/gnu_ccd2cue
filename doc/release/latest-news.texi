@@ -35,23 +35,23 @@ Blättermann.
 Numerous grammatical and markup corrections to the user's manual.  Patch
 submitted by Karl Berry.
 @item
-Added @code{announcegnu} Make target which automatically sends a signed
+Make target @code{announcegnu} which automatically sends a signed
 announcement message to @email{info-gnu@@gnu.org} and
 @email{ccd2cue@@gnu.org} mailing lists when a release is ready.  This
 target can only be made in VCS checkouts.
 @item
-Added @code{fetchpo} Make target which fetches from the Translation
-Project the latest PO files available .  This target can only be made in
-VCS checkouts.
+Make target @code{fetchpo} Make target which fetches from the
+Translation Project the latest PO files available .  This target can
+only be made in VCS checkouts.
 @item
-Latest release news and package version are in a single point of
+Latest release news, manifesto and package version in a single point of
 maintenance.
 @item
 Package meta-information, as release date and build system version,
 automatically generated at configuration time.
 @item
-Announcement message is available in user's manual ``Release'' chapter.
+Announcement message in user's manual.
 @item
-@code{distdir} Make target can be made when top-level documentation
+Make target @code{distdir} can be made when top-level documentation
 files are missing.
 @end itemize
