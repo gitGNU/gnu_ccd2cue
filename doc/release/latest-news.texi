@@ -27,14 +27,19 @@ Danish, German, Ukrainian and Vietnamese translations.
 Support for localized Unix manual pages.  Feature suggested by Mario
 Blättermann (German translator).
 @item
-@option{--help} text outputs respectable Unix manual pages.
+Respectable Unix manual pages.
 @item
 @option{--help} text meta-variables are localizable.  Bug reported by
 Mario Blättermann.
 @item
-@code{fetchpo} Make target which aids maintainers in getting the latest
-PO translation files available at their discretion.  This target can
-only be made in VCS checkouts.
+Added @code{announcegnu} Make target which automatically sends a signed
+announcement message to @email{info-gnu@@gnu.org} and
+@email{ccd2cue@@gnu.org} mailing lists when a release is ready.  This
+target can only be made in VCS checkouts.
+@item
+Added @code{fetchpo} Make target which fetches from the Translation
+Project the latest PO files available .  This target can only be made in
+VCS checkouts.
 @item
 Latest release news and package version are in a single point of
 maintenance.
@@ -43,8 +48,8 @@ Package meta-information like release date and build system tools
 versions are automatically generated at configuration time and don't
 need maintainer intervention.
 @item
-Announcement message is available in the manual's ``release'' chapter.
+Announcement message is available in manual's ``Release'' chapter.
 @item
-@code{distdir} Make target can be made made when top-level documentation
+@code{distdir} Make target can be made when top-level documentation
 files are not present.
 @end itemize

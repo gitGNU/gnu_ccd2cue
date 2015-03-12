@@ -130,6 +130,14 @@ distgnu : ensure-vcs distcheck
 	${AM_V_at} PATH=build-aux:${PATH} gnupload \
 	  --to ftp.gnu.org:${PACKAGE_TARNAME} ${PACKAGE_TARNAME}-${PACKAGE_VERSION}.tar.gz
 
+export PACKAGE_NAME PACKAGE_VERSION PACKAGE_MAILING_LIST
+
+announcegnu : ensure-vcs ANNOUNCEMENT
+	${AM_V_at} echo -n 'Sending announcement...'
+	${AM_V_at} build-aux/make-announcement-mail | \
+	  msmtp --read-recipients --account=gnu
+	${AM_V_at} echo ' done.'
+
 ensure-vcs :
 	${AM_V_at} if test x${VCS} = xn; then \
 	  echo "***** Sorry, the requested target can only be made from \

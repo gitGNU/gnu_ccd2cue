@@ -40,12 +40,16 @@ ccd2cue-*
 aclocal.m4
 autom4te.cache
 
-build-aux/*
-!git2cl
-!gendocs.sh
-!texinfo.tex
-!gnupload
-!ncftpput
+# build-aux/
+compile
+config.guess
+config.rpath
+config.sub
+depcomp
+install-sh
+mdate-sh
+missing
+
 
 ### src/
 
