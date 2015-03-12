@@ -17,7 +17,7 @@
 @c This file is intended to provide the latest release news for the
 @c 'NEWS.texi' and 'ANNOUNCEMENT.texi' files to avoid duplication of
 @c information and syncing work.  After a release is made the news items
-@c below should be moved to the 'NEWS.texi' file and another one should
+@c below should be moved to the 'NEWS.texi' file and another list should
 @c be built from scratch here.
 
 @itemize
@@ -29,8 +29,11 @@ Blättermann (German translator).
 @item
 Respectable Unix manual pages.
 @item
-@option{--help} text meta-variables are localizable.  Bug reported by
-Mario Blättermann.
+Localizable @option{--help} meta-variables.  Bug reported by Mario
+Blättermann.
+@item
+Numerous grammatical and markup corrections to the user's manual.  Patch
+submitted by Karl Berry.
 @item
 Added @code{announcegnu} Make target which automatically sends a signed
 announcement message to @email{info-gnu@@gnu.org} and
@@ -44,12 +47,11 @@ VCS checkouts.
 Latest release news and package version are in a single point of
 maintenance.
 @item
-Package meta-information like release date and build system tools
-versions are automatically generated at configuration time and don't
-need maintainer intervention.
+Package meta-information, as release date and build system version,
+automatically generated at configuration time.
 @item
-Announcement message is available in manual's ``Release'' chapter.
+Announcement message is available in user's manual ``Release'' chapter.
 @item
 @code{distdir} Make target can be made when top-level documentation
-files are not present.
+files are missing.
 @end itemize

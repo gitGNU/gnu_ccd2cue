@@ -216,8 +216,8 @@ software friendly format.
 @pindex program cdrdao
 @cindex TOC sheet format
 @cindex format of TOC sheet
-One such software capable of burning a raw image file laid out by a
-CUE sheet file, as well as to convert a CUE sheet file to the TOC
+One such program capable of burning a raw image file laid out by a
+CUE sheet file, as well as converting a CUE sheet file to the TOC
 sheet format, is @webdoc{cdrdao, http://cdrdao.sourceforge.net/}.
 
 @cindex GNU ccd2cue features
@@ -234,7 +234,7 @@ relevant information (like album, song and artist names) on a standard
 compliant audio CD.};
 @item
 Track special sub-code flags@footnote{In-disc information that
-determines copy restriction (very sad!) and audio track
+determines copy restriction (very sad!)@: and audio track
 characteristics like 4 channel audio and track pre-emphasis.};
 @end itemize
 
@@ -246,7 +246,7 @@ characteristics like 4 channel audio and track pre-emphasis.};
 @end iftex
 This manual is split in two major logical segments: instruction and
 reference.  In the former resides the manual content targeted to
-instructional, reasonably tutorial, use.  It is composed by the
+instructional, reasonably tutorial, use.  It is composed of the
 following chapters:
 
 @table @emph
@@ -259,14 +259,14 @@ subject to change between releases.
 @item Operation
 Teach how the program works from the user's perspective;
 @item Tutorial
-Guides the reader step-by-step using the program in face of practical
+Guides the reader step-by-step in using the program for practical
 common use cases.
 @item Invocation
 Concerns @command{ccd2cue} invocation syntax, accepted options and
 their meanings.
 @item Burning
 Gives an @emph{important warning} and advice about burning the
-resultant CUE sheet.  @strong{READ THAT!}
+resulting CUE sheet.  @strong{READ THAT!}
 @end table
 
 @iftex
@@ -291,7 +291,7 @@ Describes the CUE sheet format.
 @sp 1
 @noindent
 @end iftex
-Now that you are acquainted to the program and documentation,
+Now that you are acquainted with the program and documentation,
 @strong{HAPPY@tie{}HACKING!}
 
 
@@ -312,9 +312,9 @@ Now that you are acquainted to the program and documentation,
 @chapter Release
 
 In this chapter one can find information that are specific to the
-current release or subject to change between releases.  It is
-presented the features this package acquired over time, problems that
-affects its overall usage and what possibly could happen to it --- by
+current release or subject to change between releases.  It
+presents the features this package acquired over time, problems that
+affect its overall usage and what possibly could happen to it --- by
 our wishes --- in the future.  Last but not least, people whose
 contribution for this package are noteworthy are acknowledged.
 
@@ -400,18 +400,18 @@ People:
 
 @cindex GNU ccd2cue use
 @cindex using GNU ccd2cue
-Firstly, it is important to discern between the various files involved
+First, it is important to distinguish between the various files involved
 in the conversion operation accomplished by GNU ccd2cue.  The whole
-process consists basically of a conversion of the CCD set of files
-into a CUE set of files, whose meaning is, by suffix, described below:
+process basically consists of a conversion of the CCD set of files
+into a CUE set of files, whose meaning, by suffix, is described below:
 
 @cindex CCD set of files
 @cindex set of files of CCD
 @iftex
 @sp 1
 @end iftex
-In the @dfn{CCD set} all files have the same base-name and the
-respective suffixes are mandatory.  It is composed by:
+In the @dfn{CCD set} all files have the same basename and the
+respective suffixes are mandatory.  It is composed of:
 @table @file
 @item .img
 Audio/data raw image (hereafter called @dfn{image file});
@@ -426,9 +426,9 @@ Layout description (hereafter called @dfn{CCD sheet file});
 @iftex
 @sp 1
 @end iftex
-In the @dfn{CUE set} not all files have necessarily the same base-name
+In the @dfn{CUE set} all files need not have the same basename
 and the respective suffixes are just an optional default.  It is
-composed by:
+composed of:
 @table @file
 @item .bin
 The same image file as above with the traditional suffix;
@@ -447,7 +447,7 @@ The GNU ccd2cue program never touches any of the files in the CCD set; not
 even to rename the image file to use the traditional @file{.bin}
 suffix.  However it will still work with other software because the
 image file is explicitly referenced inside the CUE sheet file.  The
-idea is to take the less intrusive approach, e.g., to have both sets
+idea is to take the least intrusive approach, e.g., to have both sets
 of files simultaneously without any interfering with each other.
 Although we are against the use and development of any proprietary
 program, including those which can handle CCD sheets@footnote{Actually
@@ -462,14 +462,14 @@ improved in a subsequent release; or more expressive destination
 formats@footnote{The TOC sheet format is an example.} become
 supported; or just for debugging.
 
-The GNU ccd2cue program has just one non-trivial operation: the conversion
-and only rely on the information contained inside the CCD sheet file
+The GNU ccd2cue program has just one non-trivial operation: the conversion.
+And this only relies on the information contained inside the CCD sheet file
 to generate the equivalent CUE sheet file.  Thus, GNU ccd2cue does not
-enforce, and actually does not even check, if you have the sub-channel
+enforce, and in fact does not even check, if you have the sub-channel
 file, or even more important, the actual image file.  Therefore,
 although it is possible to generate seamlessly a CUE sheet file from a
 lone CCD sheet file, it is a must to have also, at least, the
-correspondent image file when burning the disc.
+corresponding image file in order to burn the disc.
 
 @cindex sub-channel information
 @cindex @file{.sub} file
@@ -479,14 +479,14 @@ produced CUE sheet file, the sub-channel file is not used nor
 referenced at all in the CUE sheet file.  The CUE sheet format was not
 designed to describe the information found in the sub-channel file and
 most optical disc authoring software seems to ignore it when guided by
-a CUE sheet file.  Therefore, does not expect to obtain an exact copy,
-at sub-channel level, using the CUE sheet file to guide your burning
+a CUE sheet file.  Therefore, do not expect to obtain an exact copy,
+at the sub-channel level, using the CUE sheet file to guide your burning
 software.  Nevertheless, for the vast majority of practical uses the
 extra sub-channel data contained in the sub-channel file can be fully
 ignored producing yet usable discs for the intended application.
 Notice however that that does not mean CUE sheet format is incapable
 of describing any sub-channel data; in fact it describes the most
-remarkable ones.  Hence all that data is available for GNU ccd2cue not
+important ones.  Hence all that data is available for GNU ccd2cue not
 inside the sub-channel file but rather in the CCD sheet file itself;
 the CD-Text meta-data is such a case --- the CD-Text file is produced
 from decoded sub-channel information available inside the CCD sheet
@@ -506,7 +506,7 @@ file.
 The most ordinary use case is when you have a CCD set of files and
 just want to generate a CUE sheet file in order to burn or otherwise
 access the data inside the image file.  Supposing your CCD sheet file
-is called free-as-in-freedom.ccd, you are done with the command:
+is called free-as-in-freedom.ccd, all you need is the command:
 
 @example
 ccd2cue -o free-as-in-freedom.cue free-as-in-freedom.ccd
@@ -530,22 +530,22 @@ ccd2cue free-as-in-freedom.ccd
 the result is that the yielding CUE sheet is written to the standard
 output, giving you the chance to pipe it out to another command or to
 use the shell to redirect it to a file, as you would do without it
-using the @option{-o} option.  The same thing is accomplished passing
+using the @option{-o} option.  The same thing is accomplished by passing
 @code{-} as an argument to option @option{-o}.
 
 @cindex GNU ccd2cue, omitting all arguments
 @cindex omitting all arguments of GNU ccd2cue
 @cindex file name deduction algorithm
 @cindex deduction of file names
-May you guess what happens if we omit the CCD sheet input file
+Can you guess what happens if we omit the CCD sheet input file
 specification as well?  If you answered that GNU ccd2cue will read the CCD
 sheet input from standard input and write the correspondent CUE sheet
 output to standard output, unfortunately you are wrong.  It would be
 nice if it behaved that way, but there is an inherent design drawback:
-the CUE sheet need to reference an image file and possibly a CD-Text
-file; that way how can it have any clue about those file names?  For
+the CUE sheet needs to reference an image file and possibly a CD-Text
+file; in that way, how could it have any clue about those file names?  For
 that reason it is always necessary to supply at least one file name in
-an option or non-option argument, that way GNU ccd2cue can deduce the
+an option or non-option argument, so GNU ccd2cue can deduce the
 remaining file names needed.  The deduction algorithm is very simple:
 get the file name supplied, in the following preference order:
 
@@ -565,14 +565,14 @@ Therefore, if you want to read the CCD sheet input from standard input
 and write the CCD sheet output to standard output, it is enough to
 just make explicit the name of a image name, possibly with a
 nonstandard suffix, regardless of the actual existence of the image
-file, like in
+file, as in
 
 @example
 ccd2cue -i free-as-in-free-speech.img
 @end example
 
 @noindent
-being @file{free-as-in-free-speech.img} the demanded image file name.
+where @file{free-as-in-free-speech.img} is the image file name.
 On the other hand, you can use the @option{-i} (@option{--image}) in
 conjunction with the CCD sheet file name and/or CUE sheet file name
 just to override the image file name deduction.  As expected, the
@@ -585,8 +585,8 @@ If, for some weird reason, you want to move the CUE sheet file around
 while keeping the image file in its original place and yet be able to
 normally use this pair as if they were in the same directory, you can
 use the option @option{-a} (@option{--absolute-file-name}).  That
-option will make the file name deduction algorithm explained above to
-conserve the absolute directory name for each file; however, as a
+option will make the file name deduction algorithm explained above
+retain the absolute directory name for each file; however, as a
 consequence of this approach, it will only work for file names not
 directly supplied, but deduced by the program.
 
@@ -654,8 +654,8 @@ Use absolute file name deduction.
 Reference @file{@var{img-file}} as the image file.
 @end table
 
-The @file{@var{img-file}} is a reference to a data file required only in
-burning time and thus its existence is not enforced in conversion
+The @file{@var{img-file}} is a reference to a data file required only at
+burning time and thus its existence is not enforced at the conversion
 stage.
 
 @iftex
@@ -878,10 +878,10 @@ production.
 @cartouche
 @quotation Warning
 This appendix describes the CCD sheet format.  This description is the
-result of observation, deduction and tests.  Although there is quite
-uncertainty about the semantic of a number of elements, it is expected
+result of observation, deduction and tests.  Although there is quite some
+uncertainty about the semantics of a number of elements, it is expected
 that every applicable entry, or otherwise relevant element --- for the
-production of the correspondent CUE sheet --- is well understood.  Due
+production of the corresponding CUE sheet --- is well understood.  Due
 to its proprietary nature, no authoritative, free and public available
 reference of the CCD sheet format do exist.  Whereas the information
 contained herein is thought to be accurate, there is no guarantee of
@@ -897,7 +897,7 @@ The following syntactic rules apply to CCD sheets:
 @enumerate
 @item
 Every section has a name in square brackets that appears on a line by
-itself (like in @code{[CDText]}).
+itself (as in @code{[CDText]}).
 @item
 Every property has a name and a value (in the form
 @code{@var{name}=@var{value}} --- there is no space around @samp{=})
@@ -908,14 +908,14 @@ next section declaration or end-of-file) and sections cannot be
 nested.
 @item
 A @samp{ } (space) can occur in a @dfn{indexed} section
-(resp. property) name followed by a number (like in @code{[Session 3]}
-(resp. @code{INDEX 0=17524})).
+(resp.@: property) name followed by a number (like in @code{[Session 3]}
+(resp.@: @code{INDEX 0=17524})).
 @item
 Each non-indexed section (resp. property) come out only once per file
-(resp. section).
+(resp.@: section).
 @item
 Indexes of sections and properties starts at the minimum value allowed
-and increments sequentially.
+and increment sequentially.
 @end enumerate
 
 Each following manual section corresponds to a CCD sheet
@@ -1091,8 +1091,8 @@ Non-negative integer (?);
 @table @asis
 @ccdPropertySyntax
 @item Description
-The size in bytes of the correspondent CD-Text file discarding one
-byte of the terminating null character; @code{0} if there is no
+The size in bytes of the corresponding CD-Text file discarding one
+byte for the terminating null character; @code{0} if there is no
 CD-Text meta-data;
 
 See @cueRef{CDTEXTFILE}, for more information on the CD-Text file.
@@ -1521,7 +1521,7 @@ See @cueRef{INDEX}.
 @item Description
 Special sub-code flags for this track;
 @item Value
-A space separated string of the flags described in @cdfRef{FLAGS};
+A space-separated string of the flags described in @cdfRef{FLAGS};
 @item CUE sheet
 See @cueRef{FLAGS}.
 @end table
@@ -1555,7 +1555,7 @@ Blank lines are ignored.
 There are three contexts in a CUE sheet file: @dfn{None}, @dfn{File}
 and @dfn{Track}.  The first of them is not introduced by any command,
 and the last two are introduced by @code{FILE} and @code{TRACK}
-commands, respectively.  The only commands that pertains to more than
+commands, respectively.  The only commands that pertain to more than
 one context, namely None and Track, are the CD-Text related commands
 @code{TITLE}, @code{PERFORMER} and @code{SONGWRITER}.  The only
 commands that can appear multiple times within its contexts are
@@ -1580,8 +1580,8 @@ specific positioning rules.
 
 Each following manual section corresponds to a CUE command.  For each
 of them is explained its meaning, context structure and positioning
-rules.  In the end of each section is given an example of use and is
-made a reference to the correlated CCD sheet format element, if there
+rules.  At the end of each section is an example of use and
+a reference to the correlated CCD sheet format element, if there
 is any.
 
 @iftex
@@ -1591,14 +1591,14 @@ is any.
 The meaning of the context tables is:
 @table @asis
 @item Parents
-The contexts to which this command pertains; "None" here names the
+The contexts to which this command pertains; @samp{None} here names the
 context introduced by no command.
 @item Multiple
-Whether is allowed multiple instances of this command within a single
-instance of its context; "Yes" or "No" answer.
+Whether multiple instances of this command within a single
+instance of its context is allows; value is @samp{Yes} or @samp{No}.
 @item Children
 The commands that pertains to the context introduced by this command;
-"None" if there is not one.
+@samp{None} if there is not one.
 @end table
 
 @iftex
@@ -1609,10 +1609,10 @@ The meaning of the positioning tables is:
 @table @asis
 @item After
 This command must appear after the commands listed here, if they are
-present.  The expression "None" means nothing.
+present.  The expression @samp{None} means nothing.
 @item Before
 This command must appear before the commands listed here, if they are
-present.  The expression "None" means nothing.
+present.  The expression @samp{None} means nothing.
 @end table
 
 @c --- Start of Helper Macro Definitions;
@@ -1992,7 +1992,7 @@ FILE "The Free Software Song.wav" WAVE}
 @subheading CCD sheet
 
 Since the CCD sheet file is not meant to be composed from scratch by
-an user or authoring software, rather created to mimic an existing
+an user or authoring software, but rather created to mimic an existing
 disc layout, it is assumed that the source of data are the CCD image
 and sub-channel files, which have predefined formats and names.  Thus
 there is no related explicit element in the CCD sheet format.
@@ -2010,7 +2010,7 @@ Define the @var{number}th track, whose type is @var{data-type}.  The
 value @var{number} is a strictly positive integer and must be one
 greater than the last one supplied to a previous @code{TRACK} command,
 notwithstanding @var{number} can be greater than @code{1} in the first
-occurrence of @code{TRACK} command; however it cannot exceed @code{99}
+occurrence of @code{TRACK} command; however, it cannot exceed @code{99}
 in any case.  Usually @var{number} is padded with a @code{0} on the
 left when smaller than @code{10}, in order to keep track numbers two
 digit wide uniformly throughout the CUE sheet.  The @var{data-type}
@@ -2295,11 +2295,11 @@ Ignore @var{comment}.
 The value @var{comment} can be any string of arbitrary length, but it
 ends at end-of-line.
 
-Its practical use is to comment the CUE sheet for the human
-comprehension sake.
+Its practical use is to comment the CUE sheet for the sake of human
+readers.
 
-There is no way to make multi-line comments, the best one can get is
-to start consecutive lines with this command.
+There is no way to make multi-line comments, but one can simply
+start consecutive lines with this command.
 @end deffn
 
 @heading Context
