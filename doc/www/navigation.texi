@@ -17,6 +17,7 @@
 @multitable @columnfractions .05 .05 .05 .05 .05 .05 .05
 @headitem @url{README.html#Top, Main}
 @tab @url{manual/index.html#Top, Manual}
+@tab @url{ANNOUNCEMENT.html#Top, Announcement}
 @tab @url{NEWS.html#Top, News}
 @tab @url{TODO.html#Top, To do}
 @tab @url{AUTHORS.html#Top, Authors}
