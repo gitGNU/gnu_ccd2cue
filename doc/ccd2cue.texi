@@ -21,7 +21,7 @@
 @c @documentlanguage en_US
 @firstparagraphindent insert
 @footnotestyle end
-@include version.texi
+@include release.texi
 @settitle GNU ccd2cue
 @defindex cdfF
 @defindex ccdS
@@ -136,8 +136,8 @@ Indexes:
 
 @c --- Title page;
 @titlepage
-@title GNU ccd2cue
-@subtitle for version @value{VERSION} (@value{UPDATED})
+@title @value{package}
+@subtitle for version @value{version} (@value{date})
 @author Bruno Félix Rezende Ribeiro <@email{oitofelix@@gnu.org}>
 @page
 @vskip 0pt plus 1filll

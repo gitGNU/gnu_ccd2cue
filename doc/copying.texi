@@ -33,7 +33,7 @@ This is the @value{FILE} file for @value{package} version
 @value{version}.
 @end ifset
 @ifclear FILE
-This manual is for @value{package} version @value{version}.
+This manual is for @value{package} version @value{version} (@value{date}).
 @end ifclear
 
 @iftex
