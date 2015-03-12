@@ -36,9 +36,10 @@ Numerous grammatical and markup corrections to the user's manual.  Patch
 submitted by Karl Berry.
 @item
 Make target @code{announcegnu} which automatically sends a signed
-announcement message to @email{info-gnu@@gnu.org} and
-@email{ccd2cue@@gnu.org} mailing lists when a release is ready.  This
-target can only be made in VCS checkouts.
+announcement message to @email{info-gnu@@gnu.org},
+@email{ccd2cue@@gnu.org} and @email{coordinator@@translationproject.org}
+mailing lists when a release is ready.  This target can only be made in
+VCS checkouts.
 @item
 Make target @code{fetchpo} which fetches from the Translation Project
 the latest PO files available .  This target can only be made in VCS

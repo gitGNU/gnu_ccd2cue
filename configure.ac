@@ -301,8 +301,9 @@ Maintenance:
  homepage     Generate package's homepage.
  distgnu      Same as \`distcheck' but also sign and upload the
                resulting tarball to the GNU ftp site.
- announcegnu  Send release announcement to 'info-gnu@gnu.org' and
-               '$PACKAGE_MAILING_LIST'.
+ announcegnu  Send release announcement to 'info-gnu@gnu.org',
+               '$PACKAGE_MAILING_LIST' and
+               'coordinator@translationproject.org'
  fetchpo      Fetch the latest PO translation files from the
                Translation Project.
 "])

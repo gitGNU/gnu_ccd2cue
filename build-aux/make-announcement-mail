@@ -15,7 +15,7 @@ ensure_defined PACKAGE_NAME PACKAGE_VERSION PACKAGE_MAILING_LIST
 cat <<EOF
 From: $(git config --get user.email)
 To: info-gnu@gnu.org
-Cc: ${PACKAGE_MAILING_LIST}
+Cc: ${PACKAGE_MAILING_LIST}, coordinator@translationproject.org
 Subject: ${PACKAGE_NAME} ${PACKAGE_VERSION} released
 Date: $(date --rfc-2822)
 Organization: The GNU Project
