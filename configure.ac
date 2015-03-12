@@ -29,7 +29,9 @@ dnl
 AC_INIT([GNU ccd2cue], [0.5],
 [bug-ccd2cue@gnu.org], [ccd2cue],
 [https://www.gnu.org/software/ccd2cue])
-AC_DEFINE(PACKAGE_MAILING_LIST, ["ccd2cue@gnu.org"], [Help and support mailing list])
+AC_SUBST([PACKAGE_MAILING_LIST], [ccd2cue@gnu.org])
+AC_DEFINE_UNQUOTED([PACKAGE_MAILING_LIST], ["$PACKAGE_MAILING_LIST"],
+  [Help and support mailing list])
 AC_DEFINE(PACKAGE_TRANSLATION_BUGREPORT,
 ["http://translationproject.org/team/"], [Translation bugs reporting address])
 AC_DEFINE(PACKAGE_COPYRIGHT_HOLDER, ["Bruno Fe'lix Rezende Ribeiro"],
