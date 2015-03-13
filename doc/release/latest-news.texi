@@ -51,7 +51,7 @@ single point of maintenance.
 Package meta-information, as release date and build system version,
 automatically generated at configuration time.
 @item
-Announcement message in user's manual.
+Announcement message in user's manual and homepage.
 @item
 Make target @code{distdir} can be made when top-level documentation
 files are missing.

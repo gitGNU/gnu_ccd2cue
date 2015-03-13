@@ -25,6 +25,7 @@
 @end ifclear
 @include release.texi
 @c %**end of header
+@set announcement
 
 
 
