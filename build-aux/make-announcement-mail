@@ -13,6 +13,7 @@ function ensure_defined {
 ensure_defined PACKAGE_NAME PACKAGE_VERSION PACKAGE_MAILING_LIST
 
 cat <<EOF
+Content-Type: text/plain; charset=UTF-8
 From: $(git config --get user.name) <$(git config --get user.email)>
 To: info-gnu@gnu.org
 Cc: ${PACKAGE_MAILING_LIST}, coordinator@translationproject.org
