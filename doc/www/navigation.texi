@@ -14,7 +14,7 @@
 @anchor{Top}
 @centerchap @strong{GNU ccd2cue} - @emph{CCD sheet to CUE sheet converter}
 
-@multitable @columnfractions .05 .05 .05 .05 .05 .05 .05
+@multitable @columnfractions .05 .05 .05 .05 .05 .05 .05 .05
 @headitem @url{README.html#Top, Main}
 @tab @url{manual/index.html#Top, Manual}
 @tab @url{ANNOUNCEMENT.html#Top, Announcement}
